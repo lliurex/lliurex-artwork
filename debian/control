@@ -1,0 +1,19 @@
+Source: lliurex-artwork
+Section: x11
+Priority: optional
+Maintainer: LliureX Team <lliurex@gva.es>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.2
+
+Package: lliurex-artwork-kwin-theme
+Architecture: all
+Section: x11
+Depends: kwin-style-breeze
+Description: LliureX's 19 kwin theme
+ LliureX's 19 default KWin theme, based on auroae engine
+
+Package: lliurex-artwork-color-scheme
+Architecture: all
+Section: x11
+Description: LliureX 19 color scheme
+ LliureX 19 default KDE color scheme
