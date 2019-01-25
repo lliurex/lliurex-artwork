@@ -64,9 +64,9 @@
      inkscape:window-height="948"
      id="namedview29"
      showgrid="false"
-     inkscape:zoom="7.375"
-     inkscape:cx="37.280413"
-     inkscape:cy="13.744825"
+     inkscape:zoom="14.75"
+     inkscape:cx="33.851148"
+     inkscape:cy="7.4869574"
      inkscape:window-x="0"
      inkscape:window-y="36"
      inkscape:window-maximized="1"
@@ -111,7 +111,8 @@
        style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#90949e;fill-opacity:1;stroke:none;stroke-width:2.42000008;marker:none;enable-background:accumulate" />
   </g>
   <g
-     id="pressed-center">
+     id="pressed-center"
+     transform="matrix(1,0,0,-1,0,16)">
     <rect
        id="rect17883-39-3-46-6-7-1"
        style="display:inline;opacity:0.5;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0"

@@ -65,7 +65,7 @@
      id="namedview29"
      showgrid="false"
      inkscape:zoom="14.75"
-     inkscape:cx="36.353125"
+     inkscape:cx="24.387023"
      inkscape:cy="5.4161302"
      inkscape:window-x="0"
      inkscape:window-y="36"
@@ -142,7 +142,8 @@
        style="opacity:1;fill:none;fill-opacity:0.0037037;stroke:#90949e;stroke-width:0.6;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
-     id="pressed-center">
+     id="pressed-center"
+     transform="matrix(1,0,0,-1,0,16)">
     <rect
        rx="1.4054054"
        ry="1.4054054"
@@ -151,7 +152,7 @@
        height="10.576271"
        width="10.576271"
        id="rect843-3"
-       style="opacity:1;fill:url(#linearGradient904);fill-opacity:1;stroke:#90949e;stroke-width:0.6;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="opacity:1;fill:url(#linearGradient904);fill-opacity:1;stroke:#90949e;stroke-width:0.60000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <g
        id="layer12-45-6-2-7-7"
        style="display:inline;fill:#c0e3ff;fill-opacity:1"
