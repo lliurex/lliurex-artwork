@@ -23,7 +23,7 @@ DialogWidth=720
 PreloadWeight=0
 
 [Containments][1][Wallpaper][org.kde.image][General]
-Image=file:////tmp/wallpaper-mockup.png
+Image=file:////usr/share/wallpapers/lliurex-19-mountains.png
 
 [Containments][2]
 activityId=

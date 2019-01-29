@@ -113,12 +113,11 @@ Name=Adapta
 XftAntialias=true
 XftHintStyle=
 XftSubPixel=none
-dbfile=/home/quique/.mozilla/firefox/091gt84c.default/places.sqlite
 shadeSortColumn=true
 widgetStyle=Breeze
 
 [Icons]
-Theme=Pop
+Theme=Breeze
 
 [KDE]
 ColorScheme=Breeze
