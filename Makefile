@@ -3,30 +3,35 @@ COLOR_NONE = \x1b[0m
 COLOR_GREEN = \x1b[32;01m
 COLOR_RED = \x1b[31;01m
 
-#default install path
-PREFIX = /usr/local
+%.render:
+	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
+	mkdir -p wallpapers/$(basename $@)/contents
+	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/1920x1080.png -w 1920 -h 1080 wallpapers/$(subst render,svg,$@)
+	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/1280x720.png -w 1280 -h 720 wallpapers/$(subst render,svg,$@)
 
-%.png : %.svg
-	@echo -e '$(COLOR_RED)* rendering [$@] $(COLOR_NONE)'
-	rsvg-convert -f png -o $@ $<
+lliurex-desktop: lliurex-desktop.render
 
-wallpapers: wallpapers/lliurex-19-mountains.png
+wallpapers: lliurex-desktop
 
 build: wallpapers
 
 all: build
 
 clean:
-	rm -rf wallpapers/*.png
+	rm -rf wallpapers/lliurex-desktop/contents
 
 install: build
 	@echo -e '$(COLOR_RED)* creating paths... $(COLOR_NONE)'
 	mkdir -p /usr/share/wallpapers
 	mkdir -p /usr/share/aurorae/themes
+	mkdir -p /usr/share/plasma/desktoptheme
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
+	#plasma theme
+	cp -r themes/lliurex-desktop /usr/share/plasma/desktoptheme/
+	
 	#wallpapers
-	cp wallpapers/*.png /usr/share/wallpapers/
+	cp -r wallpapers/lliurex-desktop /usr/share/wallpapers/
 	
 	#xdg files
 	cp -r defaults/xdg/* /etc/xdg/
@@ -41,7 +46,8 @@ install: build
 	cp -r color-schemes/* /usr/share/color-schemes/
 
 uninstall:
-	rm -f /usr/share/wallpapers/lliurex*
+	rm -rf /usr/share/plasma/desktoptheme/lliurex-desktop
+	rm -rf /usr/share/wallpapers/lliurex-desktop
 
 
 .PHONY: all clean install uninstall build
