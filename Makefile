@@ -27,27 +27,42 @@ install: build
 	mkdir -p /usr/share/plasma/desktoptheme
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
-	#plasma theme
+#plasma theme
 	cp -r themes/lliurex-desktop /usr/share/plasma/desktoptheme/
-	
-	#wallpapers
+
+#wallpapers
 	cp -r wallpapers/lliurex-desktop /usr/share/wallpapers/
-	
-	#xdg files
-	cp -r defaults/xdg/* /etc/xdg/
-	
-	#skel files
-	cp -r defaults/skel/* /etc/skel/
-	
-	#kwin theme
+
+#xsession files
+	cp -r defaults/xsession/* /etc/X11/Xsession.d/
+
+#xdg files
+	cp -r defaults/xdg/lliurex/ /etc/xdg/
+
+#kwin theme
 	cp -r aurorae/lliurex /usr/share/aurorae/themes/
-	
-	#color scheme
+
+#color scheme
 	cp -r color-schemes/* /usr/share/color-schemes/
 
 uninstall:
+
+#plasma theme
 	rm -rf /usr/share/plasma/desktoptheme/lliurex-desktop
+
+#wallpaper
 	rm -rf /usr/share/wallpapers/lliurex-desktop
 
+#xsession
+	rm -rf /etc/X11/Xsession.d/*lliurex*
+
+#xdg
+	rm -rf /etc/xdg/lliurex
+
+#kwin theme
+	rm -rf /usr/share/aurorae/themes/lliurex
+
+#color scheme
+	rm -rf /usr/share/color-schemes/lliurex.colors
 
 .PHONY: all clean install uninstall build
