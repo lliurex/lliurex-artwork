@@ -25,14 +25,19 @@ install: build
 	mkdir -p /usr/share/aurorae/themes
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
+	#wallpapers
 	cp wallpapers/*.png /usr/share/wallpapers/
 	
+	#xdg files
 	cp -r defaults/xdg/* /etc/xdg/
 	
+	#skel files
 	cp -r defaults/skel/* /etc/skel/
 	
+	#kwin theme
 	cp -r aurorae/lliurex /usr/share/aurorae/themes/
 	
+	#color scheme
 	cp -r color-schemes/* /usr/share/color-schemes/
 
 uninstall:

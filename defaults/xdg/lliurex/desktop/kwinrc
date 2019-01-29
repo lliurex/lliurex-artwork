@@ -1,17 +1,3 @@
-[$Version]
-update_info=kwin.upd:replace-scalein-with-scale
-
-[Compositing]
-AnimationSpeed=3
-Backend=OpenGL
-Enabled=true
-GLCore=true
-GLPreferBufferSwap=a
-GLTextureFilter=1
-HiddenPreviews=5
-OpenGLIsUnsafe=false
-WindowsBlockCompositing=true
-XRenderSmoothScale=false
 
 [Desktops]
 Number=4
