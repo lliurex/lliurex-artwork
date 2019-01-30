@@ -28,8 +28,8 @@ install: build
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
-	cp -r themes/lliurex-desktop /usr/share/plasma/desktoptheme/
-
+	cp -r desktoptheme/lliurex-desktop /usr/share/plasma/desktoptheme/
+	cp -r look-and-feel/lliurex-desktop /usr/share/plasma/look-and-feel/
 #wallpapers
 	cp -r wallpapers/lliurex-desktop /usr/share/wallpapers/
 
@@ -49,6 +49,7 @@ uninstall:
 
 #plasma theme
 	rm -rf /usr/share/plasma/desktoptheme/lliurex-desktop
+	rm -rf /usr/share/plasma/look-and-feel/lliurex-desktop
 
 #wallpaper
 	rm -rf /usr/share/wallpapers/lliurex-desktop
