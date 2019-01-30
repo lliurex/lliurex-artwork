@@ -5,9 +5,9 @@ COLOR_RED = \x1b[31;01m
 
 %.render:
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
-	mkdir -p wallpapers/$(basename $@)/contents
-	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/1920x1080.png -w 1920 -h 1080 wallpapers/$(subst render,svg,$@)
-	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/1280x720.png -w 1280 -h 720 wallpapers/$(subst render,svg,$@)
+	mkdir -p wallpapers/$(basename $@)/contents/images
+	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/images/1920x1080.png -w 1920 -h 1080 wallpapers/$(subst render,svg,$@)
+	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/images/1280x720.png -w 1280 -h 720 wallpapers/$(subst render,svg,$@)
 
 lliurex-desktop: lliurex-desktop.render
 

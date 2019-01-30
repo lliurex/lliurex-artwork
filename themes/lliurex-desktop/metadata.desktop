@@ -10,6 +10,12 @@ X-KDE-PluginInfo-EnabledByDefault=true
 X-Plasma-API=5.0
 
 [Wallpaper]
-defaultWallpaperTheme=LliureX-Desktop
+defaultWallpaperTheme=lliurex-desktop
 defaultWidth=1920
 defaultHeight=1080
+
+[ContrastEffect]
+enabled=true
+contrast=0.2
+intensity=2.0
+saturation=1.7

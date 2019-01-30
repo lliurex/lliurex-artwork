@@ -1,5 +1,8 @@
 [Theme]
-name=LliureX-Desktop
+name=lliurex-desktop
+
+[Colors:Window]
+BackgroundNormal=232,232,232
 
 [General]
 ColorScheme=Breeze
@@ -17,3 +20,4 @@ ShowDeleteCommand=false
 ShowIconsInMenuItems=false
 ShowIconsOnPushButtons=false
 SingleClick=false
+
