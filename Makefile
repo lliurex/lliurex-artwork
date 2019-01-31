@@ -30,6 +30,7 @@ install: build
 #plasma theme
 	cp -r desktoptheme/lliurex-desktop /usr/share/plasma/desktoptheme/
 	cp -r look-and-feel/lliurex-desktop /usr/share/plasma/look-and-feel/
+	cp -r look-and-feel/lliurex-desktop-classic /usr/share/plasma/look-and-feel/
 #wallpapers
 	cp -r wallpapers/lliurex-desktop /usr/share/wallpapers/
 
@@ -50,6 +51,7 @@ uninstall:
 #plasma theme
 	rm -rf /usr/share/plasma/desktoptheme/lliurex-desktop
 	rm -rf /usr/share/plasma/look-and-feel/lliurex-desktop
+	rm -rf /usr/share/plasma/look-and-feel/lliurex-desktop-classic
 
 #wallpaper
 	rm -rf /usr/share/wallpapers/lliurex-desktop
