@@ -23,8 +23,12 @@ clean:
 install: build
 	@echo -e '$(COLOR_RED)* creating paths... $(COLOR_NONE)'
 	mkdir -p $(DESTDIR)/usr/share/wallpapers
+	mkdir -p $(DESTDIR)/usr/share/color-schemes
 	mkdir -p $(DESTDIR)/usr/share/aurorae/themes
 	mkdir -p $(DESTDIR)/usr/share/plasma/desktoptheme
+	mkdir -p $(DESTDIR)/usr/share/plasma/look-and-feel/
+	mkdir -p $(DESTDIR)/etc/X11/Xsession.d
+	mkdir -p $(DESTDIR)/etc/xdg
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
