@@ -23,20 +23,20 @@ Architecture: all
 Section: x11
 Description: LliureX 19 plasma look and feel theme
  LliureX 19 default KDE Plasma look and feel themes (classic and default)
- 
- Package: lliurex-desktop-plasma-theme
+
+Package: lliurex-desktop-plasma-theme
 Architecture: all
 Section: x11
 Description: LliureX 19 plasma theme
  LliureX 19 default KDE Plasma theme
- 
- Package: lliurex-desktop-wallpaper
+
+Package: lliurex-desktop-wallpaper
 Architecture: all
 Section: x11
 Description: LliureX 19 desktop wallpaper
  LliureX 19 desktop wallpaper with KDE plasma package
- 
- Package: lliurex-desktop-defaults
+
+Package: lliurex-desktop-defaults
 Architecture: all
 Section: x11
 Description: LliureX 19 xdg defaults 
