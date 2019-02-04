@@ -22,50 +22,50 @@ clean:
 
 install: build
 	@echo -e '$(COLOR_RED)* creating paths... $(COLOR_NONE)'
-	mkdir -p /usr/share/wallpapers
-	mkdir -p /usr/share/aurorae/themes
-	mkdir -p /usr/share/plasma/desktoptheme
+	mkdir -p $(DESTDIR)/usr/share/wallpapers
+	mkdir -p $(DESTDIR)/usr/share/aurorae/themes
+	mkdir -p $(DESTDIR)/usr/share/plasma/desktoptheme
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
-	cp -r desktoptheme/lliurex-desktop /usr/share/plasma/desktoptheme/
-	cp -r look-and-feel/lliurex-desktop /usr/share/plasma/look-and-feel/
-	cp -r look-and-feel/lliurex-desktop-classic /usr/share/plasma/look-and-feel/
+	cp -r desktoptheme/lliurex-desktop $(DESTDIR)/usr/share/plasma/desktoptheme/
+	cp -r look-and-feel/lliurex-desktop $(DESTDIR)/usr/share/plasma/look-and-feel/
+	cp -r look-and-feel/lliurex-desktop-classic $(DESTDIR)/usr/share/plasma/look-and-feel/
 #wallpapers
-	cp -r wallpapers/lliurex-desktop /usr/share/wallpapers/
+	cp -r wallpapers/lliurex-desktop $(DESTDIR)/usr/share/wallpapers/
 
 #xsession files
-	cp -r defaults/xsession/* /etc/X11/Xsession.d/
+	cp -r defaults/xsession/* $(DESTDIR)/etc/X11/Xsession.d/
 
 #xdg files
-	cp -r defaults/xdg/lliurex/ /etc/xdg/
+	cp -r defaults/xdg/lliurex/ $(DESTDIR)/etc/xdg/
 
 #kwin theme
-	cp -r aurorae/lliurex /usr/share/aurorae/themes/
+	cp -r aurorae/lliurex $(DESTDIR)/usr/share/aurorae/themes/
 
 #color scheme
-	cp -r color-schemes/* /usr/share/color-schemes/
+	cp -r color-schemes/* $(DESTDIR)/usr/share/color-schemes/
 
 uninstall:
 
 #plasma theme
-	rm -rf /usr/share/plasma/desktoptheme/lliurex-desktop
-	rm -rf /usr/share/plasma/look-and-feel/lliurex-desktop
-	rm -rf /usr/share/plasma/look-and-feel/lliurex-desktop-classic
+	rm -rf $(DESTDIR)/usr/share/plasma/desktoptheme/lliurex-desktop
+	rm -rf $(DESTDIR)/usr/share/plasma/look-and-feel/lliurex-desktop
+	rm -rf $(DESTDIR)/usr/share/plasma/look-and-feel/lliurex-desktop-classic
 
 #wallpaper
-	rm -rf /usr/share/wallpapers/lliurex-desktop
+	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-desktop
 
 #xsession
-	rm -rf /etc/X11/Xsession.d/*lliurex*
+	rm -rf $(DESTDIR)/etc/X11/Xsession.d/*lliurex*
 
 #xdg
-	rm -rf /etc/xdg/lliurex
+	rm -rf $(DESTDIR)/etc/xdg/lliurex
 
 #kwin theme
-	rm -rf /usr/share/aurorae/themes/lliurex
+	rm -rf $(DESTDIR)/usr/share/aurorae/themes/lliurex
 
 #color scheme
-	rm -rf /usr/share/color-schemes/lliurex.colors
+	rm -rf $(DESTDIR)/usr/share/color-schemes/lliurex.colors
 
 .PHONY: all clean install uninstall build
