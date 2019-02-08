@@ -1,0 +1,42 @@
+GIMP Palette
+Name: Breeze
+Columns: 6
+# https://techbase.kde.org/Projects/Usability/HIG/Color
+
+231  76  60	e74c3
+237  21  21	Danger Red
+244 119  80	Icon Orange
+253 188  75	Icon Yellow
+201 206  59	Sunbeam Yellow
+
+218  68  83	Icon Red
+192  57  43	c0392b
+211  84   0	d35400
+246 116   0	Beware Orange
+243 156  31	f39c1f
+
+ 28 220 154	Mellow Turquoise
+ 46 204 113	Icon Green
+ 26 188 156	1abc9c
+ 52 152 219	3498db
+ 61 174 233	Plasma Blue
+155  89 182	9b59b6
+
+ 17 209  22	Verdant Green
+ 39 174  96	27ae60
+ 22 160 133	16a085
+ 41 128 185	2980b9
+ 29 153 243	Icon Blue
+142  68 173	8e44ad
+
+ 52  73  94	34495e
+ 49  54  59	Charcoal Grey
+127 140 141	7f8c8d
+189 195 199	bdc3c7
+252 252 252	Paper White
+
+ 44  62  80	2c3e50
+ 35  38  41	Shade Black
+ 77  77  77	Icon Grey
+149 165 166	95a5a6
+239 240 241	Cardboard Grey
