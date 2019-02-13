@@ -7,7 +7,9 @@ COLOR_RED = \x1b[31;01m
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
 	mkdir -p wallpapers/$(basename $@)/contents/images
 	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/images/1920x1080.png -w 1920 -h 1080 wallpapers/$(subst render,svg,$@)
+	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/images/1408x792.png -w 1408 -h 792 wallpapers/$(subst render,svg,$@)
 	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/images/1280x720.png -w 1280 -h 720 wallpapers/$(subst render,svg,$@)
+	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/images/1152x648.png -w 1152 -h 648 wallpapers/$(subst render,svg,$@)
 
 lliurex-desktop: lliurex-desktop.render
 
@@ -29,6 +31,7 @@ install: build
 	mkdir -p $(DESTDIR)/usr/share/plasma/look-and-feel/
 	mkdir -p $(DESTDIR)/etc/X11/Xsession.d
 	mkdir -p $(DESTDIR)/etc/xdg
+	mkdir -p $(DESTDIR)/etc/skel/
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
@@ -40,6 +43,9 @@ install: build
 
 #xsession files
 	cp -r defaults/xsession/* $(DESTDIR)/etc/X11/Xsession.d/
+
+#skel files
+	cp -r defaults/skel/* $(DESTDIR)/etc/skel/
 
 #xdg files
 	cp -r defaults/xdg/lliurex/ $(DESTDIR)/etc/xdg/
@@ -62,6 +68,9 @@ uninstall:
 
 #xsession
 	rm -rf $(DESTDIR)/etc/X11/Xsession.d/*lliurex*
+
+#skel
+	rm -rf $(DESTDIR)/etc/skel/.local/share/konsole
 
 #xdg
 	rm -rf $(DESTDIR)/etc/xdg/lliurex
