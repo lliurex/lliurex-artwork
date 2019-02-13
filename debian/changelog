@@ -1,4 +1,10 @@
-lliurex-artwork (1.0-alpha1) UNRELEASED; urgency=medium
+lliurex-artwork (1.0-alpha2) bionic; urgency=high
+
+  * master: 7c9e62bbf44003c4a7eb43665daa749a29e5ac78
+
+ -- Enrique Medina Gremaldos  <quiqueiii@gmail.com>  Wed, 13 Feb 2019 09:54:18 +0100
+
+lliurex-artwork (1.0-alpha1) bionic; urgency=medium
 
   * Initial release.
 

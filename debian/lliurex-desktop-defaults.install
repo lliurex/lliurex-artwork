@@ -1,2 +1,3 @@
 defaults/xdg/lliurex	/etc/xdg/
 defaults/xsession/*		/etc/X11//Xsession.d/
+defaults/skel/*	/etc/skel/
