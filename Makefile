@@ -45,7 +45,7 @@ install: build
 	cp -r defaults/xsession/* $(DESTDIR)/etc/X11/Xsession.d/
 
 #skel files
-	cp -r defaults/skel/* $(DESTDIR)/etc/skel/
+	cp -r defaults/skel/.* $(DESTDIR)/etc/skel/
 
 #xdg files
 	cp -r defaults/xdg/lliurex/ $(DESTDIR)/etc/xdg/
