@@ -31,6 +31,7 @@ install: build
 	mkdir -p $(DESTDIR)/usr/share/plasma/look-and-feel/
 	mkdir -p $(DESTDIR)/etc/X11/Xsession.d
 	mkdir -p $(DESTDIR)/etc/xdg
+	mkdir -p $(DESTDIR)/etc/skel/
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
@@ -42,6 +43,9 @@ install: build
 
 #xsession files
 	cp -r defaults/xsession/* $(DESTDIR)/etc/X11/Xsession.d/
+
+#skel files
+	cp -r defaults/skel/* $(DESTDIR)/etc/skel/
 
 #xdg files
 	cp -r defaults/xdg/lliurex/ $(DESTDIR)/etc/xdg/
@@ -64,6 +68,9 @@ uninstall:
 
 #xsession
 	rm -rf $(DESTDIR)/etc/X11/Xsession.d/*lliurex*
+
+#skel
+	rm -rf $(DESTDIR)/etc/skel/.local/share/konsole
 
 #xdg
 	rm -rf $(DESTDIR)/etc/xdg/lliurex
