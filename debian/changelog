@@ -1,6 +1,7 @@
 lliurex-artwork (1.0-alpha3) bionic; urgency=medium
 
   * Add foro lliurex as searchprovider
+  * Add ./config/baloofilerc to skel
 
  -- Juanma Navarro Mañez <juanma1980@gmail.com>  Wed, 24 Apr 2019 09:02:35 +0200
 
