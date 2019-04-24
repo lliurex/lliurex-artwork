@@ -32,6 +32,7 @@ install: build
 	mkdir -p $(DESTDIR)/etc/X11/Xsession.d
 	mkdir -p $(DESTDIR)/etc/xdg
 	mkdir -p $(DESTDIR)/etc/skel/
+	mkdir -p $(DESTDIR)/usr/share/kservices5/searchproviders/
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
