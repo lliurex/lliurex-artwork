@@ -1,3 +1,9 @@
+lliurex-artwork (1.0-alpha3) bionic; urgency=medium
+
+  * Add foro lliurex as searchprovider
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Wed, 24 Apr 2019 09:02:35 +0200
+
 lliurex-artwork (1.0-alpha2) bionic; urgency=high
 
   * master: d1be4969677dabd6ade930993b41b45e31d73979
