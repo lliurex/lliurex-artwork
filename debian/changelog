@@ -1,3 +1,9 @@
+lliurex-artwork (1.1) bionic; urgency=high
+
+  * dummy upgrade
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Wed, 24 Apr 2019 14:42:20 +0200
+
 lliurex-artwork (1.0-alpha3) bionic; urgency=medium
 
   * Add foro lliurex as searchprovider
