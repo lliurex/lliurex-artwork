@@ -85,10 +85,7 @@ uninstall:
 #color scheme
 	rm -rf $(DESTDIR)/usr/share/color-schemes/lliurex.colors
 
-<<<<<<< HEAD
 #searchproviders
 	rm -rf $(DESTDIR)/usr/share/kservices5/searchproviders/foroLliurex.desktop
 
-=======
->>>>>>> master
 .PHONY: all clean install uninstall build
