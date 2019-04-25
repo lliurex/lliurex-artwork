@@ -1,3 +1,8 @@
+lliurex-artwork (1.1-alpha2) bionic; urgency=medium
+  * Fix ppa build
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Thu, 25 Apr 2019 08:47:51 +0200
+
 lliurex-artwork (1.0-alpha3) bionic; urgency=medium
 
   * Add foro lliurex as searchprovider
