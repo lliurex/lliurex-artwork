@@ -32,6 +32,7 @@ install: build
 	mkdir -p $(DESTDIR)/etc/X11/Xsession.d
 	mkdir -p $(DESTDIR)/etc/xdg
 	mkdir -p $(DESTDIR)/etc/skel/
+	mkdir -p $(DESTDIR)/usr/share/kservices5/searchproviders/
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
@@ -45,7 +46,7 @@ install: build
 	cp -r defaults/xsession/* $(DESTDIR)/etc/X11/Xsession.d/
 
 #skel files
-	cp -r defaults/skel/.* $(DESTDIR)/etc/skel/
+	cp -r defaults/skel/. $(DESTDIR)/etc/skel/
 
 #xdg files
 	cp -r defaults/xdg/lliurex/ $(DESTDIR)/etc/xdg/
@@ -55,6 +56,9 @@ install: build
 
 #color scheme
 	cp -r color-schemes/* $(DESTDIR)/usr/share/color-schemes/
+
+#search providers
+	cp -r defaults/searchproviders/* $(DESTDIR)/usr/share/kservices5/searchproviders/
 
 uninstall:
 
@@ -80,5 +84,8 @@ uninstall:
 
 #color scheme
 	rm -rf $(DESTDIR)/usr/share/color-schemes/lliurex.colors
+
+#searchproviders
+	rm -rf $(DESTDIR)/usr/share/kservices5/searchproviders/foroLliurex.desktop
 
 .PHONY: all clean install uninstall build
