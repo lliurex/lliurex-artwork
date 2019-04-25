@@ -46,7 +46,7 @@ install: build
 	cp -r defaults/xsession/* $(DESTDIR)/etc/X11/Xsession.d/
 
 #skel files
-	cp -r defaults/skel/. $(DESTDIR)/etc/skel/
+	cp -Tr defaults/skel $(DESTDIR)/etc/skel
 
 #xdg files
 	cp -r defaults/xdg/lliurex/ $(DESTDIR)/etc/xdg/
@@ -85,7 +85,10 @@ uninstall:
 #color scheme
 	rm -rf $(DESTDIR)/usr/share/color-schemes/lliurex.colors
 
+<<<<<<< HEAD
 #searchproviders
 	rm -rf $(DESTDIR)/usr/share/kservices5/searchproviders/foroLliurex.desktop
 
+=======
+>>>>>>> master
 .PHONY: all clean install uninstall build
