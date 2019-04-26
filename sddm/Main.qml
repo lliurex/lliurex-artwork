@@ -34,7 +34,59 @@ Rectangle {
         }
     }
     
-    TextBox {
+    Column {
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        spacing: 20
+        
+        Row {
+            spacing: 20
+            anchors.right: parent.right
+            
+            Text {
+                text: "User"
+            }
+            TextBox {
+                id: txtuser
+                width: 164
+            }
+        }
+        
+        Row {
+            spacing: 20
+            anchors.right: parent.right
+            
+            Text {
+                text: "Password"
+            }
+            PasswordBox {
+                id: txtpass
+                width: 164
+            }
+        }
+        
+        Button {
+            text: "Login"
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: "#eff0f1"
+            activeColor: "#eff0f1"
+            pressedColor: "#93cee9"
+            textColor: "#000000"
+        }
+    }
+    
+    Row {
+        spacing: 20
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        
+        Text {
+            text: "Session"
+        }
+        
+        ComboBox {
+            
+        }
         
     }
     
