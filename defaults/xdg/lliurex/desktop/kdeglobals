@@ -1,11 +1,8 @@
 [Theme]
 name=lliurex-desktop
 
-[Colors:Window]
-BackgroundNormal=232,232,232
-
 [General]
-ColorScheme=Breeze
+ColorScheme=lliurex
 Name=Breeze
 
 [Icons]
