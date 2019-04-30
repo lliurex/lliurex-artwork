@@ -51,9 +51,6 @@ install: build
 #xdg files
 	cp -r defaults/xdg/lliurex/ $(DESTDIR)/etc/xdg/
 
-#kwin theme
-	cp -r aurorae/lliurex $(DESTDIR)/usr/share/aurorae/themes/
-
 #color scheme
 	cp -r color-schemes/* $(DESTDIR)/usr/share/color-schemes/
 
@@ -78,9 +75,6 @@ uninstall:
 
 #xdg
 	rm -rf $(DESTDIR)/etc/xdg/lliurex
-
-#kwin theme
-	rm -rf $(DESTDIR)/usr/share/aurorae/themes/lliurex
 
 #color scheme
 	rm -rf $(DESTDIR)/usr/share/color-schemes/lliurex.colors
