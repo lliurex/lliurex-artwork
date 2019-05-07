@@ -1,5 +1,6 @@
 import QtQuick 2.0
-import SddmComponents 2.0
+import QtQuick.Controls 2.0
+import SddmComponents 2.0 as Sddm
 
 
 Rectangle {
@@ -10,20 +11,20 @@ Rectangle {
     LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
-    TextConstants { id: textConstants }
+    Sddm.TextConstants { id: textConstants }
     
     Connections {
         target: sddm
         onLoginSucceeded: {}
         onLoginFailed: {
-            pw_entry.text = ""
-            pw_entry.focus = true
-            errorMessage.color = "red"
-            errorMessage.text = textConstants.loginFailed
+            txtPass.text = ""
+            txtPass.focus = true
+            
+            txtPass.borderColor="red"
         }
     }
     
-    Background {
+    Sddm.Background {
         anchors.fill: parent
         source: config.background
         fillMode: Image.PreserveAspectCrop
@@ -34,67 +35,153 @@ Rectangle {
         }
     }
     
-    Column {
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
-        spacing: 20
+    //top frame
+    Rectangle {
+        //color: "#eff0f1"
+        color: "white"
+        width: parent.width
+        height: 48
         
-        Row {
-            spacing: 20
-            anchors.right: parent.right
-            
-            Text {
-                text: "User"
-            }
-            TextBox {
-                id: txtuser
-                width: 164
+         Timer {
+            id: timerClock
+            interval: 1000
+            running: true
+            repeat: true
+            onTriggered: {
+                txtClock.text = Qt.formatDateTime(new Date(), "HH:mm    ddd d MMMM yyyy");
             }
         }
-        
-        Row {
-            spacing: 20
-            anchors.right: parent.right
-            
-            Text {
-                text: "Password"
-            }
-            PasswordBox {
-                id: txtpass
-                width: 164
-            }
+
+        Text {
+            id: txtHostname
+            text: sddm.hostname
+            anchors.left:parent.left
+            anchors.verticalCenter: parent.verticalCenter
         }
         
-        Button {
-            text: "Login"
+        Text {
+            id: txtClock
+            text: "--"
             anchors.horizontalCenter: parent.horizontalCenter
-            color: "#eff0f1"
-            activeColor: "#eff0f1"
-            pressedColor: "#93cee9"
-            textColor: "#000000"
+            anchors.verticalCenter: parent.verticalCenter
+        }
+        
+        Row {
+            spacing: 10
+            anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.rightMargin: 10
+            
+            ComboBox {
+                id: cmbSession
+                model: sessionModel
+                currentIndex: sessionModel.lastIndex
+                textRole: "name"
+            }
+            Button {
+                text: "Power off"
+                
+                onClicked: {
+                    loginFrame.visible=false
+                    shutdownFrame.visible=true
+                }
+            }
+            
         }
     }
     
-    Row {
-        spacing: 20
-        anchors.left: parent.left
-        anchors.bottom: parent.bottom
+    // login frame
+    Rectangle {
         
-        Text {
-            text: "Session"
+        id: loginFrame
+        color: "white"
+        width: childrenRect.width+40
+        height: childrenRect.height+40
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        
+        Column {
+            
+            spacing: 10
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            
+            Image {
+                id: imgFace
+            }
+            
+            TextField {
+                id: txtUser
+                width: 164
+                placeholderText: "User name"
+                
+            }
+            TextField {
+                id: txtPass
+                width: 164
+                echoMode: TextInput.Password
+                placeholderText: "Password"
+            }
+            
+            Button {
+                text: "Login"
+                anchors.horizontalCenter: parent.horizontalCenter
+                
+                onClicked: {
+                    sddm.login(txtUser.text,txtPass.text,cmbSession.currentIndex)
+                }
+            }
         }
+    }
+    
+    // Shutdown frame
+    Rectangle {
+        id: shutdownFrame
+        visible: false
+        color: "white"
+        width: childrenRect.width+40
+        height: childrenRect.height+40
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
         
-        ComboBox {
+        Column {
+            spacing: 40
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            
+            Row {
+                spacing: 10
+                
+                Button {
+                    text: "Power Off"
+                    enabled:sddm.canPowerOff()
+                }
+                
+                Button {
+                    text: "Reboot"
+                    enabled: sddm.canReboot()
+                }
+                
+                Button {
+                    text: "Suspend"
+                    enabled: sddm.canSuspend()
+                }
+            }
+            
+            Button {
+                text: "Cancel"
+                anchors.right: parent.right
+                
+                onClicked: {
+                    loginFrame.visible=true
+                    shutdownFrame.visible=false
+                }
+            }
             
         }
         
     }
     
     Component.onCompleted: {
-        /*if (user_entry.text === "")
-            user_entry.focus = true
-        else
-            pw_entry.focus = true*/
-        pw_entry.focus = true
     }
 }
