@@ -155,16 +155,26 @@ Rectangle {
                 Button {
                     text: "Power Off"
                     enabled:sddm.canPowerOff()
+                    
+                    onClicked: {
+                        sddm.powerOff()
+                    }
                 }
                 
                 Button {
                     text: "Reboot"
                     enabled: sddm.canReboot()
+                    onClicked: {
+                        sddm.reboot()
+                    }
                 }
                 
                 Button {
                     text: "Suspend"
                     enabled: sddm.canSuspend()
+                    onClicked: {
+                        sddm.suspend()
+                    }
                 }
             }
             
