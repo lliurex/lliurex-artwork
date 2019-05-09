@@ -17,8 +17,11 @@ Rectangle {
     
     Connections {
         target: sddm
-        onLoginSucceeded: {}
+        onLoginSucceeded: {
+            message.text="Yo man"
+        }
         onLoginFailed: {
+            message.text="Login fail"
             txtPass.text = ""
             txtPass.focus = true
             
@@ -37,137 +40,225 @@ Rectangle {
         }
     }
     
-    //top frame
-    Rectangle {
-        color: "#eff0f1"
-        width: parent.width
-        height: 48
-        
-         Timer {
-            id: timerClock
-            interval: 1000
-            running: true
-            repeat: true
-            onTriggered: {
-                txtClock.text = Qt.formatDateTime(new Date(), "HH:mm    ddd d MMMM yyyy");
-            }
-        }
 
+     Timer {
+        id: timerClock
+        interval: 500
+        running: true
+        repeat: true
+        onTriggered: {
+            txtDate.text = Qt.formatDateTime(new Date(), "ddd d MMMM yyyy");
+            txtClock.text = Qt.formatDateTime(new Date(), "HH:mm");
+        }
+    }
+
+    Column {
+        spacing: 10
+        /*
+        anchors.right:parent.right
+        anchors.rightMargin: 40
+        */
+        anchors.verticalCenter: parent.verticalCenter
+        x: parent.width*0.7
+        
         Text {
             id: txtHostname
-            text: sddm.hostname
-            anchors.left:parent.left
-            anchors.verticalCenter: parent.verticalCenter
+            text: "server"
+            anchors.horizontalCenter: parent.horizontalCenter
+            
+            color:"white"
+            font.pointSize: 32
+            style:Text.Outline
+            styleColor: "#40000000"
+
+            
+        }
+        
+        Text {
+            id: txtDate
+            text: "--"
+            anchors.horizontalCenter: parent.horizontalCenter
+            
+            color:"white"
+            font.pointSize: 32
+            style:Text.Outline
+            styleColor: "#40000000"
+
+            
         }
         
         Text {
             id: txtClock
             text: "--"
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
-        }
-        
-        Row {
-            spacing: 10
-            anchors.right: parent.right
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.rightMargin: 10
-            /*
-            ComboBox {
-                id: cmbSession
-                model: sessionModel
-                currentIndex: sessionModel.lastIndex
-                textRole: "name"
-            }*/
-            Button {
-                icon.source: "images/shutdown.svg"
-                width:32
-                height:32
-                
-                onClicked: {
-                    loginFrame.visible=false
-                    shutdownFrame.visible=true
-                }
-            }
             
+            color:"white"
+            font.pointSize: 96
+            style:Text.Outline
+            styleColor: "#40000000"
+
+        }
+    
+    }
+    
+    Button {
+        icon.source: "images/shutdown.svg"
+        width:64
+        height:64
+        flat:true
+        
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.rightMargin:40
+        anchors.bottomMargin: 40
+        
+        onClicked: {
+            loginFrame.visible=false
+            shutdownFrame.visible=true
         }
     }
     
+    
+    
     // login frame
-    Rectangle {
-        
+    Item {
         id: loginFrame
-        color: "#eff0f1"
-        radius: 5
         width: childrenRect.width+40
         height: childrenRect.height+40
-        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.left: parent.left
+        anchors.leftMargin:200
         anchors.verticalCenter: parent.verticalCenter
         
-        Column {
+        Rectangle {
+            color: "#40000000"
             
-            spacing: 20
+            width: loginTop.width+5
+            height: loginTop.height+5
+            radius:5
+            
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+        }
+        
+        
+        Rectangle {
+            
+            id: loginTop
+            color: "#eff0f1"
+            radius: 5
+            width: childrenRect.width+40
+            height: childrenRect.height+40
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             
-            Image {
-                source: "images/lliurex.svg"
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
             
-            Rectangle {
-                color: "#7f8c8d"
-                height: 5
-                width: 320
-            }
-            
-            TextField {
-                id: txtUser
-                width: 200
-                placeholderText: "User name"
-                anchors.horizontalCenter: parent.horizontalCenter
+            Column {
                 
-            }
-            
-            TextField {
-                id: txtPass
-                width: 200
-                echoMode: TextInput.Password
-                placeholderText: "Password"
+                spacing: 16
                 anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
                 
                 Image {
-                    source: "images/upcase.svg"
-                    anchors.right: parent.right
-                    anchors.rightMargin:5
-                    anchors.verticalCenter: parent.verticalCenter
+                    source: "images/lliurex.svg"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+                
+                Rectangle {
+                    color: "#7f8c8d"
+                    height: 5
+                    width: 320
+                }
+                
+                TextField {
+                    id: txtUser
+                    width: 200
+                    placeholderText: "User name"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+                
+                TextField {
+                    id: txtPass
+                    width: 200
+                    echoMode: TextInput.Password
+                    placeholderText: "Password"
+                    anchors.horizontalCenter: parent.horizontalCenter
                     
-                    visible: keyboard.capsLock
+                    Image {
+                        source: "images/upcase.svg"
+                        anchors.right: parent.right
+                        anchors.rightMargin:5
+                        anchors.verticalCenter: parent.verticalCenter
+                        
+                        visible: keyboard.capsLock
+                    }
                 }
-            }
-            
-            Button {
-                text: "Login"
-                anchors.horizontalCenter: parent.horizontalCenter
                 
-                onClicked: {
-                    sddm.login(txtUser.text,txtPass.text,cmbSession.currentIndex)
+                Text {
+                    id: message
+                    color: "red"
+                    text: "No connection to server"
+                    anchors.horizontalCenter: parent.horizontalCenter
                 }
-            }
-            
-            Button {
-                icon.source: "images/settings.svg"
-                anchors.right : parent.right
                 
-                width: 32
-                height: 32
-                
-                onClicked: {
+                Button {
+                    text: "Login"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    
+                    onClicked: {
+                        sddm.login(txtUser.text,txtPass.text,cmbSession.currentIndex)
+                    }
                 }
+                
+                ComboBox {
+                    flat: true
+                    anchors.left:parent.left
+                    model: sessionModel
+                    currentIndex: sessionModel.lastIndex
+                    textRole: "name"
+                    
+                    indicator: {}
+                }
+                
+                /*
+                Button {
+                    icon.source: "images/settings.svg"
+                    anchors.right : parent.right
+                    
+                    width: 32
+                    height: 32
+                    
+                    onClicked: {
+                    }
+                }
+                */
+                /*
+                Text {
+                    text:"Plasma"
+                    anchors.left:parent.left
+                    
+                    MouseArea {
+                        anchors.fill: parent
+                        
+                        acceptedButtons: Qt.LeftButton
+                        
+                        onClicked: {
+                            menu.popup()
+                        }
+                    }
+                    
+                    Menu {
+                        id: menu
+                        contentItem: ListView {
+                            model: sessionModel
+                        }
+                    }
+                }
+                */
+                
             }
-            
         }
     }
+    
     
     // Shutdown frame
     Rectangle {
