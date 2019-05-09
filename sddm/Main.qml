@@ -1,5 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.0
+
+//import QtQuick.Controls.Styles.Breeze 1.0
 import SddmComponents 2.0 as Sddm
 
 
@@ -37,8 +39,7 @@ Rectangle {
     
     //top frame
     Rectangle {
-        //color: "#eff0f1"
-        color: "white"
+        color: "#eff0f1"
         width: parent.width
         height: 48
         
@@ -71,15 +72,17 @@ Rectangle {
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             anchors.rightMargin: 10
-            
+            /*
             ComboBox {
                 id: cmbSession
                 model: sessionModel
                 currentIndex: sessionModel.lastIndex
                 textRole: "name"
-            }
+            }*/
             Button {
-                text: "Power off"
+                icon.source: "images/shutdown.svg"
+                width:32
+                height:32
                 
                 onClicked: {
                     loginFrame.visible=false
@@ -94,7 +97,8 @@ Rectangle {
     Rectangle {
         
         id: loginFrame
-        color: "white"
+        color: "#eff0f1"
+        radius: 5
         width: childrenRect.width+40
         height: childrenRect.height+40
         anchors.horizontalCenter: parent.horizontalCenter
@@ -102,25 +106,44 @@ Rectangle {
         
         Column {
             
-            spacing: 10
+            spacing: 20
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             
             Image {
-                id: imgFace
+                source: "images/lliurex.svg"
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+            
+            Rectangle {
+                color: "#7f8c8d"
+                height: 5
+                width: 320
             }
             
             TextField {
                 id: txtUser
-                width: 164
+                width: 200
                 placeholderText: "User name"
+                anchors.horizontalCenter: parent.horizontalCenter
                 
             }
+            
             TextField {
                 id: txtPass
-                width: 164
+                width: 200
                 echoMode: TextInput.Password
                 placeholderText: "Password"
+                anchors.horizontalCenter: parent.horizontalCenter
+                
+                Image {
+                    source: "images/upcase.svg"
+                    anchors.right: parent.right
+                    anchors.rightMargin:5
+                    anchors.verticalCenter: parent.verticalCenter
+                    
+                    visible: keyboard.capsLock
+                }
             }
             
             Button {
@@ -131,6 +154,18 @@ Rectangle {
                     sddm.login(txtUser.text,txtPass.text,cmbSession.currentIndex)
                 }
             }
+            
+            Button {
+                icon.source: "images/settings.svg"
+                anchors.right : parent.right
+                
+                width: 32
+                height: 32
+                
+                onClicked: {
+                }
+            }
+            
         }
     }
     
@@ -138,7 +173,7 @@ Rectangle {
     Rectangle {
         id: shutdownFrame
         visible: false
-        color: "white"
+        color: "#eff0f1"
         width: childrenRect.width+40
         height: childrenRect.height+40
         anchors.horizontalCenter: parent.horizontalCenter
@@ -191,6 +226,7 @@ Rectangle {
         }
         
     }
+    
     
     Component.onCompleted: {
     }
