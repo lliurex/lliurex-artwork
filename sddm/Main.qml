@@ -1,9 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.0
-
-//import QtQuick.Controls.Styles.Breeze 1.0
 import SddmComponents 2.0 as Sddm
-
+import "lliurex" as Lliurex
 
 Rectangle {
     
@@ -98,27 +96,37 @@ Rectangle {
             styleColor: "#40000000"
 
         }
+        
+        Lliurex.Button {
+            text:"Hello world"
+            anchors.horizontalCenter: parent.horizontalCenter
+            
+            onClicked: {
+                console.log("click")
+            }
+        }
     
     }
     
-    Button {
-        icon.source: "images/shutdown.svg"
-        width:64
-        height:64
-        flat:true
+    Image {
+        source: "images/shutdown.svg"
         
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         anchors.rightMargin:40
         anchors.bottomMargin: 40
         
-        onClicked: {
-            loginFrame.visible=false
-            shutdownFrame.visible=true
+        MouseArea {
+            anchors.fill: parent
+            
+            acceptedButtons: Qt.LeftButton
+            
+            onClicked: {
+                loginFrame.visible=false
+                shutdownFrame.visible=true
+            }
         }
     }
-    
-    
     
     // login frame
     Item {
@@ -200,7 +208,7 @@ Rectangle {
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
                 
-                Button {
+                Lliurex.Button {
                     text: "Login"
                     anchors.horizontalCenter: parent.horizontalCenter
                     
@@ -219,105 +227,86 @@ Rectangle {
                     indicator: {}
                 }
                 
-                /*
-                Button {
-                    icon.source: "images/settings.svg"
-                    anchors.right : parent.right
-                    
-                    width: 32
-                    height: 32
-                    
-                    onClicked: {
-                    }
-                }
-                */
-                /*
-                Text {
-                    text:"Plasma"
-                    anchors.left:parent.left
-                    
-                    MouseArea {
-                        anchors.fill: parent
-                        
-                        acceptedButtons: Qt.LeftButton
-                        
-                        onClicked: {
-                            menu.popup()
-                        }
-                    }
-                    
-                    Menu {
-                        id: menu
-                        contentItem: ListView {
-                            model: sessionModel
-                        }
-                    }
-                }
-                */
-                
             }
         }
     }
     
     
     // Shutdown frame
-    Rectangle {
+    Item {
         id: shutdownFrame
         visible: false
-        color: "#eff0f1"
-        width: childrenRect.width+40
-        height: childrenRect.height+40
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
+            
+         Rectangle {
+            color: "#40000000"
+            
+            width: shutdownTop.width+5
+            height: shutdownTop.height+5
+            radius:5
+            
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+        }
         
-        Column {
-            spacing: 40
+        Rectangle {
+            id: shutdownTop
+            color: "#eff0f1"
+            width: childrenRect.width+40
+            height: childrenRect.height+40
+            radius: 5
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             
-            Row {
-                spacing: 10
+            Column {
+                spacing: 40
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
                 
-                Button {
-                    text: "Power Off"
-                    enabled:sddm.canPowerOff()
+                Row {
+                    spacing: 10
+                    
+                    Lliurex.Button {
+                        text: "Power Off"
+                        enabled:sddm.canPowerOff
+                        
+                        onClicked: {
+                            sddm.powerOff()
+                        }
+                    }
+                    
+                    Lliurex.Button {
+                        text: "Reboot"
+                        enabled: sddm.canReboot
+                        onClicked: {
+                            sddm.reboot()
+                        }
+                    }
+                    
+                    Lliurex.Button {
+                        text: "Suspend"
+                        enabled: sddm.canSuspend
+                        onClicked: {
+                            sddm.suspend()
+                        }
+                    }
+                }
+                
+                Lliurex.Button {
+                    text: "Cancel"
+                    anchors.right: parent.right
                     
                     onClicked: {
-                        sddm.powerOff()
+                        loginFrame.visible=true
+                        shutdownFrame.visible=false
                     }
                 }
                 
-                Button {
-                    text: "Reboot"
-                    enabled: sddm.canReboot()
-                    onClicked: {
-                        sddm.reboot()
-                    }
-                }
-                
-                Button {
-                    text: "Suspend"
-                    enabled: sddm.canSuspend()
-                    onClicked: {
-                        sddm.suspend()
-                    }
-                }
-            }
-            
-            Button {
-                text: "Cancel"
-                anchors.right: parent.right
-                
-                onClicked: {
-                    loginFrame.visible=true
-                    shutdownFrame.visible=false
-                }
             }
             
         }
-        
     }
-    
     
     Component.onCompleted: {
     }
