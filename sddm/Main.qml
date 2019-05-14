@@ -3,6 +3,7 @@ import QtQuick.Controls 2.0
 import SddmComponents 2.0 as Sddm
 import "lliurex" as Lliurex
 
+
 Rectangle {
     
     width: 640
@@ -95,15 +96,6 @@ Rectangle {
             style:Text.Outline
             styleColor: "#40000000"
 
-        }
-        
-        Lliurex.Button {
-            text:"Hello world"
-            anchors.horizontalCenter: parent.horizontalCenter
-            
-            onClicked: {
-                console.log("click")
-            }
         }
     
     }
@@ -204,7 +196,7 @@ Rectangle {
                 Text {
                     id: message
                     color: "red"
-                    text: "No connection to server"
+                    text: ""
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
                 
@@ -308,6 +300,29 @@ Rectangle {
         }
     }
     
+    function request(url, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = (function(myxhr) {
+            return function() {
+                if(myxhr.readyState === 4) { callback(myxhr); }
+            }
+        })(xhr);
+
+        xhr.open("GET", url);
+        xhr.send();
+    }
+
     Component.onCompleted: {
+        request("http://192.168.122.216", function (o) {
+            if (o.status === 200)
+            {
+                console.log("Connected to server!");
+            }
+            else
+            {
+                console.log("Some error has occurred");
+                message.text="No connection to server"
+            }
+        });
     }
 }
