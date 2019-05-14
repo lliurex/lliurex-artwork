@@ -20,7 +20,7 @@ Rectangle {
             message.text="Yo man"
         }
         onLoginFailed: {
-            message.text="Login fail"
+            message.text="Login failed"
             txtPass.text = ""
             txtPass.focus = true
             
@@ -210,6 +210,7 @@ Rectangle {
                 }
                 
                 ComboBox {
+                    id: cmbSession
                     flat: true
                     anchors.left:parent.left
                     model: sessionModel
