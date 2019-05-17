@@ -1,8 +1,26 @@
+/*
+    Lliurex Sddm theme
+
+    Copyright (C) 2019  Enrique Medina Gremaldos <quiqueiii@gmail.com>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 import QtQuick 2.0
 import QtQuick.Controls 2.0
 import SddmComponents 2.0 as Sddm
 import "lliurex" as Lliurex
-
 
 Rectangle {
     
@@ -14,13 +32,16 @@ Rectangle {
 
     Sddm.TextConstants { id: textConstants }
     
+    /* catch login events */
     Connections {
         target: sddm
+        
         onLoginSucceeded: {
-            message.text="Yo man"
+            message.text=""
         }
+        
         onLoginFailed: {
-            message.text="Login failed"
+            message.text=qsTr("Login failed")
             txtPass.text = ""
             txtPass.focus = true
             
@@ -32,6 +53,7 @@ Rectangle {
         anchors.fill: parent
         source: config.background
         fillMode: Image.PreserveAspectCrop
+        
         onStatusChanged: {
             if (status == Image.Error && source != config.defaultBackground) {
                 source = config.defaultBackground
@@ -39,8 +61,8 @@ Rectangle {
         }
     }
     
-
-     Timer {
+    /* Clock refresh timer */
+    Timer {
         id: timerClock
         interval: 500
         running: true
@@ -69,8 +91,6 @@ Rectangle {
             font.pointSize: 32
             style:Text.Outline
             styleColor: "#40000000"
-
-            
         }
         
         Text {
@@ -82,8 +102,6 @@ Rectangle {
             font.pointSize: 32
             style:Text.Outline
             styleColor: "#40000000"
-
-            
         }
         
         Text {
@@ -95,9 +113,7 @@ Rectangle {
             font.pointSize: 96
             style:Text.Outline
             styleColor: "#40000000"
-
         }
-    
     }
     
     Image {
@@ -120,7 +136,7 @@ Rectangle {
         }
     }
     
-    // login frame
+    /* login frame */
     Item {
         id: loginFrame
         width: childrenRect.width+40
@@ -140,7 +156,6 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter
         }
         
-        
         Rectangle {
             
             id: loginTop
@@ -150,7 +165,6 @@ Rectangle {
             height: childrenRect.height+40
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
-            
             
             Column {
                 
@@ -172,7 +186,7 @@ Rectangle {
                 TextField {
                     id: txtUser
                     width: 200
-                    placeholderText: "User name"
+                    placeholderText: qsTr("User name")
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
                 
@@ -180,8 +194,12 @@ Rectangle {
                     id: txtPass
                     width: 200
                     echoMode: TextInput.Password
-                    placeholderText: "Password"
+                    placeholderText: qsTr("Password")
                     anchors.horizontalCenter: parent.horizontalCenter
+                    
+                    Keys.onReturnPressed: {
+                        sddm.login(txtUser.text,txtPass.text,cmbSession.currentIndex)
+                    }
                     
                     Image {
                         source: "images/upcase.svg"
@@ -201,7 +219,8 @@ Rectangle {
                 }
                 
                 Lliurex.Button {
-                    text: "Login"
+                    text: qsTr("Login");
+                    minWidth: 200
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     onClicked: {
@@ -224,8 +243,7 @@ Rectangle {
         }
     }
     
-    
-    // Shutdown frame
+    /* Shutdown frame */
     Item {
         id: shutdownFrame
         visible: false
@@ -261,16 +279,15 @@ Rectangle {
                     spacing: 10
                     
                     Lliurex.Button {
-                        text: "Power Off"
+                        text: qsTr("Power off")
                         enabled:sddm.canPowerOff
-                        
                         onClicked: {
                             sddm.powerOff()
                         }
                     }
                     
                     Lliurex.Button {
-                        text: "Reboot"
+                        text: qsTr("Reboot")
                         enabled: sddm.canReboot
                         onClicked: {
                             sddm.reboot()
@@ -278,23 +295,32 @@ Rectangle {
                     }
                     
                     Lliurex.Button {
-                        text: "Suspend"
+                        text: qsTr("Suspend")
                         enabled: sddm.canSuspend
                         onClicked: {
                             sddm.suspend()
                         }
                     }
-                }
-                
-                Lliurex.Button {
-                    text: "Cancel"
-                    anchors.right: parent.right
                     
+                    Lliurex.Button {
+                        text: qsTr("Hibernate")
+                        enabled: sddm.canHibernate
+                        onClicked: {
+                            sddm.hibernate()
+                        }
+                    }
+                }
+
+                Lliurex.Button {
+                    text: qsTr("Cancel")
+                    anchors.right: parent.right
                     onClicked: {
                         loginFrame.visible=true
                         shutdownFrame.visible=false
                     }
                 }
+                
+                
                 
             }
             
@@ -314,15 +340,13 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        request("http://192.168.122.216", function (o) {
-            if (o.status === 200)
-            {
+        request("http://server", function (o) {
+            if (o.status === 200) {
                 console.log("Connected to server!");
             }
-            else
-            {
+            else {
                 console.log("Some error has occurred");
-                message.text="No connection to server"
+                message.text=qsTr("No connection to server")
             }
         });
     }

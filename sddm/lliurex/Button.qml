@@ -1,6 +1,24 @@
+/*
+    Lliurex Sddm theme
+
+    Copyright (C) 2019  Enrique Medina Gremaldos <quiqueiii@gmail.com>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 import QtQuick 2.0
 import QtQuick.Controls 2.0
-
 
 Rectangle {
     
@@ -8,6 +26,7 @@ Rectangle {
     
     signal clicked();
     property string text: ""
+    property int minWidth:0
     
     property Gradient colorNormal :  Gradient {
         GradientStop { position: 0.0; color: "#f1f2f3" }
@@ -18,7 +37,6 @@ Rectangle {
         GradientStop { position: 0.0; color: "#c2e0f5" }
         GradientStop { position: 1.0; color: "#b0d9f5" }
     }
-    
     
     states: [
         State {
@@ -53,8 +71,7 @@ Rectangle {
     radius: 3
     border.width: 2
     
-    
-    width:label.width*1.6
+    width: ((label.width*1.6)>minWidth) ? (label.width*1.6) : minWidth
     height:label.height*2.0
     
     MouseArea {
