@@ -41,3 +41,9 @@ Architecture: all
 Section: x11
 Description: LliureX 19 xdg defaults 
  LliureX 19 xdg scripts
+ 
+Package: lliurex-sddm-theme
+Architecture: all
+Section: x11
+Description: LliureX sddm theme
+ LliureX 19 custom sddm theme
