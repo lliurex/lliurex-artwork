@@ -1,0 +1,16 @@
+[SddmGreeterTheme]
+Name=Lliurex
+
+Description=Lliurex theme
+Type=sddm-theme
+Author=Gabriel Retana, Enrique Medina Gremaldos
+Copyright=(c) 2019, Gabriel Retana, Enrique Medina Gremaldos
+License=GPL
+Version=0.1
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=lliurex
+Theme-API=2.0
+
+

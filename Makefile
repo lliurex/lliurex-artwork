@@ -32,6 +32,9 @@ install: build
 	mkdir -p $(DESTDIR)/etc/X11/Xsession.d
 	mkdir -p $(DESTDIR)/etc/xdg
 	mkdir -p $(DESTDIR)/etc/skel/
+	mkdir -p $(DESTDIR)/usr/share/kservices5/searchproviders/
+	mkdir -p $(DESTDIR)/usr/share/sddm/themes/
+	mkdir -p $(DESTDIR)/usr/lib/sddm/sddm.conf.d/
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
@@ -45,16 +48,22 @@ install: build
 	cp -r defaults/xsession/* $(DESTDIR)/etc/X11/Xsession.d/
 
 #skel files
-	cp -r defaults/skel/.* $(DESTDIR)/etc/skel/
+	cp -r defaults/skel/.?* $(DESTDIR)/etc/skel/
 
 #xdg files
 	cp -r defaults/xdg/lliurex/ $(DESTDIR)/etc/xdg/
 
-#kwin theme
-	cp -r aurorae/lliurex $(DESTDIR)/usr/share/aurorae/themes/
-
 #color scheme
 	cp -r color-schemes/* $(DESTDIR)/usr/share/color-schemes/
+
+#search providers
+	cp -r defaults/searchproviders/* $(DESTDIR)/usr/share/kservices5/searchproviders/
+
+#sddm theme
+	cp -r sddm/lliurex $(DESTDIR)/usr/share/sddm/themes/lliurex
+
+#sddm settings
+	cp -r defaults/sddm/* $(DESTDIR)/usr/lib/sddm/sddm.conf.d/
 
 uninstall:
 
@@ -75,10 +84,16 @@ uninstall:
 #xdg
 	rm -rf $(DESTDIR)/etc/xdg/lliurex
 
-#kwin theme
-	rm -rf $(DESTDIR)/usr/share/aurorae/themes/lliurex
-
 #color scheme
 	rm -rf $(DESTDIR)/usr/share/color-schemes/lliurex.colors
+
+#searchproviders
+	rm -rf $(DESTDIR)/usr/share/kservices5/searchproviders/foroLliurex.desktop
+
+#sddm theme
+	rm -rf $(DESTDIR)/usr/share/sddm/themes/lliurex
+	
+#sddm settings
+	rm -rf $(DESTDIR)/usr/lib/sddm/sddm.conf.d/80-lliurex.conf
 
 .PHONY: all clean install uninstall build

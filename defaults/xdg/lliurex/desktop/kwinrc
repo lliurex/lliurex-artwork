@@ -55,7 +55,6 @@ RollOverDesktops=true
 [org.kde.kdecoration2]
 BorderSize=Normal
 ButtonsOnLeft=M
-ButtonsOnRight=HIAX
+ButtonsOnRight=IAX
 CloseOnDoubleClickOnMenu=false
-library=org.kde.kwin.aurorae
-theme=__aurorae__svg__lliurex
+library=org.kde.breeze
