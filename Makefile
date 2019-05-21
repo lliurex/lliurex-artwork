@@ -33,6 +33,7 @@ install: build
 	mkdir -p $(DESTDIR)/etc/xdg
 	mkdir -p $(DESTDIR)/etc/skel/
 	mkdir -p $(DESTDIR)/usr/share/sddm/themes/
+	mkdir -p $(DESTDIR)/usr/lib/sddm/sddm.conf.d/
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
@@ -60,6 +61,9 @@ install: build
 #sddm theme
 	cp -r sddm/ $(DESTDIR)/usr/share/sddm/themes/
 
+#sddm settings
+	cp -r defaults/sddm/* $(DESTDIR)/usr/lib/sddm/sddm.conf.d/
+
 uninstall:
 
 #plasma theme
@@ -84,5 +88,8 @@ uninstall:
 
 #color scheme
 	rm -rf $(DESTDIR)/usr/share/color-schemes/lliurex.colors
+
+#sddm settings
+	rm -rf $(DESTDIR)/usr/lib/sddm/sddm.conf.d/80-lliurex.conf
 
 .PHONY: all clean install uninstall build
