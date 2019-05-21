@@ -1,0 +1,23 @@
+lliurex-artwork (1.1-alpha2) bionic; urgency=medium
+  * Fix ppa build
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Thu, 25 Apr 2019 08:47:51 +0200
+
+lliurex-artwork (1.0-alpha3) bionic; urgency=medium
+
+  * Add foro lliurex as searchprovider
+  * Add ./config/baloofilerc to skel
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Wed, 24 Apr 2019 09:02:35 +0200
+
+lliurex-artwork (1.0-alpha2) bionic; urgency=high
+
+  * master: d1be4969677dabd6ade930993b41b45e31d73979
+
+ -- Enrique Medina Gremaldos  <quiqueiii@gmail.com>  Wed, 13 Feb 2019 12:37:00 +0100
+
+lliurex-artwork (1.0-alpha1) bionic; urgency=high
+
+  * Initial release.
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Mon, 04 Feb 2019 12:24:30 +0100
