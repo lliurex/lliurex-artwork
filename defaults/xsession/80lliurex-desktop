@@ -1,2 +1,2 @@
 
-XDG_LLIUREX_CONFIG_DIRS="/etc/xdg/lliurex/desktop"
+XDG_LLIUREX_CONFIG_DIRS="/etc/xdg/lliurex/desktop:/etc/xdg/lliurex/layouts/current"
