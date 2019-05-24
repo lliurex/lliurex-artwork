@@ -5,13 +5,6 @@ Maintainer: LliureX Team <lliurex@gva.es>
 Build-Depends: debhelper (>= 10), librsvg2-bin
 Standards-Version: 4.1.2
 
-Package: lliurex-desktop-kwin-theme
-Architecture: all
-Section: x11
-Depends: kwin-style-breeze
-Description: LliureX's 19 kwin theme
- LliureX's 19 default KWin theme, based on auroae engine
-
 Package: lliurex-desktop-color-scheme
 Architecture: all
 Section: x11
