@@ -29,14 +29,15 @@ Section: x11
 Description: LliureX 19 desktop wallpaper
  LliureX 19 desktop wallpaper with KDE plasma package
 
-Package: lliurex-desktop-defaults
-Architecture: all
-Section: x11
-Description: LliureX 19 xdg defaults 
- LliureX 19 xdg scripts
- 
 Package: lliurex-sddm-theme
 Architecture: all
 Section: x11
 Description: LliureX sddm theme
  LliureX 19 custom sddm theme
+
+Package: lliurex-desktop-defaults
+Architecture: all
+Depends: lliurex-desktop-color-scheme, lliurex-desktop-plasma-look-and-feel, lliurex-desktop-plasma-theme, lliurex-desktop-wallpaper, lliurex-sddm-theme
+Section: x11
+Description: LliureX 19 xdg defaults 
+ LliureX 19 xdg scripts
