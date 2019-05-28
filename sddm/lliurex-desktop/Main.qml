@@ -24,6 +24,12 @@ import "ui" as Lliurex
 
 Rectangle {
     
+    id: theme
+    property int checkTime:0
+    property int programmedCheck:0
+    property bool loginStatus: true
+    property bool serverStatus: true
+    
     width: 640
     height: 480
     
@@ -37,11 +43,15 @@ Rectangle {
         target: sddm
         
         onLoginSucceeded: {
+            theme.loginStatus=true;
+            
             message.text=""
         }
         
         onLoginFailed: {
-            message.text=qsTr("Login failed")
+            theme.loginStatus=false;
+            
+            //message.text=qsTr("Login failed")
             txtPass.text = ""
             txtPass.focus = true
             
@@ -61,6 +71,18 @@ Rectangle {
         }
     }
     
+    function request(url, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = (function(myxhr) {
+            return function() {
+                if(myxhr.readyState === 4) { callback(myxhr); }
+            }
+        })(xhr);
+
+        xhr.open("GET", url);
+        xhr.send();
+    }
+    
     /* Clock refresh timer */
     Timer {
         id: timerClock
@@ -70,6 +92,30 @@ Rectangle {
         onTriggered: {
             txtDate.text = Qt.formatDateTime(new Date(), "ddd d MMMM yyyy");
             txtClock.text = Qt.formatDateTime(new Date(), "HH:mm");
+            
+            theme.checkTime+=timerClock.interval
+            
+            if (config.classroom === 'true'  && theme.programmedCheck>=0 && theme.checkTime>=theme.programmedCheck) {
+                
+                // avoid trigger another server check
+                theme.programmedCheck=-1;
+                
+                request(config.server, function (o) {
+                    if (o.status === 200) {
+                        console.log("Connected to server!");
+                        // two minutes
+                        theme.serverStatus=true;
+                        theme.programmedCheck=theme.checkTime+120000;
+                    }
+                    else {
+                        console.log("Some error has occurred");
+                        
+                        //program another check in 5 seconds
+                        theme.serverStatus=false;
+                        theme.programmedCheck=theme.checkTime+5000;
+                    }
+                    });
+            }
         }
     }
 
@@ -84,7 +130,7 @@ Rectangle {
         
         Text {
             id: txtHostname
-            text: "server"
+            text: sddm.hostname
             anchors.horizontalCenter: parent.horizontalCenter
             
             color:"white"
@@ -161,8 +207,8 @@ Rectangle {
             id: loginTop
             color: "#eff0f1"
             radius: 5
-            width: childrenRect.width+40
-            height: childrenRect.height+40
+            width: childrenRect.width+80
+            height: childrenRect.height+80
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             
@@ -188,6 +234,8 @@ Rectangle {
                     width: 200
                     placeholderText: qsTr("User name")
                     anchors.horizontalCenter: parent.horizontalCenter
+                    
+                    onEditingFinished: theme.loginStatus=true;
                 }
                 
                 TextField {
@@ -214,7 +262,8 @@ Rectangle {
                 Text {
                     id: message
                     color: "red"
-                    text: ""
+                    text: (theme.loginStatus==false) ? qsTr("Login failed") : ((theme.serverStatus==false) ? qsTr("No connection to server") : "")
+                    
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
                 
@@ -327,27 +376,9 @@ Rectangle {
         }
     }
     
-    function request(url, callback) {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = (function(myxhr) {
-            return function() {
-                if(myxhr.readyState === 4) { callback(myxhr); }
-            }
-        })(xhr);
-
-        xhr.open("GET", url);
-        xhr.send();
-    }
+    
 
     Component.onCompleted: {
-        request("http://server", function (o) {
-            if (o.status === 200) {
-                console.log("Connected to server!");
-            }
-            else {
-                console.log("Some error has occurred");
-                message.text=qsTr("No connection to server")
-            }
-        });
+        
     }
 }

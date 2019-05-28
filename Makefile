@@ -59,8 +59,8 @@ install: build
 #search providers
 	cp -r defaults/searchproviders/* $(DESTDIR)/usr/share/kservices5/searchproviders/
 
-#sddm theme
-	cp -r sddm/lliurex $(DESTDIR)/usr/share/sddm/themes/lliurex
+#sddm themes
+	cp -r sddm/* $(DESTDIR)/usr/share/sddm/themes/
 
 #sddm settings
 	cp -r defaults/sddm/* $(DESTDIR)/usr/lib/sddm/sddm.conf.d/
@@ -90,10 +90,10 @@ uninstall:
 #searchproviders
 	rm -rf $(DESTDIR)/usr/share/kservices5/searchproviders/foroLliurex.desktop
 
-#sddm theme
-	rm -rf $(DESTDIR)/usr/share/sddm/themes/lliurex
+#sddm themes
+	rm -rf $(DESTDIR)/usr/share/sddm/themes/lliurex-*
 	
 #sddm settings
-	rm -rf $(DESTDIR)/usr/lib/sddm/sddm.conf.d/80-lliurex.conf
+	rm -rf $(DESTDIR)/usr/lib/sddm/sddm.conf.d/*lliurex*
 
 .PHONY: all clean install uninstall build
