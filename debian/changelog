@@ -1,6 +1,9 @@
 lliurex-artwork (1.4.0.0) bionic; urgency=medium
 
   * Master tag: 93b100abec332e9dab86ff6ba8220876b6bbcfa1
+  * Added a classroom default package
+  * Added a classroom sddm theme
+  * Improved sddm base theme
 
  -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 28 May 2019 14:51:45 +0200
 
