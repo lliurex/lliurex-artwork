@@ -1,3 +1,10 @@
+lliurex-artwork (1.3.1.0) bionic; urgency=medium
+
+  * Master tag: aa68ce60041203d68e006c84ee351f58bbfb0030
+  * Fixed sddm.conf setting the proper sddm theme name
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 28 May 2019 08:55:20 +0200
+
 lliurex-artwork (1.3.0.2) bionic; urgency=medium
 
   * binary package lliurex-desktop-defaults brings dependencies with it
