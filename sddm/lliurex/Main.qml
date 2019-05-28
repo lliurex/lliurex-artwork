@@ -130,7 +130,7 @@ Rectangle {
         
         Text {
             id: txtHostname
-            text: "server"
+            text: sddm.hostname
             anchors.horizontalCenter: parent.horizontalCenter
             
             color:"white"
