@@ -1,2 +1,2 @@
-sddm/lliurex/	/usr/share/sddm/themes/
-defaults/sddm/* /usr/lib/sddm/sddm.conf.d/
+sddm/lliurex-desktop/	/usr/share/sddm/themes/
+defaults/sddm/80-lliurex-desktop.conf /usr/lib/sddm/sddm.conf.d/
