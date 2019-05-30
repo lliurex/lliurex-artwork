@@ -3,6 +3,15 @@ COLOR_NONE = \x1b[0m
 COLOR_GREEN = \x1b[32;01m
 COLOR_RED = \x1b[31;01m
 
+previews:
+	@echo -e '$(COLOR_RED)* rendering previews $(COLOR_NONE)'
+	mkdir -p look-and-feel/lliurex-desktop/contents/previews/
+	mkdir -p look-and-feel/lliurex-desktop-classic/contents/previews/
+	
+	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/lliurex-desktop-classic/contents/previews/preview.png preview-classic.svg 
+	
+	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/lliurex-desktop/contents/previews/preview.png preview-default.svg
+
 %.render:
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
 	mkdir -p wallpapers/$(basename $@)/contents/images
@@ -15,12 +24,14 @@ lliurex-desktop: lliurex-desktop.render
 
 wallpapers: lliurex-desktop
 
-build: wallpapers
+build: wallpapers previews
 
 all: build
 
 clean:
 	rm -rf wallpapers/lliurex-desktop/contents
+	rm -rf look-and-feel/lliurex-desktop/contents/previews
+	rm -rf look-and-feel/lliurex-desktop-classic/contents/previews
 
 install: build
 	@echo -e '$(COLOR_RED)* creating paths... $(COLOR_NONE)'
