@@ -119,6 +119,7 @@ Rectangle {
         }
     }
 
+    /* Clock aand date */
     Column {
         spacing: 10
         /*
@@ -128,9 +129,11 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         x: parent.width*0.7
         
+        visible: (theme.width>=1024)
+        
         Text {
             id: txtHostname
-            text: sddm.hostname
+            text: sddm.hostName
             anchors.horizontalCenter: parent.horizontalCenter
             
             color:"white"
@@ -187,9 +190,10 @@ Rectangle {
         id: loginFrame
         width: childrenRect.width+40
         height: childrenRect.height+40
-        anchors.left: parent.left
-        anchors.leftMargin:200
+        anchors.left: (theme.width>=1024) ? parent.left : undefined
+        anchors.leftMargin:(theme.width>=1024) ? 200 : 0
         anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: (theme.width>=1024) ? undefined : parent.horizontalCenter
         
         Rectangle {
             color: "#40000000"
@@ -285,7 +289,32 @@ Rectangle {
                     currentIndex: sessionModel.lastIndex
                     textRole: "name"
                     
-                    indicator: {}
+                    indicator: Item {}
+                    
+                    Component.onCompleted: {
+                        
+                        for (var n=0;n<count;n++) {
+                            var index=model.index(n,0)
+                            /*
+                             * Ok, lets explain this crap
+                             * Role is an enum (integer) with quite a
+                             * bit of predefined role types. 0x0100 is the equivalent
+                             * for Qt::UserRole, from the docs:
+                             * The first role that can be used for application-specific purposes.
+                             * 
+                             * The +4 is the "name" offset
+                             * 
+                             * Warning! this may break easily!
+                            */
+                            var name=model.data(index,0x0100+4)
+                            
+                            if (name==="Plasma") {
+                                currentIndex=n
+                            }
+                        }
+                        
+                    }
+                    
                 }
                 
             }
