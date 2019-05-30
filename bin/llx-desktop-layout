@@ -1,0 +1,36 @@
+#!/bin/bash
+
+cmd=$1
+
+case $cmd in
+    set)
+        layout=$2
+        must_set=false
+        
+        case $layout in
+            classic)
+                must_set=true
+            ;;
+            
+            default)
+                must_set=true
+            ;;
+        esac
+        
+        if [ "$must_set" = true ]; then
+            rm -rf /etc/xdg/lliurex/layouts/current
+            ln -s /etc/xdg/lliurex/layouts/$layout /etc/xdg/lliurex/layouts/current
+        fi
+    ;;
+    
+    get)
+        path="not set"
+        
+        if [ -e /etc/xdg/lliurex/layouts/current ]; then
+            raw=`readlink -f /etc/xdg/lliurex/layouts/current`
+            path=`basename $raw`
+        fi
+        
+        echo $path
+    ;;
+esac
