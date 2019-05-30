@@ -1,3 +1,12 @@
+lliurex-artwork (1.5.0.0) bionic; urgency=medium
+
+  * Master tag: 3a55d2c91ee3dba11cac6b2f8008f21dd5d04972
+  * Added look-n-feel previews
+  * Sddm auto-selects Plasma session
+  * Sddm fits in low-res screens
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 30 May 2019 15:54:38 +0200
+
 lliurex-artwork (1.4.0.0) bionic; urgency=medium
 
   * Master tag: 93b100abec332e9dab86ff6ba8220876b6bbcfa1
