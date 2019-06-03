@@ -18,6 +18,9 @@ var layout = {
                 },
                 "/Configuration": {
                     "PreloadWeight": "0"
+                },
+                "/General" : {
+                    "showToolbox":"false"
                 }
 
             },
@@ -65,7 +68,7 @@ var layout = {
                 }
             },
             "height": 3.55,
-            "hiding": "normal",
+            "hiding": "windowscover",
             "location": "bottom",
             "maximumLength": 64.33,
             "minimumLength": 31.77,

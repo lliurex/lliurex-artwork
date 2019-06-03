@@ -30,8 +30,13 @@ Rectangle {
     property bool loginStatus: true
     property bool serverStatus: true
     
-    width: 640
-    height: 480
+    //width: parent.width
+    //height: parent.height
+    property variant geometry: screenModel.geometry(screenModel.primary)
+    x: geometry.x
+    y: geometry.y
+    width: geometry.width
+    height: geometry.height
     
     LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
@@ -179,8 +184,12 @@ Rectangle {
             acceptedButtons: Qt.LeftButton
             
             onClicked: {
-                loginFrame.visible=false
-                shutdownFrame.visible=true
+                //loginFrame.visible=false
+                //shutdownFrame.visible=true
+                console.log(theme.x)
+                console.log(theme.y)
+                console.log(theme.width)
+                console.log(theme.height)
             }
         }
     }
@@ -188,33 +197,43 @@ Rectangle {
     /* login frame */
     Item {
         id: loginFrame
-        width: childrenRect.width+40
-        height: childrenRect.height+40
-        anchors.left: (theme.width>=1024) ? parent.left : undefined
-        anchors.leftMargin:(theme.width>=1024) ? 200 : 0
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.horizontalCenter: (theme.width>=1024) ? undefined : parent.horizontalCenter
+        //width: childrenRect.width+40
+        //height: childrenRect.height+40
+        width: loginShadow.width
+        height: loginShadow.height
+        
+        
+        x: (theme.width>=1024) ? (200) : ((theme.width*0.5)-(width*0.5))
+        
+        //anchors.left: (theme.width>=1024) ? parent.left : undefined
+        //anchors.leftMargin:(theme.width>=1024) ? 200 : 0
+        anchors.verticalCenter: theme.verticalCenter
+        //anchors.horizontalCenter:theme.horizontalCenter
+        //anchors.horizontalCenter: (theme.width>=1024) ? undefined : theme.horizontalCenter
+        //anchors.left: (theme.width>=1024) ? theme.left : undefined
         
         Rectangle {
+            id: loginShadow
             color: "#40000000"
             
-            width: loginTop.width+5
-            height: loginTop.height+5
+            width: loginTop.width+6
+            height: loginTop.height+6
             radius:5
             
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
+            anchors.horizontalCenter: loginTop.horizontalCenter
+            anchors.verticalCenter: loginTop.verticalCenter
         }
         
         Rectangle {
-            
             id: loginTop
             color: "#eff0f1"
             radius: 5
-            width: childrenRect.width+80
-            height: childrenRect.height+80
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
+            //width: childrenRect.width+80
+            //height: childrenRect.height+80
+            width: 400
+            height: 400
+            //anchors.horizontalCenter: parent.horizontalCenter
+            //anchors.verticalCenter: parent.verticalCenter
             
             Column {
                 
@@ -224,7 +243,7 @@ Rectangle {
                 
                 Image {
                     source: "images/lliurex.svg"
-                    anchors.horizontalCenter: parent.horizontalCenter
+                    //anchors.horizontalCenter: parent.horizontalCenter
                 }
                 
                 Rectangle {
@@ -266,6 +285,8 @@ Rectangle {
                 Text {
                     id: message
                     color: "red"
+                    height: 32
+
                     text: (theme.loginStatus==false) ? qsTr("Login failed") : ((theme.serverStatus==false) ? qsTr("No connection to server") : "")
                     
                     anchors.horizontalCenter: parent.horizontalCenter

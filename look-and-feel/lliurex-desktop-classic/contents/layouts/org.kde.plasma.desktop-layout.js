@@ -18,6 +18,9 @@ var layout = {
                 },
                 "/Configuration": {
                     "PreloadWeight": "0"
+                },
+                "/General" : {
+                    "showToolbox":"false"
                 }
             },
             "wallpaperPlugin": "org.kde.image"

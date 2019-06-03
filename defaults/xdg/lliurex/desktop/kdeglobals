@@ -14,7 +14,5 @@ LookAndFeelPackage=lliurex-desktop
 contrast=4
 widgetStyle=breeze
 ShowDeleteCommand=false
-ShowIconsInMenuItems=false
-ShowIconsOnPushButtons=false
 SingleClick=false
 
