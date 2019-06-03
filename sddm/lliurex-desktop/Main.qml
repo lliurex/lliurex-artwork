@@ -30,8 +30,6 @@ Rectangle {
     property bool loginStatus: true
     property bool serverStatus: true
     
-    //width: parent.width
-    //height: parent.height
     property variant geometry: screenModel.geometry(screenModel.primary)
     x: geometry.x
     y: geometry.y
@@ -56,7 +54,6 @@ Rectangle {
         onLoginFailed: {
             theme.loginStatus=false;
             
-            //message.text=qsTr("Login failed")
             txtPass.text = ""
             txtPass.focus = true
             
@@ -127,10 +124,6 @@ Rectangle {
     /* Clock aand date */
     Column {
         spacing: 10
-        /*
-        anchors.right:parent.right
-        anchors.rightMargin: 40
-        */
         anchors.verticalCenter: parent.verticalCenter
         x: parent.width*0.7
         
@@ -184,12 +177,8 @@ Rectangle {
             acceptedButtons: Qt.LeftButton
             
             onClicked: {
-                //loginFrame.visible=false
-                //shutdownFrame.visible=true
-                console.log(theme.x)
-                console.log(theme.y)
-                console.log(theme.width)
-                console.log(theme.height)
+                loginFrame.visible=false
+                shutdownFrame.visible=true
             }
         }
     }
@@ -197,20 +186,12 @@ Rectangle {
     /* login frame */
     Item {
         id: loginFrame
-        //width: childrenRect.width+40
-        //height: childrenRect.height+40
         width: loginShadow.width
         height: loginShadow.height
         
-        
         x: (theme.width>=1024) ? (200) : ((theme.width*0.5)-(width*0.5))
         
-        //anchors.left: (theme.width>=1024) ? parent.left : undefined
-        //anchors.leftMargin:(theme.width>=1024) ? 200 : 0
         anchors.verticalCenter: theme.verticalCenter
-        //anchors.horizontalCenter:theme.horizontalCenter
-        //anchors.horizontalCenter: (theme.width>=1024) ? undefined : theme.horizontalCenter
-        //anchors.left: (theme.width>=1024) ? theme.left : undefined
         
         Rectangle {
             id: loginShadow
@@ -228,12 +209,8 @@ Rectangle {
             id: loginTop
             color: "#eff0f1"
             radius: 5
-            //width: childrenRect.width+80
-            //height: childrenRect.height+80
             width: 400
             height: 400
-            //anchors.horizontalCenter: parent.horizontalCenter
-            //anchors.verticalCenter: parent.verticalCenter
             
             Column {
                 
@@ -243,7 +220,6 @@ Rectangle {
                 
                 Image {
                     source: "images/lliurex.svg"
-                    //anchors.horizontalCenter: parent.horizontalCenter
                 }
                 
                 Rectangle {
@@ -363,8 +339,9 @@ Rectangle {
         Rectangle {
             id: shutdownTop
             color: "#eff0f1"
-            width: childrenRect.width+40
-            height: childrenRect.height+40
+            width: 480
+            height: 180
+            
             radius: 5
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
@@ -419,16 +396,9 @@ Rectangle {
                     }
                 }
                 
-                
-                
             }
             
         }
     }
     
-    
-
-    Component.onCompleted: {
-        
-    }
 }
