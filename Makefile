@@ -46,6 +46,7 @@ install: build
 	mkdir -p $(DESTDIR)/usr/share/kservices5/searchproviders/
 	mkdir -p $(DESTDIR)/usr/share/sddm/themes/
 	mkdir -p $(DESTDIR)/usr/lib/sddm/sddm.conf.d/
+	mkdir -p $(DESTDIR)/usr/lib/systemd/system/sddm.conf.d/
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
@@ -75,6 +76,9 @@ install: build
 
 #sddm settings
 	cp -r defaults/sddm/* $(DESTDIR)/usr/lib/sddm/sddm.conf.d/
+
+#sddm service override
+	cp -r defaults/systemd/* $(DESTDIR)/usr/lib/systemd/system/
 
 uninstall:
 
@@ -106,5 +110,8 @@ uninstall:
 	
 #sddm settings
 	rm -rf $(DESTDIR)/usr/lib/sddm/sddm.conf.d/*lliurex*
+
+#sddm service override
+	rm -rf $(DESTDIR)/usr/lib/systemd/system/sddm.service.d/*lliurex*
 
 .PHONY: all clean install uninstall build
