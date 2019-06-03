@@ -1,3 +1,14 @@
+lliurex-artwork (1.5.1.0) bionic; urgency=medium
+
+  * Master tag: 15d8910110d9e8df9b91d365122758a35edb7029
+  * Fixed some bugs in sddm auto-fitting
+  * Fixed some sddm bad code practices
+  * Session dock hides below windows
+  * Removed desktop toolbox icon
+  * Menu icons are back
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Mon, 03 Jun 2019 09:55:11 +0200
+
 lliurex-artwork (1.5.0.0) bionic; urgency=medium
 
   * Master tag: 3a55d2c91ee3dba11cac6b2f8008f21dd5d04972
