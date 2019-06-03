@@ -1,3 +1,12 @@
+lliurex-artwork (1.5.2.0) bionic; urgency=medium
+
+  * Master tag: a3c8c098cab58e34036f9d0d7a4daa2ac74c4c10
+  * Added a sddm service override
+  * No longer remeber last session opened apps
+  * sddm server checks for n4d instead of apache
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Mon, 03 Jun 2019 15:03:26 +0200
+
 lliurex-artwork (1.5.1.0) bionic; urgency=medium
 
   * Master tag: 15d8910110d9e8df9b91d365122758a35edb7029
