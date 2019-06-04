@@ -1,3 +1,12 @@
+lliurex-artwork (1.5.4.0) bionic; urgency=low
+
+  * Master tag: f77265fc7ea811e7be2a01531e56aa752575053b
+  * Added gtk default settings
+  * Added a server default package
+  * Added a server sddm theme with server checking disabled
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 04 Jun 2019 11:51:47 +0200
+
 lliurex-artwork (1.5.3.0) bionic; urgency=high
 
   * Small wallpaper changes

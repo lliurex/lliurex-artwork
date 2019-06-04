@@ -47,11 +47,25 @@ Architecture: all
 Section: x11
 Depdends: lliurex-desktop-sddm-theme
 Description: LliureX classroom sddm theme
- LliureX 19 custom sddm theme
+ LliureX 19 Classroom custom sddm theme
 
 Package: lliurex-classroom-defaults
 Architecture: all
 Depends: lliurex-desktop-defaults, lliurex-classroom-sddm-theme
 Section: x11
 Description: LliureX 19 classroom xdg defaults 
+ LliureX 19 xdg scripts
+
+Package: lliurex-server-sddm-theme
+Architecture: all
+Section: x11
+Depdends: lliurex-classroom-sddm-theme
+Description: LliureX server sddm theme
+ LliureX 19 Server custom sddm theme
+
+Package: lliurex-server-defaults
+Architecture: all
+Depends: lliurex-classroom-defaults, lliurex-server-sddm-theme
+Section: x11
+Description: LliureX 19 server xdg defaults 
  LliureX 19 xdg scripts
