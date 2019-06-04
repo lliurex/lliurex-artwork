@@ -1,3 +1,11 @@
+lliurex-artwork (1.5.5.0) bionic; urgency=medium
+
+  * Master tag: 7a82a22193a4b42c94e85f9be446d2e9b691a4db
+  * Swapped XDG config dir order in order to properly apply deskop layout
+  * fixed classic desktop color scheme
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 04 Jun 2019 12:50:04 +0200
+
 lliurex-artwork (1.5.4.0) bionic; urgency=low
 
   * Master tag: f77265fc7ea811e7be2a01531e56aa752575053b
