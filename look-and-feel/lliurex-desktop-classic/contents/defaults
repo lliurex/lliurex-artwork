@@ -6,7 +6,7 @@ name=lliurex-desktop
 widgetStyle=breeze
 
 [kdeglobals][General]
-ColorScheme=LliureX
+ColorScheme=lliurex
 
 [kdeglobals][Icons]
 Theme=breeze
