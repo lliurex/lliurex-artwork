@@ -1,3 +1,10 @@
+lliurex-artwork (1.5.8.0) bionic; urgency=medium
+
+  * Master tag: 50ef0ea68e762094d8fecb78d5ca1ce077392504
+  * Fixed Makefile typo
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 06 Jun 2019 15:50:39 +0200
+
 lliurex-artwork (1.5.7.0) bionic; urgency=medium
 
   * Master tag: e23c261c5ff52c9aceed81797b2f692afe1694a7
