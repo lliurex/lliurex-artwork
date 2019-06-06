@@ -1,2 +1,2 @@
 sddm/lliurex-server/	/usr/share/sddm/themes/
-defaults/sddm/85-lliurex-server.conf /usr/lib/sddm/sddm.conf.d/
+defaults/sddm/86-lliurex-server.conf /usr/lib/sddm/sddm.conf.d/
