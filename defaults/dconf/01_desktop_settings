@@ -1,0 +1,6 @@
+[org/gnome/desktop/interface]
+font-name='Noto Sans Regular 10'
+icon-theme='breeze'
+cursor-theme='breeze_cursors'
+gtk-theme='Breeze'
+toolbar-style='icons'
