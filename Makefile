@@ -47,6 +47,8 @@ install: build
 	mkdir -p $(DESTDIR)/usr/share/sddm/themes/
 	mkdir -p $(DESTDIR)/usr/lib/sddm/sddm.conf.d/
 	mkdir -p $(DESTDIR)/usr/lib/systemd/system/sddm.conf.d/
+	mkdir -p $(DESTDIR)/etc/dconf/profile/
+	mkdir -p $(DESTDIR)/etc/dconf/db/lliurex.d/
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
@@ -79,6 +81,12 @@ install: build
 
 #sddm service override
 	cp -r defaults/systemd/* $(DESTDIR)/usr/lib/systemd/system/
+
+#dconf
+	cp -r defaults/dconf/lliurex $(DESTDIR)/etc/dconf/profiles/
+	cp -r defaults/dconf/*settings $(DESTDIR)/etc/dconf/db/lliurex.d/
+	
+	@echo -e "You may want to perfom a dconf update as root"
 
 uninstall:
 
@@ -114,4 +122,7 @@ uninstall:
 #sddm service override
 	rm -rf $(DESTDIR)/usr/lib/systemd/system/sddm.service.d/*lliurex*
 
+#dconf
+	rm -rf $(DESTDIR)/etc/dconf/profile/lliurex
+	rm -rf $(DESTDIR)/etc/dconf/db/lliurex.d
 .PHONY: all clean install uninstall build

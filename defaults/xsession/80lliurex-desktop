@@ -1,2 +1,2 @@
-
+DCONF_PROFILE=lliurex
 XDG_LLIUREX_CONFIG_DIRS="/etc/xdg/lliurex/layouts/current:/etc/xdg/lliurex/desktop"
