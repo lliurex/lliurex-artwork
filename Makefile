@@ -83,7 +83,7 @@ install: build
 	cp -r defaults/systemd/* $(DESTDIR)/usr/lib/systemd/system/
 
 #dconf
-	cp -r defaults/dconf/lliurex $(DESTDIR)/etc/dconf/profiles/
+	cp -r defaults/dconf/lliurex $(DESTDIR)/etc/dconf/profile/
 	cp -r defaults/dconf/*settings $(DESTDIR)/etc/dconf/db/lliurex.d/
 	
 	@echo -e "You may want to perfom a dconf update as root"
