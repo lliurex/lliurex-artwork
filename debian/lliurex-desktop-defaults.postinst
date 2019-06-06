@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+if [ "$1" = "configure" ] ; then
+    #update dconf database, as we droped new settings
+    dconf update
+fi
+
+#DEBHELPER#
+
+exit 0
+

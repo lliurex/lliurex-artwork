@@ -1,2 +1,4 @@
 /etc/xdg/lliurex/desktop
 /etc/xdg/lliurex/layouts
+/etc/dconf/profile/
+/etc/dconf/db/lliurex.d/

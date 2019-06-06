@@ -1,3 +1,10 @@
+lliurex-artwork (1.5.7.0) bionic; urgency=medium
+
+  * Master tag: e23c261c5ff52c9aceed81797b2f692afe1694a7
+  * gtkrc skels does not seems to work, trying with dconf defaults
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 06 Jun 2019 15:31:48 +0200
+
 lliurex-artwork (1.5.6.0) bionic; urgency=medium
 
   * Master tag: 618649ac502080524c61cdb1c1e21893bc4f2723
