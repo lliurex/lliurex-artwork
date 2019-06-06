@@ -1,3 +1,10 @@
+lliurex-artwork (1.5.6.0) bionic; urgency=medium
+
+  * Master tag: 618649ac502080524c61cdb1c1e21893bc4f2723
+  * Added a gtk2 default look and feel, for those apps still living in 2009
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 06 Jun 2019 09:23:26 +0200
+
 lliurex-artwork (1.5.5.1) bionic; urgency=medium
 
   * Fixed typo in server sddm theme
