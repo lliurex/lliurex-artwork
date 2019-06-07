@@ -1,3 +1,10 @@
+lliurex-artwork (1.5.9.0) bionic; urgency=medium
+
+  * Master tag: ddd753b024a28682cc8c6ec328fec2c73b138e68
+  * Just another try to fix gtk LnF
+
+ -- Enrique MG <quiqueiii@gmail.com>  Fri, 07 Jun 2019 11:34:20 +0200
+
 lliurex-artwork (1.5.8.0) bionic; urgency=medium
 
   * Master tag: 50ef0ea68e762094d8fecb78d5ca1ce077392504
