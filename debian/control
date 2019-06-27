@@ -37,7 +37,7 @@ Description: LliureX desktop sddm theme
 
 Package: lliurex-desktop-defaults
 Architecture: all
-Depends: lliurex-desktop-color-scheme, lliurex-desktop-plasma-look-and-feel, lliurex-desktop-plasma-theme, lliurex-desktop-wallpaper, lliurex-desktop-sddm-theme
+Depends: lliurex-desktop-color-scheme, lliurex-desktop-plasma-look-and-feel, lliurex-desktop-plasma-theme, lliurex-desktop-wallpaper, lliurex-desktop-sddm-theme, lliurex-plymouth-theme
 Section: x11
 Description: LliureX 19 xdg defaults 
  LliureX 19 xdg scripts
