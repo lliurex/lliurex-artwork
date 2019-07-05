@@ -88,6 +88,9 @@ install: build
 	
 	@echo -e "You may want to perfom a dconf update as root"
 
+#icon theme
+	cp -r icons/lliurex $(DESTDIR)/usr/share/icons/
+
 uninstall:
 
 #plasma theme
@@ -125,4 +128,8 @@ uninstall:
 #dconf
 	rm -rf $(DESTDIR)/etc/dconf/profile/lliurex
 	rm -rf $(DESTDIR)/etc/dconf/db/lliurex.d
+
+#icon theme
+	rm -rf $(DESTDIR)/usr/share/icons/lliurex
+
 .PHONY: all clean install uninstall build
