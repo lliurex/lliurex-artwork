@@ -1,3 +1,11 @@
+lliurex-artwork (1.6.0.0) bionic; urgency=low
+
+  * Master tag: c09398c313d32c9da72ca85e814ffb4701f8fe61
+  * Added a custom icon theme based on Breeze
+  * Desktop layouts sports a favorite places and show desktop applets
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Mon, 08 Jul 2019 15:47:16 +0200
+
 lliurex-artwork (1.5.9.1) bionic; urgency=medium
 
   * Added a dependency with lliurex plymouth theme to default desktop package
