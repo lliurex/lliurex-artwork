@@ -48,6 +48,40 @@ var layout = {
                     "config": {
                         "/": {
                             "immutability": "1"
+                        },
+                        "/Configuration": {
+                            "PreloadWeight": "65"
+                        },
+                        "/Configuration/ConfigDialog": {
+                            "DialogHeight": "540",
+                            "DialogWidth": "720"
+                        },
+                        "/Configuration/General": {
+                            "length": "1165",
+                            "widgetWidth": "300"
+                        }
+                    },
+                    "plugin": "org.kde.placesWidget"
+                },
+                {
+                    "config": {
+                        "/": {
+                            "immutability": "1"
+                        },
+                        "/Configuration": {
+                            "PreloadWeight": "42"
+                        },
+                        "/Configuration/ConfigDialog": {
+                            "DialogHeight": "540",
+                            "DialogWidth": "720"
+                        }
+                    },
+                    "plugin": "org.kde.plasma.showdesktop"
+                },
+                {
+                    "config": {
+                        "/": {
+                            "immutability": "1"
                         }
                     },
                     "plugin": "org.kde.plasma.taskmanager"
