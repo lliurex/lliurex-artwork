@@ -9,7 +9,7 @@ widgetStyle=breeze
 ColorScheme=lliurex
 
 [kdeglobals][Icons]
-Theme=breeze
+Theme=lliurex
 
 [kcminputrc][Mouse]
 cursorTheme=breeze_cursors

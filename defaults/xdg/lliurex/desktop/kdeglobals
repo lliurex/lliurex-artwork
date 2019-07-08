@@ -6,7 +6,7 @@ ColorScheme=lliurex
 Name=LliureX
 
 [Icons]
-Theme=breeze
+Theme=lliurex
 
 [KDE]
 ChangeCursor=true
