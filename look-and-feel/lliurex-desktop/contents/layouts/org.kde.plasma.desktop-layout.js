@@ -97,13 +97,33 @@ var layout = {
                             "immutability": "1"
                         },
                         "/Configuration": {
-                            "PreloadWeight": "0"
+                            "PreloadWeight": "65"
+                        },
+                        "/Configuration/ConfigDialog": {
+                            "DialogHeight": "540",
+                            "DialogWidth": "720"
                         },
                         "/Configuration/General": {
-                            "length": "1556"
+                            "length": "1165",
+                            "widgetWidth": "300"
                         }
                     },
-                    "plugin": "org.kde.plasma.panelspacer"
+                    "plugin": "org.kde.placesWidget"
+                },
+                {
+                    "config": {
+                        "/": {
+                            "immutability": "1"
+                        },
+                        "/Configuration": {
+                            "PreloadWeight": "42"
+                        },
+                        "/Configuration/ConfigDialog": {
+                            "DialogHeight": "540",
+                            "DialogWidth": "720"
+                        }
+                    },
+                    "plugin": "org.kde.plasma.showdesktop"
                 },
                 {
                     "config": {
@@ -112,9 +132,12 @@ var layout = {
                         },
                         "/Configuration": {
                             "PreloadWeight": "0"
+                        },
+                        "/Configuration/General": {
+                            "length": "1556"
                         }
                     },
-                    "plugin": "org.kde.plasma.lock_logout"
+                    "plugin": "org.kde.plasma.panelspacer"
                 },
                 {
                     "config": {
