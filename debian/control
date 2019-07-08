@@ -5,6 +5,12 @@ Maintainer: LliureX Team <lliurex@gva.es>
 Build-Depends: debhelper (>= 10), librsvg2-bin
 Standards-Version: 4.1.2
 
+Package: lliurex-desktop-icon-theme
+Architecture: all
+Section: x11
+Description: LliureX 19 icon theme
+ LliureX 19 icon theme based on Breeze
+
 Package: lliurex-desktop-color-scheme
 Architecture: all
 Section: x11
