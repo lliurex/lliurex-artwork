@@ -1,3 +1,9 @@
+lliurex-artwork (1.6.0.1) bionic; urgency=high
+
+  * Added lliurex icon theme as dependency
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Wed, 10 Jul 2019 12:14:48 +0200
+
 lliurex-artwork (1.6.0.0) bionic; urgency=low
 
   * Master tag: c09398c313d32c9da72ca85e814ffb4701f8fe61

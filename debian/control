@@ -43,7 +43,8 @@ Description: LliureX desktop sddm theme
 
 Package: lliurex-desktop-defaults
 Architecture: all
-Depends: lliurex-desktop-color-scheme, lliurex-desktop-plasma-look-and-feel, lliurex-desktop-plasma-theme, lliurex-desktop-wallpaper, lliurex-desktop-sddm-theme, lliurex-plymouth-theme, plasma-applet-places-widget
+Conflicts: neon-adwaita
+Depends: lliurex-desktop-color-scheme, lliurex-desktop-icon-theme, lliurex-desktop-plasma-look-and-feel, lliurex-desktop-plasma-theme, lliurex-desktop-wallpaper, lliurex-desktop-sddm-theme, lliurex-plymouth-theme, plasma-applet-places-widget
 Section: x11
 Description: LliureX 19 xdg defaults 
  LliureX 19 xdg scripts
