@@ -1,6 +1,6 @@
 
 [Desktops]
-Number=4
+Number=1
 Rows=1
 
 [Effect-CoverSwitch]
@@ -51,6 +51,16 @@ SwitchingMode=0
 
 [Windows]
 RollOverDesktops=true
+
+[ElectricBorders]
+Bottom=None
+BottomLeft=None
+BottomRight=None
+Left=None
+Right=None
+Top=None
+TopLeft=None
+TopRight=None
 
 [org.kde.kdecoration2]
 BorderSize=Normal

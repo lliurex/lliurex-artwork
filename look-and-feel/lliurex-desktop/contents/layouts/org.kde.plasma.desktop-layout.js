@@ -44,7 +44,7 @@ var layout = {
                             "DialogWidth": "720"
                         },
                         "/Configuration/General": {
-                            "launchers": ["applications:org.kde.dolphin.desktop","applications:org.kde.konsole.desktop","applications:firefox.desktop","applications:org.kde.ksysguard.desktop","applications:systemsettings.desktop"],
+                            "launchers": ["applications:firefox.desktop","applications:org.kde.dolphin.desktop","applications:systemsettings.desktop"],
                             "maxStripes": "1",
                             "middleClickAction": "ToggleGrouping"
                         }
@@ -86,7 +86,7 @@ var layout = {
                             "PreloadWeight": "100"
                         },
                         "/Configuration/General": {
-                            "favoritesPortedToKAstats": "true"
+                            "favoriteApps":["firefox.desktop","systemsettings.desktop","zero-center.desktop","org.kde.dolphin.desktop","lliurex-store.desktop","org.kde.konsole.desktop"]
                         }
                     },
                     "plugin": "org.kde.plasma.kicker"
@@ -160,6 +160,24 @@ var layout = {
                         }
                     },
                     "plugin": "org.kde.plasma.digitalclock"
+                },
+                {
+                    "config": {
+                        "/": {
+                            "immutability":"1"
+                        },
+                        "/Configuration" : {
+                            "PreloadWeight" : "90"
+                        },
+                        "/Configuration/ConfigDialog" : {
+                             "DialogHeight": "540",
+                            "DialogWidth": "720"
+                        },
+                        "/Configuration/General" : {
+                            "showFullName": "false"
+                        }
+                    },
+                    "plugin": "org.kde.plasma.userswitcher"
                 }
             ],
             "config": {
@@ -177,7 +195,7 @@ var layout = {
                     "PreloadWeight": "0"
                 }
             },
-            "height": 2,
+            "height": 1.8,
             "hiding": "normal",
             "location": "top",
             "maximumLength": 106.66,
