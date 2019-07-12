@@ -1,3 +1,13 @@
+lliurex-artwork (1.6.1.0) bionic; urgency=low
+
+  * Master tag: a1b5b54d8c0a0b9caa30cd92832b23a6ce005ed1
+  * custom menu favorites
+  * removed discover notifications
+  * disabled hot corners
+  * added user logout applet
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Fri, 12 Jul 2019 14:44:21 +0200
+
 lliurex-artwork (1.6.0.1) bionic; urgency=high
 
   * Added lliurex icon theme as dependency
