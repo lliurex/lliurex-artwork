@@ -1,3 +1,11 @@
+lliurex-artwork (1.7.0.0) bionic; urgency=medium
+
+  * Master tag: fea8a25ce4776f374195912fa87ca617aaae08ea
+  * Added new backgrounds
+  * Fixed konsole keyboard profile
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 16 Jul 2019 13:00:54 +0200
+
 lliurex-artwork (1.6.1.0) bionic; urgency=low
 
   * Master tag: a1b5b54d8c0a0b9caa30cd92832b23a6ce005ed1

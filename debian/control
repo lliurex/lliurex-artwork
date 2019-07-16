@@ -56,9 +56,15 @@ Depdends: lliurex-desktop-sddm-theme
 Description: LliureX classroom sddm theme
  LliureX 19 Classroom custom sddm theme
 
+Package: lliurex-classroom-wallpaper
+Architecture: all
+Section: x11
+Description: LliureX 19 classroom wallpaper
+ LliureX 19 classroom wallpaper with KDE plasma package
+
 Package: lliurex-classroom-defaults
 Architecture: all
-Depends: lliurex-desktop-defaults, lliurex-classroom-sddm-theme
+Depends: lliurex-desktop-defaults, lliurex-classroom-wallpaper, lliurex-classroom-sddm-theme
 Section: x11
 Description: LliureX 19 classroom xdg defaults 
  LliureX 19 xdg scripts
