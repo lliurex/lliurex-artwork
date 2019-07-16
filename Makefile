@@ -21,8 +21,10 @@ previews:
 	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/images/1152x648.png -w 1152 -h 648 wallpapers/$(subst render,svg,$@)
 
 lliurex-desktop: lliurex-desktop.render
+lliurex-classroom: lliurex-classroom.render
+lliurex-sunset: lliurex-sunset.render
 
-wallpapers: lliurex-desktop
+wallpapers: lliurex-desktop lliurex-classroom lliurex-sunset
 
 build: wallpapers previews
 
@@ -30,6 +32,8 @@ all: build
 
 clean:
 	rm -rf wallpapers/lliurex-desktop/contents
+	rm -rf wallpapers/lliurex-classroom/contents
+	rm -rf wallpapers/lliurex-sunset/contents
 	rm -rf look-and-feel/lliurex-desktop/contents/previews
 	rm -rf look-and-feel/lliurex-desktop-classic/contents/previews
 
