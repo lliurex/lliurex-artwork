@@ -1,8 +1,9 @@
 lliurex-artwork (1.7.0.0) bionic; urgency=medium
 
-  * Master tag: fea8a25ce4776f374195912fa87ca617aaae08ea
+  * Master tag: aaa6941c6c4df0ba855f4f36e4237b085d47bed3
   * Added new backgrounds
   * Fixed konsole keyboard profile
+  * Added classroom plasma theme
 
  -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 16 Jul 2019 13:00:54 +0200
 
