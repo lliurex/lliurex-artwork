@@ -1,3 +1,9 @@
+lliurex-artwork (1.7.0.1) bionic; urgency=medium
+
+  * fixed install file
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Tue, 16 Jul 2019 16:12:20 +0200
+
 lliurex-artwork (1.7.0.0) bionic; urgency=medium
 
   * Master tag: aaa6941c6c4df0ba855f4f36e4237b085d47bed3
