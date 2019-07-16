@@ -9,6 +9,3 @@ Parent=FALLBACK/
 [Interaction Options]
 AutoCopySelectedText=true
 MiddleClickPasteMode=0
-
-[Keyboard]
-KeyBindings=linux
