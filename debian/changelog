@@ -1,3 +1,10 @@
+lliurex-artwork (1.7.0.2) bionic; urgency=medium
+
+  * Fixed depends
+  * Fixed classroom plasma theme install file
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Wed, 17 Jul 2019 08:30:30 +0200
+
 lliurex-artwork (1.7.0.1) bionic; urgency=medium
 
   * fixed install file
