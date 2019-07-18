@@ -48,9 +48,6 @@ install: build
 	mkdir -p $(DESTDIR)/etc/xdg
 	mkdir -p $(DESTDIR)/etc/skel/
 	mkdir -p $(DESTDIR)/usr/share/kservices5/searchproviders/
-	mkdir -p $(DESTDIR)/usr/share/sddm/themes/
-	mkdir -p $(DESTDIR)/usr/lib/sddm/sddm.conf.d/
-	mkdir -p $(DESTDIR)/usr/lib/systemd/system/sddm.conf.d/
 	mkdir -p $(DESTDIR)/etc/dconf/profile/
 	mkdir -p $(DESTDIR)/etc/dconf/db/lliurex.d/
 
@@ -79,15 +76,6 @@ install: build
 
 #search providers
 	cp -r defaults/searchproviders/* $(DESTDIR)/usr/share/kservices5/searchproviders/
-
-#sddm themes
-	cp -r sddm/* $(DESTDIR)/usr/share/sddm/themes/
-
-#sddm settings
-	cp -r defaults/sddm/* $(DESTDIR)/usr/lib/sddm/sddm.conf.d/
-
-#sddm service override
-	cp -r defaults/systemd/* $(DESTDIR)/usr/lib/systemd/system/
 
 #dconf
 	cp -r defaults/dconf/lliurex $(DESTDIR)/etc/dconf/profile/
@@ -125,15 +113,6 @@ uninstall:
 
 #searchproviders
 	rm -rf $(DESTDIR)/usr/share/kservices5/searchproviders/foroLliurex.desktop
-
-#sddm themes
-	rm -rf $(DESTDIR)/usr/share/sddm/themes/lliurex-*
-	
-#sddm settings
-	rm -rf $(DESTDIR)/usr/lib/sddm/sddm.conf.d/*lliurex*
-
-#sddm service override
-	rm -rf $(DESTDIR)/usr/lib/systemd/system/sddm.service.d/*lliurex*
 
 #dconf
 	rm -rf $(DESTDIR)/etc/dconf/profile/lliurex
