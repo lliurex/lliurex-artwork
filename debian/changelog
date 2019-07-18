@@ -1,3 +1,12 @@
+lliurex-artwork (1.7.1.0) bionic; urgency=medium
+
+  * Master tag: b54ddcd7792929121dae1ffbf1c102398aa3a9be
+  * Sddm removed from this source package
+  * Num lock enabled by default
+  * Fixed sunset wallpaper display name
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 18 Jul 2019 12:55:58 +0200
+
 lliurex-artwork (1.7.0.2) bionic; urgency=medium
 
   * Fixed depends
