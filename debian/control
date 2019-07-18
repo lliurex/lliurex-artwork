@@ -35,12 +35,6 @@ Section: x11
 Description: LliureX 19 desktop wallpaper
  LliureX 19 desktop wallpaper with KDE plasma package
 
-Package: lliurex-desktop-sddm-theme
-Architecture: all
-Section: x11
-Description: LliureX desktop sddm theme
- LliureX 19 custom sddm theme
-
 Package: lliurex-desktop-defaults
 Architecture: all
 Conflicts: neon-adwaita
@@ -48,13 +42,6 @@ Depends: lliurex-desktop-color-scheme, lliurex-desktop-icon-theme, lliurex-deskt
 Section: x11
 Description: LliureX 19 xdg defaults 
  LliureX 19 xdg scripts
-
-Package: lliurex-classroom-sddm-theme
-Architecture: all
-Section: x11
-Depends: lliurex-desktop-sddm-theme
-Description: LliureX classroom sddm theme
- LliureX 19 Classroom custom sddm theme
 
 Package: lliurex-classroom-plasma-theme
 Architecture: all
@@ -74,13 +61,6 @@ Depends: lliurex-desktop-defaults, lliurex-classroom-wallpaper, lliurex-classroo
 Section: x11
 Description: LliureX 19 classroom xdg defaults 
  LliureX 19 xdg scripts
-
-Package: lliurex-server-sddm-theme
-Architecture: all
-Section: x11
-Depdends: lliurex-classroom-sddm-theme
-Description: LliureX server sddm theme
- LliureX 19 Server custom sddm theme
 
 Package: lliurex-server-defaults
 Architecture: all
