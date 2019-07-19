@@ -1,3 +1,10 @@
+lliurex-artwork (1.7.2.0) bionic; urgency=high
+
+  * Master tag: a52c3b4fdd78a8b6a7c7288405a81ca1b04520cf
+  * Removed files that shouldnt be there
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Fri, 19 Jul 2019 08:31:04 +0200
+
 lliurex-artwork (1.7.1.0) bionic; urgency=medium
 
   * Master tag: b54ddcd7792929121dae1ffbf1c102398aa3a9be

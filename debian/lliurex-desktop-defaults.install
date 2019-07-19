@@ -5,6 +5,5 @@ defaults/xsession/90lliurex		/etc/X11//Xsession.d/
 defaults/skel/.[a-zA-Z0-9]*			/etc/skel/
 defaults/searchproviders/* /usr/share/kservices5/searchproviders/
 bin/*	/usr/bin/
-defaults/systemd/*	/usr/lib/systemd/system/
 defaults/dconf/lliurex	/etc/dconf/profile/
 defaults/dconf/*settings	/etc/dconf/db/lliurex.d/
