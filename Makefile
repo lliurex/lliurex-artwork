@@ -39,9 +39,10 @@ wallpapers/lliurex-sunset.png: wallpapers/lliurex-sunset-background.png
 lliurex-desktop: lliurex-desktop.render
 lliurex-classroom: lliurex-classroom.render
 lliurex-infantil: lliurex-infantil.render
+lliurex-musica: lliurex-musica.render
 lliurex-sunset: lliurex-sunset.render
 
-wallpapers: lliurex-desktop lliurex-classroom lliurex-sunset
+wallpapers: lliurex-desktop lliurex-classroom lliurex-infantil lliurex-musica lliurex-sunset
 
 build: wallpapers previews
 
