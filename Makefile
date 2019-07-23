@@ -12,27 +12,48 @@ previews:
 	
 	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/lliurex-desktop/contents/previews/preview.png preview-default.svg
 
-%.render:
+wallpapers/base.png: wallpapers/base.svg
+	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
+	rsvg-convert -f png -o $@ -w 1920 -h 1080 $<
+
+wallpapers/lliurex-%-background.png: wallpapers/lliurex-%.svg
+	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
+	rsvg-convert -f png -o $@ -w 1920 -h 1080 $<
+
+wallpapers/lliurex-%.png: wallpapers/lliurex-%-background.png wallpapers/base.png
+	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
+	convert $^ -composite $@
+
+wallpapers/lliurex-sunset.png: wallpapers/lliurex-sunset-background.png
+	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
+	cp $< $@
+
+%.render: wallpapers/%.png
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
 	mkdir -p wallpapers/$(basename $@)/contents/images
-	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/images/1920x1080.png -w 1920 -h 1080 wallpapers/$(subst render,svg,$@)
-	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/images/1408x792.png -w 1408 -h 792 wallpapers/$(subst render,svg,$@)
-	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/images/1280x720.png -w 1280 -h 720 wallpapers/$(subst render,svg,$@)
-	rsvg-convert -f png -o wallpapers/$(basename $@)/contents/images/1152x648.png -w 1152 -h 648 wallpapers/$(subst render,svg,$@)
+	cp $< wallpapers/$(basename $@)/contents/images/1920x1080.png
+	convert $< -resize 1408x792 wallpapers/$(basename $@)/contents/images/1408x792.png
+	convert $< -resize 1280x720 wallpapers/$(basename $@)/contents/images/1280x720.png
+	convert $< -resize 1152x648 wallpapers/$(basename $@)/contents/images/1152x648.png
 
 lliurex-desktop: lliurex-desktop.render
 lliurex-classroom: lliurex-classroom.render
+lliurex-infantil: lliurex-infantil.render
+lliurex-musica: lliurex-musica.render
 lliurex-sunset: lliurex-sunset.render
 
-wallpapers: lliurex-desktop lliurex-classroom lliurex-sunset
+wallpapers: lliurex-desktop lliurex-classroom lliurex-infantil lliurex-musica lliurex-sunset
 
 build: wallpapers previews
 
 all: build
 
 clean:
+	rm -rf wallpapers/*.png
 	rm -rf wallpapers/lliurex-desktop/contents
 	rm -rf wallpapers/lliurex-classroom/contents
+	rm -rf wallpapers/lliurex-infantil/contents
+	rm -rf wallpapers/lliurex-musica/contents
 	rm -rf wallpapers/lliurex-sunset/contents
 	rm -rf look-and-feel/lliurex-desktop/contents/previews
 	rm -rf look-and-feel/lliurex-desktop-classic/contents/previews
@@ -97,6 +118,8 @@ uninstall:
 #wallpaper
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-desktop
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-classroom
+	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-infantil
+	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-musica
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-sunset
 
 #xsession
