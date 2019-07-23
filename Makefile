@@ -52,6 +52,8 @@ clean:
 	rm -rf wallpapers/*.png
 	rm -rf wallpapers/lliurex-desktop/contents
 	rm -rf wallpapers/lliurex-classroom/contents
+	rm -rf wallpapers/lliurex-infantil/contents
+	rm -rf wallpapers/lliurex-musica/contents
 	rm -rf wallpapers/lliurex-sunset/contents
 	rm -rf look-and-feel/lliurex-desktop/contents/previews
 	rm -rf look-and-feel/lliurex-desktop-classic/contents/previews
@@ -116,6 +118,8 @@ uninstall:
 #wallpaper
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-desktop
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-classroom
+	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-infantil
+	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-musica
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-sunset
 
 #xsession
