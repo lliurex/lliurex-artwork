@@ -2,7 +2,7 @@ Source: lliurex-artwork
 Section: x11
 Priority: optional
 Maintainer: LliureX Team <lliurex@gva.es>
-Build-Depends: debhelper (>= 10), librsvg2-bin
+Build-Depends: debhelper (>= 10), librsvg2-bin, imagemagick-6.q16
 Standards-Version: 4.1.2
 
 Package: lliurex-desktop-icon-theme
@@ -68,3 +68,29 @@ Depends: lliurex-classroom-defaults, lliurex-server-sddm-theme
 Section: x11
 Description: LliureX 19 server xdg defaults 
  LliureX 19 xdg scripts
+
+Package: lliurex-infantil-wallpaper
+Architecture: all
+Section: x11
+Description: LliureX 19 Infantil wallpaper
+ LliureX 19 Infantil wallpaper with KDE plasma package
+
+Package: lliurex-infantil-defaults
+Architecture: all
+Depends: lliurex-desktop-defaults, lliurex-infantil-wallpaper
+Section: x11
+Description: LliureX 19 infantil xdg defaults 
+ LliureX 19 Infantil xdg scripts
+
+Package: lliurex-musica-wallpaper
+Architecture: all
+Section: x11
+Description: LliureX 19 Musica wallpaper
+ LliureX 19 Musica wallpaper with KDE plasma package
+
+Package: lliurex-musica-defaults
+Architecture: all
+Depends: lliurex-desktop-defaults, lliurex-musica-wallpaper
+Section: x11
+Description: LliureX 19 Musica xdg defaults 
+ LliureX 19 Musica xdg scripts

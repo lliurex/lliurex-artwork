@@ -1,3 +1,11 @@
+lliurex-artwork (1.8.0.0) bionic; urgency=medium
+
+  * Master tag: fa845d5e3c97d86e1a5a3faa06e2d72e557c8751
+  * Wallpapers are rendered and composited from a common source svg
+  * Added infantil and musica artwork
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 23 Jul 2019 15:04:05 +0200
+
 lliurex-artwork (1.7.2.0) bionic; urgency=high
 
   * Master tag: a52c3b4fdd78a8b6a7c7288405a81ca1b04520cf
