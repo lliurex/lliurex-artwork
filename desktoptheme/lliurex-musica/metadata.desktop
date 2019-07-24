@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=LliureX-Musica
+
+X-KDE-PluginInfo-Author=Enrique Medina Gremaldos
+X-KDE-PluginInfo-Email=quiqueiii@gmail.com
+X-KDE-PluginInfo-Name=LliureX-Musica
+X-KDE-PluginInfo-Website=https://lliurex.net
+X-KDE-PluginInfo-License=LGPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-Plasma-API=5.0
+
+[Wallpaper]
+defaultWallpaperTheme=lliurex-musica
+defaultWidth=1920
+defaultHeight=1080
+
+[ContrastEffect]
+enabled=false
+contrast=0.2
+intensity=2.0
+saturation=1.7
