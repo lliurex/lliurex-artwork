@@ -75,9 +75,15 @@ Section: x11
 Description: LliureX 19 Infantil wallpaper
  LliureX 19 Infantil wallpaper with KDE plasma package
 
+Package: lliurex-infantil-plasma-theme
+Architecture: all
+Section: x11
+Description: LliureX 19 infantil plasma theme
+ LliureX 19 infantil KDE Plasma theme
+
 Package: lliurex-infantil-defaults
 Architecture: all
-Depends: lliurex-desktop-defaults, lliurex-infantil-wallpaper
+Depends: lliurex-desktop-defaults, lliurex-infantil-wallpaper, lliurex-infantil-plasma-theme
 Section: x11
 Description: LliureX 19 infantil xdg defaults 
  LliureX 19 Infantil xdg scripts
@@ -88,9 +94,15 @@ Section: x11
 Description: LliureX 19 Musica wallpaper
  LliureX 19 Musica wallpaper with KDE plasma package
 
+Package: lliurex-musica-plasma-theme
+Architecture: all
+Section: x11
+Description: LliureX 19 musica plasma theme
+ LliureX 19 musica KDE Plasma theme
+
 Package: lliurex-musica-defaults
 Architecture: all
-Depends: lliurex-desktop-defaults, lliurex-musica-wallpaper
+Depends: lliurex-desktop-defaults, lliurex-musica-wallpaper, lliurex-musica-plasma-theme
 Section: x11
 Description: LliureX 19 Musica xdg defaults 
  LliureX 19 Musica xdg scripts
