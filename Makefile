@@ -12,24 +12,41 @@ previews:
 	
 	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/lliurex-desktop/contents/previews/preview.png preview-default.svg
 
+
+wallpapers/lliurex-%-background.png: wallpapers/lliurex-%.svg
+	@echo -e '$(COLOR_RED)* rendering background [$(basename $@)] $(COLOR_NONE)'
+	rsvg-convert -f png -o $@ -w 1920 -h 1080 $<
+
+wallpapers/lliurex-%.png: wallpapers/lliurex-%-background.png wallpapers/base.png
+	@echo -e '$(COLOR_RED)* composing [$(basename $@)] $(COLOR_NONE)'
+	convert $^ -composite $@
+
 wallpapers/base.png: wallpapers/base.svg
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
 	rsvg-convert -f png -o $@ -w 1920 -h 1080 $<
 
-wallpapers/lliurex-%-background.png: wallpapers/lliurex-%.svg
+wallpapers/xiquets.png: wallpapers/xiquets.svg
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
 	rsvg-convert -f png -o $@ -w 1920 -h 1080 $<
 
-wallpapers/lliurex-%.png: wallpapers/lliurex-%-background.png wallpapers/base.png
+wallpapers/xiquet.png: wallpapers/xiquet.svg
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
-	convert $^ -composite $@
+	rsvg-convert -f png -o $@ -w 1920 -h 1080 $<
 
 wallpapers/lliurex-sunset.png: wallpapers/lliurex-sunset-background.png
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
 	cp $< $@
 
+wallpapers/lliurex-xiquets.png: wallpapers/lliurex-neutral-background.png wallpapers/xiquets.png
+	@echo -e '$(COLOR_RED)* composing [$(basename $@)] $(COLOR_NONE)'
+	convert $^ -composite $@
+
+wallpapers/lliurex-xiquet.png: wallpapers/lliurex-neutral-background.png wallpapers/xiquet.png
+	@echo -e '$(COLOR_RED)* composing [$(basename $@)] $(COLOR_NONE)'
+	convert $^ -composite $@
+
 %.render: wallpapers/%.png
-	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
+	@echo -e '$(COLOR_RED)* creating [$(basename $@)] $(COLOR_NONE)'
 	mkdir -p wallpapers/$(basename $@)/contents/images
 	cp $< wallpapers/$(basename $@)/contents/images/1920x1080.png
 	convert $< -resize 1408x792 wallpapers/$(basename $@)/contents/images/1408x792.png
@@ -41,8 +58,10 @@ lliurex-classroom: lliurex-classroom.render
 lliurex-infantil: lliurex-infantil.render
 lliurex-musica: lliurex-musica.render
 lliurex-sunset: lliurex-sunset.render
+lliurex-xiquets: lliurex-xiquets.render
+lliurex-xiquet: lliurex-xiquet.render
 
-wallpapers: lliurex-desktop lliurex-classroom lliurex-infantil lliurex-musica lliurex-sunset
+wallpapers: lliurex-desktop lliurex-classroom lliurex-infantil lliurex-musica lliurex-sunset lliurex-xiquets lliurex-xiquet
 
 build: wallpapers previews
 
@@ -55,6 +74,8 @@ clean:
 	rm -rf wallpapers/lliurex-infantil/contents
 	rm -rf wallpapers/lliurex-musica/contents
 	rm -rf wallpapers/lliurex-sunset/contents
+	rm -rf wallpapers/lliurex-xiquets/contents
+	rm -rf wallpapers/lliurex-xiquet/contents
 	rm -rf look-and-feel/lliurex-desktop/contents/previews
 	rm -rf look-and-feel/lliurex-desktop-classic/contents/previews
 
