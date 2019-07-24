@@ -1,3 +1,11 @@
+lliurex-artwork (1.9.0.0) bionic; urgency=medium
+
+  * Master tag: 0fec4ee8b0cadf56553f3f01ab57f93770a07966
+  * Added a pair of optionals wallpapers
+  * Some icons has been improved
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Wed, 24 Jul 2019 14:15:30 +0200
+
 lliurex-artwork (1.8.0.0) bionic; urgency=medium
 
   * Master tag: fa845d5e3c97d86e1a5a3faa06e2d72e557c8751
