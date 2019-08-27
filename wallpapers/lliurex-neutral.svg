@@ -29,7 +29,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.32"
-     inkscape:cx="524.06814"
+     inkscape:cx="-161.86936"
      inkscape:cy="1040.8908"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -38,9 +38,9 @@
      borderlayer="true"
      inkscape:snap-global="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="0"
-     inkscape:window-y="22"
+     inkscape:window-height="1025"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:showpageshadow="false" />
   <metadata
@@ -61,7 +61,7 @@
      id="layer1"
      transform="translate(0,-11.249983)">
     <rect
-       style="opacity:1;vector-effect:none;fill:#727672;fill-opacity:1;stroke:none;stroke-width:1.49395621;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;vector-effect:none;fill:#555855;fill-opacity:1;stroke:none;stroke-width:1.49395621;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="rect816"
        width="508"
        height="285.75"
@@ -79,7 +79,7 @@
        id="rect817"
        style="opacity:1;vector-effect:none;fill:#959995;fill-opacity:1;stroke:none;stroke-width:0.27468279;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <rect
-       style="opacity:1;vector-effect:none;fill:#727672;fill-opacity:1;stroke:none;stroke-width:0.27468279;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;vector-effect:none;fill:#555855;fill-opacity:1;stroke:none;stroke-width:0.27468279;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="rect819"
        width="70.680229"
        height="69.428726"
