@@ -20,7 +20,45 @@
    inkscape:version="0.92.4 (unknown)"
    sodipodi:docname="lliurex-desktop.svg">
   <defs
-     id="defs2" />
+     id="defs2">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1387"
+       x="-0.098046358"
+       width="1.1960927"
+       y="-0.17625"
+       height="1.3525">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="15.301392"
+         id="feGaussianBlur1389" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5457">
+      <rect
+         y="-962.39758"
+         x="1834.1636"
+         height="354.80679"
+         width="637.80768"
+         id="rect5459"
+         style="opacity:1;fill:#f36f2c;fill-opacity:1;stroke:none;stroke-width:0.69429511;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:41.34803009;stroke-opacity:1" />
+    </clipPath>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter5861"
+       x="-0.12662682"
+       width="1.2532536"
+       y="-0.21026089"
+       height="1.4205218">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="35.633472"
+         id="feGaussianBlur5863" />
+    </filter>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -28,9 +66,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.32"
-     inkscape:cx="366.49627"
-     inkscape:cy="1314.2363"
+     inkscape:zoom="0.22627417"
+     inkscape:cx="820.07558"
+     inkscape:cy="342.39419"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -38,9 +76,9 @@
      borderlayer="true"
      inkscape:snap-global="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="0"
-     inkscape:window-y="22"
+     inkscape:window-height="1025"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:showpageshadow="false" />
   <metadata
@@ -60,6 +98,13 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-11.249983)">
+    <rect
+       y="27.455713"
+       x="601.92712"
+       height="208.35938"
+       width="374.55078"
+       id="rect817"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.40772292;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:41.34803009;stroke-opacity:1;filter:url(#filter1387)" />
     <rect
        style="opacity:1;vector-effect:none;fill:#019062;fill-opacity:1;stroke:none;stroke-width:1.49395621;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="rect816"
@@ -87,5 +132,12 @@
        width="49.113277"
        id="rect848"
        style="opacity:1;vector-effect:none;fill:#00c7b0;fill-opacity:1;stroke:none;stroke-width:0.19451581;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+    <path
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:16.36995023;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:41.34803009;stroke-opacity:1;filter:url(#filter5861)"
+       d="m 1815.3809,-988.36133 v 406.73438 h 675.373 v -406.73438 z m 18.7832,25.96289 h 637.8066 v 354.8086 h -637.8066 z"
+       id="rect1407"
+       clip-path="url(#clipPath5457)"
+       inkscape:connector-curvature="0"
+       transform="matrix(0.8011093,0,0,0.81522688,-1470.7195,794.17112)" />
   </g>
 </svg>
