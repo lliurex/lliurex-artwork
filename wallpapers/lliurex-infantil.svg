@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="1920"
@@ -21,6 +22,18 @@
    sodipodi:docname="lliurex-infantil.svg">
   <defs
      id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3046">
+      <stop
+         style="stop-color:#e95730;stop-opacity:1"
+         offset="0"
+         id="stop3042" />
+      <stop
+         style="stop-color:#f9a12d;stop-opacity:1"
+         offset="1"
+         id="stop3044" />
+    </linearGradient>
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath5457">
@@ -32,6 +45,15 @@
          id="rect5459"
          style="opacity:1;fill:#f36f2c;fill-opacity:1;stroke:none;stroke-width:0.69429511;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:41.34803009;stroke-opacity:1" />
     </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3046"
+       id="linearGradient3048"
+       x1="0"
+       y1="11.249969"
+       x2="-508"
+       y2="296.99997"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -40,15 +62,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.22627417"
-     inkscape:cx="218.38292"
-     inkscape:cy="1093.1696"
+     inkscape:zoom="0.45254834"
+     inkscape:cx="1304.7468"
+     inkscape:cy="596.73147"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
      borderlayer="true"
-     inkscape:snap-global="false"
+     inkscape:snap-global="true"
      inkscape:window-width="1920"
      inkscape:window-height="1025"
      inkscape:window-x="1920"
@@ -78,7 +100,7 @@
        id="path9303"
        inkscape:connector-curvature="0" />
     <rect
-       style="opacity:1;vector-effect:none;fill:#e96830;fill-opacity:1;stroke:none;stroke-width:1.62856126;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;vector-effect:none;fill:url(#linearGradient3048);fill-opacity:1;stroke:none;stroke-width:1.62856126;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="rect814"
        width="508"
        height="285.75"
