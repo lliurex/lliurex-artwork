@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="1920"
@@ -21,6 +22,18 @@
    sodipodi:docname="lliurex-desktop.svg">
   <defs
      id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3054">
+      <stop
+         style="stop-color:#019062;stop-opacity:1;"
+         offset="0"
+         id="stop3050" />
+      <stop
+         style="stop-color:#00b7a2;stop-opacity:1"
+         offset="1"
+         id="stop3052" />
+    </linearGradient>
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath5457">
@@ -32,6 +45,15 @@
          id="rect5459"
          style="opacity:1;fill:#f36f2c;fill-opacity:1;stroke:none;stroke-width:0.69429511;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:41.34803009;stroke-opacity:1" />
     </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3054"
+       id="linearGradient3056"
+       x1="1.9444442e-06"
+       y1="11.249984"
+       x2="508"
+       y2="296.99997"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -41,18 +63,18 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.22627417"
-     inkscape:cx="1495.9499"
+     inkscape:cx="525.88778"
      inkscape:cy="774.67076"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
      borderlayer="true"
-     inkscape:snap-global="false"
+     inkscape:snap-global="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1025"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
+     inkscape:window-height="1001"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
      inkscape:window-maximized="1"
      inkscape:showpageshadow="false" />
   <metadata
@@ -73,7 +95,7 @@
      id="layer1"
      transform="translate(0,-11.249983)">
     <rect
-       style="opacity:1;vector-effect:none;fill:#019062;fill-opacity:1;stroke:none;stroke-width:1.49395621;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;vector-effect:none;fill:url(#linearGradient3056);fill-opacity:1;stroke:none;stroke-width:1.49395621;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="rect816"
        width="508"
        height="285.75"
