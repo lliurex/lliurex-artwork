@@ -1,3 +1,9 @@
+lliurex-artwork (1.9.2.0) bionic; urgency=medium
+
+  * Changed background colors to slightly darker color gradients
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Wed, 28 Aug 2019 12:08:14 +0200
+
 lliurex-artwork (1.9.1.0) bionic; urgency=medium
 
   * Master tag: aa7b40a23ccdfae8a7cba2b414772ab6020f0628
