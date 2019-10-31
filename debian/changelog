@@ -1,3 +1,11 @@
+lliurex-artwork (1.10.0.0) bionic; urgency=medium
+
+  * Master tag: 204ed899c8f78988a1eed21b71de9e80b074359e
+  * Added a custom Plasma splash screen
+  * Customized panel application menu hover effect
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 31 Oct 2019 13:09:47 +0100
+
 lliurex-artwork (1.9.3.0) bionic; urgency=medium
 
   * Master tag: df718555078ca726c262ebf3a945afc848037a31
