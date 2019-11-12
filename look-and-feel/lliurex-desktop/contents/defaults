@@ -1,7 +1,4 @@
 
-[plasmarc][Theme]
-name=lliurex-desktop
-
 [kdeglobals][KDE]
 widgetStyle=breeze
 
@@ -11,14 +8,21 @@ ColorScheme=lliurex
 [kdeglobals][Icons]
 Theme=lliurex
 
+[plasmarc][Theme]
+name=lliurex-desktop
+
 [kcminputrc][Mouse]
-cursorTheme=breeze_cursors
+cursorTheme=Breeze_Snow
 
 [kwinrc][WindowSwitcher]
-LayoutName=org.kde.breeze.desktop
+LayoutName=thumbnails
 
 [kwinrc][DesktopSwitcher]
 LayoutName=org.kde.breeze.desktop
 
 [kwinrc][org.kde.kdecoration2]
 library=org.kde.breeze
+
+[ksplashrc][KSplash]
+Engine=KSplashQML
+Theme=lliurex-desktop

@@ -97,11 +97,17 @@ install: build
 #plasma theme
 	cp -r desktoptheme/lliurex-desktop $(DESTDIR)/usr/share/plasma/desktoptheme/
 	cp -r desktoptheme/lliurex-classroom $(DESTDIR)/usr/share/plasma/desktoptheme/
+	cp -r desktoptheme/lliurex-musica $(DESTDIR)/usr/share/plasma/desktoptheme/
+	cp -r desktoptheme/lliurex-infantil $(DESTDIR)/usr/share/plasma/desktoptheme/
 	cp -r look-and-feel/lliurex-desktop $(DESTDIR)/usr/share/plasma/look-and-feel/
 	cp -r look-and-feel/lliurex-desktop-classic $(DESTDIR)/usr/share/plasma/look-and-feel/
 #wallpapers
 	cp -r wallpapers/lliurex-desktop $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-classroom $(DESTDIR)/usr/share/wallpapers/
+	cp -r wallpapers/lliurex-infantil $(DESTDIR)/usr/share/wallpapers/
+	cp -r wallpapers/lliurex-musica $(DESTDIR)/usr/share/wallpapers/
+	cp -r wallpapers/lliurex-xiquet $(DESTDIR)/usr/share/wallpapers/
+	cp -r wallpapers/lliurex-xiquets $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-sunset $(DESTDIR)/usr/share/wallpapers/
 
 #xsession files

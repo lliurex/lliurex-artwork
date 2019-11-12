@@ -1,18 +1,6 @@
-[Theme]
-name=lliurex-desktop
-
-[General]
-ColorScheme=lliurex
-Name=LliureX
-
-[Icons]
-Theme=lliurex
-
 [KDE]
 ChangeCursor=true
-LookAndFeelPackage=lliurex-desktop
 contrast=4
-widgetStyle=breeze
 ShowDeleteCommand=false
 SingleClick=false
 

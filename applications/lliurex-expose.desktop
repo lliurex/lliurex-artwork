@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Expose
+GenericName=Expose effect
+
+Type=Application
+Icon=view-list-icons
+Exec=qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut "Expose"
+StartupNotify=false

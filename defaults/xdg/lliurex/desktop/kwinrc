@@ -11,6 +11,11 @@ TabBoxAlternative=false
 TabBox=false
 TabBoxAlternative=false
 
+[Effect-PresentWindows]
+BorderActivate=9
+BorderActivateAll=9
+BorderActivateClass=9
+
 [Plugins]
 coverswitchEnabled=true
 cubeslideEnabled=false
@@ -51,6 +56,7 @@ SwitchingMode=0
 
 [Windows]
 RollOverDesktops=true
+ElectricBorders=0
 
 [ElectricBorders]
 Bottom=None
