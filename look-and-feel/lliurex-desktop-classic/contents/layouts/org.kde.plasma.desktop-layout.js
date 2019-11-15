@@ -40,6 +40,9 @@ var layout = {
                         },
                         "/Configuration/General": {
                             "favoriteApps":["firefox.desktop","systemsettings.desktop","zero-center.desktop","org.kde.dolphin.desktop","lliurex-store.desktop","org.kde.konsole.desktop"]
+                        },
+                        "/Shortcuts" : {
+                            "global" : "Alt+F1"
                         }
                     },
                     "plugin": "org.kde.plasma.kicker"
@@ -74,9 +77,12 @@ var layout = {
                         "/Configuration/ConfigDialog": {
                             "DialogHeight": "540",
                             "DialogWidth": "720"
+                        },
+                        "/Shortcuts" : {
+                            "global" : "Alt+d"
                         }
                     },
-                    "plugin": "org.kde.plasma.showdesktop"
+                    "plugin": "org.kde.plasma.minimizeall"
                 },
                 {
                     "config": {
