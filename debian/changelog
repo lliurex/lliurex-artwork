@@ -1,3 +1,12 @@
+lliurex-artwork (1.12.0.0) bionic; urgency=medium
+
+  * Master tag: bf6466396c313a2b987efd53e4661fff9fa2c449
+  * Added some new custom lliurex icons
+  * Improved kick-of menu with composition turned off
+  * Added a pressed highlight to plasma widgets
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 28 Nov 2019 16:03:10 +0100
+
 lliurex-artwork (1.11.0.0) bionic; urgency=medium
 
   * Master tag: 5b01f6d4433a6b39809590494cd1da6e24dc8e12
