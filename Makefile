@@ -106,6 +106,7 @@ install: build
 	cp -r desktoptheme/lliurex-classroom $(DESTDIR)/usr/share/plasma/desktoptheme/
 	cp -r desktoptheme/lliurex-musica $(DESTDIR)/usr/share/plasma/desktoptheme/
 	cp -r desktoptheme/lliurex-infantil $(DESTDIR)/usr/share/plasma/desktoptheme/
+	cp -r desktoptheme/lliurex-fp $(DESTDIR)/usr/share/plasma/desktoptheme/
 	cp -r look-and-feel/lliurex-desktop $(DESTDIR)/usr/share/plasma/look-and-feel/
 	cp -r look-and-feel/lliurex-desktop-classic $(DESTDIR)/usr/share/plasma/look-and-feel/
 #wallpapers
@@ -156,6 +157,7 @@ uninstall:
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-infantil
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-musica
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-sunset
+	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-fp
 
 #xsession
 	rm -rf $(DESTDIR)/etc/X11/Xsession.d/*lliurex*
