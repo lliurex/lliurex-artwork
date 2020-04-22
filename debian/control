@@ -106,3 +106,22 @@ Depends: lliurex-desktop-defaults, lliurex-musica-wallpaper, lliurex-musica-plas
 Section: x11
 Description: LliureX 19 Musica xdg defaults 
  LliureX 19 Musica xdg scripts
+
+Package: lliurex-fp-wallpaper
+Architecture: all
+Section: x11
+Description: LliureX 19 FP wallpaper
+ LliureX 19 FP wallpaper with KDE plasma package
+
+Package: lliurex-fp-plasma-theme
+Architecture: all
+Section: x11
+Description: LliureX 19 FP plasma theme
+ LliureX 19 FP KDE Plasma theme
+
+Package: lliurex-fp-defaults
+Architecture: all
+Depends: lliurex-desktop-defaults, lliurex-fp-wallpaper, lliurex-fp-plasma-theme
+Section: x11
+Description: LliureX 19 FP xdg defaults 
+ LliureX 19 FP xdg scripts
