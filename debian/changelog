@@ -1,3 +1,12 @@
+lliurex-artwork (1.13.0.0) bionic; urgency=medium
+
+  * Master tag: 0ba92812e87d4ffb6de10f89d3f8fb2e47408e09
+  * Added a FP wallpaper
+  * Added a FP default settings
+  * Added a FreeCAD breeze style icon
+
+ -- Enrique Medina Gremaldos <quique@serenity>  Mon, 27 Apr 2020 09:14:39 +0200
+
 lliurex-artwork (1.12.1.0) bionic; urgency=medium
 
   * Master tag: f0ca4071039fec15006f84a34c713efb3a91ea60
