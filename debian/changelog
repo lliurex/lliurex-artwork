@@ -1,3 +1,10 @@
+lliurex-artwork (1.13.1.0) bionic; urgency=medium
+
+  * Master tag: cd08df420606435deddd0e8df272d8489315cb90
+  * Improved FP wallaper 
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Fri, 29 May 2020 16:44:27 +0200
+
 lliurex-artwork (1.13.0.0) bionic; urgency=medium
 
   * Master tag: 0ba92812e87d4ffb6de10f89d3f8fb2e47408e09
@@ -5,7 +12,7 @@ lliurex-artwork (1.13.0.0) bionic; urgency=medium
   * Added a FP default settings
   * Added a FreeCAD breeze style icon
 
- -- Enrique Medina Gremaldos <quique@serenity>  Mon, 27 Apr 2020 09:14:39 +0200
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Mon, 27 Apr 2020 09:14:39 +0200
 
 lliurex-artwork (1.12.1.0) bionic; urgency=medium
 
