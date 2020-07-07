@@ -13,7 +13,7 @@ previews:
 	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/lliurex-desktop/contents/previews/preview.png preview-default.svg
 	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/lliurex-desktop/contents/previews/splash.png preview-splash.svg 
 
-wallpapers/lliurex-%-background.png: wallpapers/lliurex-%.svg
+wallpapers/lliurex-%-background.png: wallpapers/%-background.svg
 	@echo -e '$(COLOR_RED)* rendering background [$(basename $@)] $(COLOR_NONE)'
 	rsvg-convert -f png -o $@ -w 1920 -h 1080 $<
 
@@ -21,7 +21,7 @@ wallpapers/lliurex-%.png: wallpapers/lliurex-%-background.png wallpapers/base.pn
 	@echo -e '$(COLOR_RED)* composing [$(basename $@)] $(COLOR_NONE)'
 	convert $^ -composite $@
 
-wallpapers/base.png: wallpapers/base.svg
+wallpapers/base.png: wallpapers/19+1.svg
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
 	rsvg-convert -f png -o $@ -w 1920 -h 1080 $<
 
