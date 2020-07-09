@@ -33,8 +33,9 @@ wallpapers/xiquet.png: wallpapers/xiquet.svg
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
 	rsvg-convert -f png -o $@ -w 1920 -h 1080 $<
 
-wallpapers/lliurex-sunset.png: wallpapers/lliurex-sunset-background.png
+wallpapers/lliurex-sunset.png: wallpapers/lliurex-sunset.svg
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
+	rsvg-convert -f png -o $@ -w 1920 -h 1080 $<
 	cp $< $@
 
 wallpapers/lliurex-xiquets.png: wallpapers/lliurex-neutral-background.png wallpapers/xiquets.png
@@ -45,8 +46,9 @@ wallpapers/lliurex-xiquet.png: wallpapers/lliurex-neutral-background.png wallpap
 	@echo -e '$(COLOR_RED)* composing [$(basename $@)] $(COLOR_NONE)'
 	convert $^ -composite $@
 
-wallpapers/lliurex-fp.png: wallpapers/lliurex-fp-background.png
+wallpapers/lliurex-fp.png: wallpapers/lliurex-fp.svg
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
+	rsvg-convert -f png -o $@ -w 1920 -h 1080 $<
 	cp $< $@
 
 wallpapers/lliurex-19.png: wallpapers/base.svg wallpapers/lliurex-desktop.svg
