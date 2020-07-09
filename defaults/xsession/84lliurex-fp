@@ -1,0 +1,1 @@
+XDG_LLIUREX_CONFIG_DIRS="/etc/xdg/lliurex/fp:$XDG_LLIUREX_CONFIG_DIRS"
