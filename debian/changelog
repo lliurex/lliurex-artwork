@@ -1,3 +1,9 @@
+lliurex-artwork (2.0.1.1) bionic; urgency=medium
+
+  * Updated sddm dependency name
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Fri, 10 Jul 2020 12:38:50 +0200
+
 lliurex-artwork (2.0.1.0) bionic; urgency=medium
 
   * Master tag: a79f3b45316ba1dcc355d2b5a14b2feee28bd432
