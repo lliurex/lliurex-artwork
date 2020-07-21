@@ -134,7 +134,7 @@ Description: LliureX 19 Desktop wallpaper
  
 Package: lliurex-breeze-gtk-theme
 Architecture: all
-Depends: breeze-gtk-thene
+Depends: breeze-gtk-theme
 Section: x11
 Description: LliureX 19.7 fix for breeze-gtk-theme
  LliureX 19.7 custom css to fix vertical spinbuttons and togglebuttons
