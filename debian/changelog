@@ -1,3 +1,9 @@
+lliurex-artwork (2.1.0.1) bionic; urgency=medium
+
+  * Fixed lliurex-breeze-gtk-theme dependency name
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Tue, 21 Jul 2020 09:47:53 +0200
+
 lliurex-artwork (2.1.0.0) bionic; urgency=medium
 
   * Master tag: 4e9f453594907fcc45fb41a22b369f1a594b9475
