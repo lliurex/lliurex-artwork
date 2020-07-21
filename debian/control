@@ -131,3 +131,11 @@ Architecture: all
 Section: x11
 Description: LliureX 19 Desktop wallpaper
  Old LliureX 19 wallpaper with KDE plasma package
+ 
+Package: lliurex-breeze-gtk-theme
+Architecture: all
+Depends: breeze-gtk-thene
+Section: x11
+Description: LliureX 19.7 fix for breeze-gtk-theme
+ LliureX 19.7 custom css to fix vertical spinbuttons and togglebuttons
+ 

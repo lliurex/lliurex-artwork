@@ -1,0 +1,38 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+   configure)
+
+                PACKAGE_NAME="lliurex-breeze-gtk-theme"
+
+                # GIMP
+
+                DEFAULT_CSS="/usr/share/themes/Breeze/gtk-3.0/gtk.css"
+                LLIUREX_CSS="/usr/share/themes/Breeze/gtk-3.0/lliurex-gtk.css"
+                DIVERTED_CSS="/usr/share/themes/Breeze/gtk-3.0/gtk.css"
+
+
+                if [ -f $DEFAULT_CSS ]; then
+                        if dpkg-divert --package ${PACKAGE_NAME} --add  --rename  --divert ${DIVERTED_CSS} ${DEFAULT_CSS} ; then
+                                ln -fs ${LLIUREX_CSS} ${DEFAULT_CSS} || true
+                        fi
+                fi
+
+                ##
+
+
+   ;;
+
+   abort-upgrade|abort-remove|abort-deconfigure)
+   ;;
+
+   *)
+       exit 1
+   ;;
+esac
+
+#DEBHELPER#
+
+exit 0
