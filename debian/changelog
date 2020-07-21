@@ -1,3 +1,9 @@
+lliurex-artwork (2.1.0.2) bionic; urgency=medium
+
+  * Fixed lliurex-breeze-gtk-theme diversion name
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Tue, 21 Jul 2020 10:00:21 +0200
+
 lliurex-artwork (2.1.0.1) bionic; urgency=medium
 
   * Fixed lliurex-breeze-gtk-theme dependency name
