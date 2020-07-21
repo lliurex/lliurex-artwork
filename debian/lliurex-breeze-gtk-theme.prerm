@@ -9,7 +9,7 @@ case "$1" in
 
                 DEFAULT_CSS="/usr/share/themes/Breeze/gtk-3.0/gtk.css"
                 LLIUREX_CSS="/usr/share/themes/Breeze/gtk-3.0/lliurex-gtk.css"
-                DIVERTED_CSS="/usr/share/themes/Breeze/gtk-3.0/gtk.css"
+                DIVERTED_CSS="/usr/share/themes/Breeze/gtk-3.0/gtk.css.diverted"
 
          if [ -f ${DIVERTED_CSS} ] ; then
                 rm -f ${DEFAULT_CSS}
