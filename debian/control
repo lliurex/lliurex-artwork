@@ -38,7 +38,7 @@ Description: LliureX 19.7 desktop wallpaper
 Package: lliurex-desktop-defaults
 Architecture: all
 Conflicts: neon-adwaita
-Depends: lliurex-desktop-color-scheme, lliurex-desktop-icon-theme, lliurex-desktop-plasma-look-and-feel, lliurex-desktop-plasma-theme, lliurex-desktop-wallpaper, lliurex-sddm-theme, lliurex-plymouth-theme, plasma-applet-places-widget
+Depends: lliurex-desktop-color-scheme, lliurex-desktop-icon-theme, lliurex-desktop-plasma-look-and-feel, lliurex-desktop-plasma-theme, lliurex-desktop-wallpaper, lliurex-sddm-theme, lliurex-plymouth-theme, plasma-applet-places-widget, lliurex-breeze-gtk-theme
 Section: x11
 Description: LliureX 19.7 xdg defaults 
  LliureX 19.7 xdg scripts
