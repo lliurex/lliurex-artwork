@@ -21,7 +21,7 @@ wallpapers/lliurex-%.png: wallpapers/lliurex-%-background.png wallpapers/base.pn
 	@echo -e '$(COLOR_RED)* composing [$(basename $@)] $(COLOR_NONE)'
 	convert $^ -composite $@
 
-wallpapers/base.png: wallpapers/19+1.svg
+wallpapers/base.png: wallpapers/21.svg
 	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
 	rsvg-convert -f png -o $@ -w 1920 -h 1080 $<
 
@@ -56,7 +56,14 @@ wallpapers/lliurex-19.png: wallpapers/base.svg wallpapers/lliurex-desktop.svg
 	rsvg-convert -f png -o wallpapers/base-19.png -w 1920 -h 1080 wallpapers/base.svg
 	rsvg-convert -f png -o wallpapers/lliurex-19.png -w 1920 -h 1080 wallpapers/lliurex-desktop.svg
 	convert wallpapers/lliurex-19.png  wallpapers/base-19.png -composite wallpapers/lliurex-19.png
-	
+
+wallpapers/lliurex-19+1.png: wallpapers/19+1.svg wallpapers/lliurex-desktop.svg
+	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
+	rsvg-convert -f png -o wallpapers/base-19+1.png -w 1920 -h 1080 wallpapers/19+1.svg
+	rsvg-convert -f png -o wallpapers/lliurex-19+1.png -w 1920 -h 1080 wallpapers/lliurex-desktop.svg
+	convert wallpapers/lliurex-19+1.png  wallpapers/base-19+1.png -composite wallpapers/lliurex-19+1.png
+
+
 %.render: wallpapers/%.png
 	@echo -e '$(COLOR_RED)* creating [$(basename $@)] $(COLOR_NONE)'
 	mkdir -p wallpapers/$(basename $@)/contents/images
@@ -74,8 +81,9 @@ lliurex-xiquets: lliurex-xiquets.render
 lliurex-xiquet: lliurex-xiquet.render
 lliurex-fp: lliurex-fp.render
 lliurex-19: lliurex-19.render
+lliurex-19+1: lliurex-19+1.render
 
-wallpapers: lliurex-desktop lliurex-classroom lliurex-infantil lliurex-musica lliurex-sunset lliurex-xiquets lliurex-xiquet lliurex-fp lliurex-19
+wallpapers: lliurex-desktop lliurex-classroom lliurex-infantil lliurex-musica lliurex-sunset lliurex-xiquets lliurex-xiquet lliurex-fp lliurex-19 lliurex-19+1
 
 build: wallpapers previews
 
@@ -92,6 +100,7 @@ clean:
 	rm -rf wallpapers/lliurex-xiquet/contents
 	rm -rf wallpapers/lliurex-fp/contents
 	rm -rf wallpapers/lliurex-19/contents
+	rm -rf wallpapers/lliurex-19+1/contents
 	rm -rf look-and-feel/lliurex-desktop/contents/previews
 	rm -rf look-and-feel/lliurex-desktop-classic/contents/previews
 
@@ -128,6 +137,7 @@ install: build
 	cp -r wallpapers/lliurex-sunset $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-fp $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-19 $(DESTDIR)/usr/share/wallpapers/
+	cp -r wallpapers/lliurex-19+1 $(DESTDIR)/usr/share/wallpapers/
 	
 	#xsession files
 	cp -r defaults/xsession/* $(DESTDIR)/etc/X11/Xsession.d/
@@ -169,6 +179,7 @@ uninstall:
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-sunset
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-fp
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-19
+	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-19+1
 	
 #xsession
 	rm -rf $(DESTDIR)/etc/X11/Xsession.d/*lliurex*
