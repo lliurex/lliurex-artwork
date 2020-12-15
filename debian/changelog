@@ -1,3 +1,9 @@
+lliurex-artwork (2.1.0.3) bionic; urgency=medium
+
+  * Add wiki as search provider
+
+ -- Juanma1980 <juanma1980@gmail.com>  Tue, 15 Dec 2020 20:47:05 +0100
+
 lliurex-artwork (2.1.0.2) bionic; urgency=medium
 
   * Fixed lliurex-breeze-gtk-theme diversion name
