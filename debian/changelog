@@ -1,3 +1,9 @@
+lliurex-artwork (2.2.0.0) focal; urgency=medium
+
+  * Provisional focal package
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Wed, 10 Feb 2021 22:01:00 +0100
+
 lliurex-artwork (2.1.0.2) bionic; urgency=medium
 
   * Fixed lliurex-breeze-gtk-theme diversion name
