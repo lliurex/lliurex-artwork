@@ -5,13 +5,13 @@ COLOR_RED = \x1b[31;01m
 
 previews:
 	@echo -e '$(COLOR_RED)* rendering previews $(COLOR_NONE)'
-	mkdir -p look-and-feel/lliurex-desktop/contents/previews/
-	mkdir -p look-and-feel/lliurex-desktop-classic/contents/previews/
+	mkdir -p look-and-feel/net.lliurex.default/contents/previews/
+	mkdir -p look-and-feel/net.lliurex.classic/contents/previews/
 	
-	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/lliurex-desktop-classic/contents/previews/preview.png preview-classic.svg 
+	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/net.lliurex.classic/contents/previews/preview.png preview-classic.svg 
 	
-	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/lliurex-desktop/contents/previews/preview.png preview-default.svg
-	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/lliurex-desktop/contents/previews/splash.png preview-splash.svg 
+	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/net.lliurex.default/contents/previews/preview.png preview-default.svg
+	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/net.lliurex.default/contents/previews/splash.png preview-splash.svg 
 
 wallpapers/lliurex-%-background.png: wallpapers/%-background.svg
 	@echo -e '$(COLOR_RED)* rendering background [$(basename $@)] $(COLOR_NONE)'
@@ -101,8 +101,8 @@ clean:
 	rm -rf wallpapers/lliurex-fp/contents
 	rm -rf wallpapers/lliurex-19/contents
 	rm -rf wallpapers/lliurex-19+1/contents
-	rm -rf look-and-feel/lliurex-desktop/contents/previews
-	rm -rf look-and-feel/lliurex-desktop-classic/contents/previews
+	rm -rf look-and-feel/net.lliurex.default/contents/previews
+	rm -rf look-and-feel/net.lliurex.classic/contents/previews
 
 install: build
 	@echo -e '$(COLOR_RED)* creating paths... $(COLOR_NONE)'
@@ -125,8 +125,8 @@ install: build
 	cp -r desktoptheme/lliurex-musica $(DESTDIR)/usr/share/plasma/desktoptheme/
 	cp -r desktoptheme/lliurex-infantil $(DESTDIR)/usr/share/plasma/desktoptheme/
 	cp -r desktoptheme/lliurex-fp $(DESTDIR)/usr/share/plasma/desktoptheme/
-	cp -r look-and-feel/lliurex-desktop $(DESTDIR)/usr/share/plasma/look-and-feel/
-	cp -r look-and-feel/lliurex-desktop-classic $(DESTDIR)/usr/share/plasma/look-and-feel/
+	cp -r look-and-feel/net.lliurex.default $(DESTDIR)/usr/share/plasma/look-and-feel/
+	cp -r look-and-feel/net.lliurex.classic $(DESTDIR)/usr/share/plasma/look-and-feel/
 #wallpapers
 	cp -r wallpapers/lliurex-desktop $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-classroom $(DESTDIR)/usr/share/wallpapers/
@@ -168,8 +168,8 @@ uninstall:
 #plasma theme
 	rm -rf $(DESTDIR)/usr/share/plasma/desktoptheme/lliurex-desktop
 	rm -rf $(DESTDIR)/usr/share/plasma/desktoptheme/lliurex-classroom
-	rm -rf $(DESTDIR)/usr/share/plasma/look-and-feel/lliurex-desktop
-	rm -rf $(DESTDIR)/usr/share/plasma/look-and-feel/lliurex-desktop-classic
+	rm -rf $(DESTDIR)/usr/share/plasma/look-and-feel/net.lliurex.default
+	rm -rf $(DESTDIR)/usr/share/plasma/look-and-feel/net.lliurex.classic
 
 #wallpaper
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-desktop
