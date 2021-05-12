@@ -1,3 +1,9 @@
+lliurex-artwork (21.0.0.0) focal; urgency=medium
+
+  * Testing new default layout (wip)
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Wed, 12 May 2021 11:39:57 +0200
+
 lliurex-artwork (2.2.0.0) focal; urgency=medium
 
   * Provisional focal package
