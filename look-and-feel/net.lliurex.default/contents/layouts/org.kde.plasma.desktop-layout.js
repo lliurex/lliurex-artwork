@@ -60,7 +60,7 @@ var layout = {
                             "DialogWidth": "720"
                         },
                         "/Configuration/General": {
-                            "launchers": "applications:org.kde.dolphin.desktop,applications:systemsettings.desktop,applications:org.kde.konsole.desktop,applications:firefox.desktop,applications:org.kde.kcalc.desktop,applications:org.kde.ksysguard.desktop",
+                            "launchers":[ "applications:org.kde.dolphin.desktop","applications:systemsettings.desktop","applications:org.kde.konsole.desktop","applications:firefox.desktop","applications:org.kde.kcalc.desktop","applications:org.kde.ksysguard.desktop"],
                             "showOnlyCurrentDesktop": "false"
                         }
                     },
