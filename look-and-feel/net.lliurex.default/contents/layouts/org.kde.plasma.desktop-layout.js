@@ -39,13 +39,53 @@ var layout = {
                             "immutability": "1"
                         },
                         "/Configuration": {
-                            "PreloadWeight": "97"
+                            "PreloadWeight": "100"
                         },
                         "/Configuration/General": {
-                            "favoritesPortedToKAstats": "true"
+                            "favoriteApps":["firefox.desktop","systemsettings.desktop","zero-center.desktop","org.kde.dolphin.desktop","lliurex-store.desktop","org.kde.konsole.desktop"]
+                        },
+                        "/Shortcuts" : {
+                            "global" : "Alt+F1"
                         }
                     },
-                    "plugin": "org.kde.plasma.kickoff"
+                    "plugin": "org.kde.plasma.kicker"
+                },
+                {
+                    "config": {
+                        "/": {
+                            "immutability": "1"
+                        },
+                        "/Configuration": {
+                            "PreloadWeight": "65"
+                        },
+                        "/Configuration/ConfigDialog": {
+                            "DialogHeight": "540",
+                            "DialogWidth": "720"
+                        },
+                        "/Configuration/General": {
+                            "length": "1165",
+                            "widgetWidth": "300"
+                        }
+                    },
+                    "plugin": "org.kde.placesWidget"
+                },
+                {
+                    "config": {
+                        "/": {
+                            "immutability": "1"
+                        },
+                        "/Configuration": {
+                            "PreloadWeight": "42"
+                        },
+                        "/Configuration/ConfigDialog": {
+                            "DialogHeight": "540",
+                            "DialogWidth": "720"
+                        },
+                        "/Shortcuts" : {
+                            "global" : "Alt+d"
+                        }
+                    },
+                    "plugin": "org.kde.plasma.minimizeall"
                 },
                 {
                     "config": {
@@ -60,7 +100,7 @@ var layout = {
                             "DialogWidth": "720"
                         },
                         "/Configuration/General": {
-                            "launchers": "applications:org.kde.dolphin.desktop,applications:systemsettings.desktop,applications:org.kde.konsole.desktop,applications:firefox.desktop,applications:org.kde.kcalc.desktop,applications:org.kde.ksysguard.desktop",
+                            "launchers":[ "applications:org.kde.dolphin.desktop","applications:systemsettings.desktop","applications:org.kde.konsole.desktop","applications:firefox.desktop","applications:org.kde.kcalc.desktop","applications:org.kde.ksysguard.desktop"],
                             "showOnlyCurrentDesktop": "false"
                         }
                     },
