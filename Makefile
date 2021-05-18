@@ -106,7 +106,7 @@ w21: lliurex-escriptori lliurex-aula lliurex-infantil lliurex-musica lliurex-neu
 	@echo -e '$(COLOR_RED)* creating [$^] $(COLOR_NONE)'
 
 
-wallpapers:w21 lliurex-sunset lliurex-xiquets lliurex-xiquet lliurex-fp lliurex-19 lliurex-19+1
+wallpapers:w21 lliurex-sunset lliurex-xiquets lliurex-xiquet lliurex-19 lliurex-19+1
 
 build: wallpapers previews
 
