@@ -1,3 +1,9 @@
+lliurex-artwork (21.0.4.0) focal; urgency=medium
+
+  * fixed makefile
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 18 May 2021 10:46:44 +0200
+
 lliurex-artwork (21.0.3.0) focal; urgency=medium
 
   * just some progress, alpha quality
