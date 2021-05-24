@@ -64,8 +64,12 @@ wallpapers/lliurex-19+1.png: wallpapers/19+1.svg wallpapers/lliurex-desktop.svg
 	convert wallpapers/lliurex-19+1.png  wallpapers/base-19+1.png -composite wallpapers/lliurex-19+1.png
 
 wallpapers/21.png: wallpapers/21.svg
-	@echo -e '$(COLOR_RED)* rendering [$(basename $@)] $(COLOR_NONE)'
+	@echo -e '$(COLOR_RED)* rendering [$@] $(COLOR_NONE)'
 	rsvg-convert -f png -o wallpapers/21.png -w 5000 -h 2813 wallpapers/21.svg
+
+wallpapers/21.4.3.png: wallpapers/21.4.3.svg
+	@echo -e '$(COLOR_RED)* rendering [$@] $(COLOR_NONE)'
+	rsvg-convert -f png -o wallpapers/21.4.3.png -w 3750 -h 2813 wallpapers/21.4.3.svg
 
 
 %.render: wallpapers/%.png
@@ -76,24 +80,36 @@ wallpapers/21.png: wallpapers/21.svg
 	convert $< -resize 1280x720 wallpapers/$(basename $@)/contents/images/1280x720.png
 	convert $< -resize 1152x648 wallpapers/$(basename $@)/contents/images/1152x648.png
 
+wallpapers/lliurex-%.4.3.jpg: wallpapers/%.jpg wallpapers/21.4.3.png
+	@echo -e '$(COLOR_RED)* composing [$@] $(COLOR_NONE)'
+	#convert $< -resize 3750x2813 $@
+	convert $< -crop 3750x2813+625+0 $@
+	convert $@  wallpapers/21.4.3.png -composite $@
 
 wallpapers/lliurex-%.jpg: wallpapers/%.jpg wallpapers/21.png
+	@echo -e '$(COLOR_RED)* composing [$@] $(COLOR_NONE)'
 	convert $<  wallpapers/21.png -composite $@
 	
-lliurex-%.render21: wallpapers/lliurex-%.jpg
-	@echo -e '$(COLOR_RED)* creating [$(basename $@)] $(COLOR_NONE)'
-	mkdir -p wallpapers/$(basename $@)/contents/images
-	cp $< wallpapers/$(basename $@)/contents/images/5000x2813.jpg
-	convert $< -resize 1920x1080 wallpapers/$(basename $@)/contents/images/1920x1080.jpg
-	convert $< -resize 1408x792 wallpapers/$(basename $@)/contents/images/1408x792.jpg
-	convert $< -resize 1280x720 wallpapers/$(basename $@)/contents/images/1280x720.jpg
-	convert $< -resize 1152x648 wallpapers/$(basename $@)/contents/images/1152x648.jpg
+lliurex-%.render.21.16.9: wallpapers/lliurex-%.jpg
+	@echo -e '$(COLOR_RED)* creating [$@] $(COLOR_NONE)'
+	mkdir -p wallpapers/lliurex-$*/contents/images
+	cp $< wallpapers/lliurex-$*/contents/images/5000x2813.jpg
+	convert $< -resize 1920x1080 wallpapers/lliurex-$*/contents/images/1920x1080.jpg
+	convert $< -resize 1408x792 wallpapers/lliurex-$*/contents/images/1408x792.jpg
+	convert $< -resize 1280x720 wallpapers/lliurex-$*/contents/images/1280x720.jpg
+	convert $< -resize 1152x648 wallpapers/lliurex-$*/contents/images/1152x648.jpg
 
-lliurex-escriptori: lliurex-escriptori.render21
-lliurex-aula: lliurex-aula.render21
-lliurex-infantil: lliurex-infantil.render21
-lliurex-musica: lliurex-musica.render21
-lliurex-neutro: lliurex-neutro.render21
+lliurex-%.render.21.4.3: wallpapers/lliurex-%.4.3.jpg
+	@echo -e '$(COLOR_RED)* creating [$@] $(COLOR_NONE)'
+	mkdir -p wallpapers/lliurex-$*/contents/images
+	cp $< wallpapers/lliurex-$*/contents/images/3750x2813.jpg
+	convert $< -resize 1024x768 wallpapers/lliurex-$*/contents/images/1024x768.jpg
+
+lliurex-escriptori: lliurex-escriptori.render.21.16.9 lliurex-escriptori.render.21.4.3
+lliurex-aula: lliurex-aula.render.21.16.9
+lliurex-infantil: lliurex-infantil.render.21.16.9
+lliurex-musica: lliurex-musica.render.21.16.9
+lliurex-neutro: lliurex-neutro.render.21.16.9
 
 lliurex-sunset: lliurex-sunset.render
 lliurex-xiquets: lliurex-xiquets.render
@@ -188,6 +204,10 @@ install: build
 #icon theme
 	cp -r icons/lliurex $(DESTDIR)/usr/share/icons/
 
+#avatar
+	mkdir -p $(DESTDIR)/usr/share/plasma/avatar/lliurex
+	cp -r avatar/*.png $(DESTDIR)/usr/share/plasma/avatar/lliurex
+	
 uninstall:
 
 #plasma theme
@@ -228,5 +248,8 @@ uninstall:
 
 #icon theme
 	rm -rf $(DESTDIR)/usr/share/icons/lliurex
+
+#avatar
+	rm -rf $(DESTDIR)/usr/share/plasma/avatar/lliurex
 
 .PHONY: all clean install uninstall build
