@@ -2,3 +2,6 @@
 DefaultProfile=lliurex.profile
 
 
+[MainWindow]
+Width = 600
+Height = 400

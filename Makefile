@@ -106,10 +106,10 @@ lliurex-%.render.21.4.3: wallpapers/lliurex-%.4.3.jpg
 	convert $< -resize 1024x768 wallpapers/lliurex-$*/contents/images/1024x768.jpg
 
 lliurex-escriptori: lliurex-escriptori.render.21.16.9 lliurex-escriptori.render.21.4.3
-lliurex-aula: lliurex-aula.render.21.16.9
-lliurex-infantil: lliurex-infantil.render.21.16.9
-lliurex-musica: lliurex-musica.render.21.16.9
-lliurex-neutro: lliurex-neutro.render.21.16.9
+lliurex-aula: lliurex-aula.render.21.16.9 lliurex-aula.render.21.4.3
+lliurex-infantil: lliurex-infantil.render.21.16.9 lliurex-infantil.render.21.4.3
+lliurex-musica: lliurex-musica.render.21.16.9 lliurex-musica.render.21.4.3
+lliurex-neutro: lliurex-neutro.render.21.16.9 lliurex-neutro.render.21.4.3
 
 lliurex-sunset: lliurex-sunset.render
 lliurex-xiquets: lliurex-xiquets.render
