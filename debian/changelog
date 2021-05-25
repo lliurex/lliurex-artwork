@@ -1,3 +1,10 @@
+lliurex-artwork (21.0.5.0) focal; urgency=medium
+
+  * Added 4:3 backgrounds
+  * fixes
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 25 May 2021 14:37:51 +0200
+
 lliurex-artwork (21.0.4.0) focal; urgency=medium
 
   * fixed makefile
