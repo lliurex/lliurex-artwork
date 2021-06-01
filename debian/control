@@ -8,123 +8,99 @@ Standards-Version: 4.1.2
 Package: lliurex-desktop-icon-theme
 Architecture: all
 Section: x11
-Description: LliureX 19.7 icon theme
- LliureX 19.7 icon theme based on Breeze
+Description: LliureX 21 icon theme
+ LliureX 21 icon theme based on Breeze
 
 Package: lliurex-desktop-color-scheme
 Architecture: all
 Section: x11
-Description: LliureX 19.7 color scheme
- LliureX 19.7 default KDE color scheme
+Description: LliureX 21 color scheme
+ LliureX 21 default KDE color scheme
 
 Package: lliurex-desktop-plasma-look-and-feel
 Architecture: all
 Section: x11
-Description: LliureX 19.7 plasma look and feel theme
- LliureX 19.7 default KDE Plasma look and feel themes (classic and default)
+Description: LliureX 21 plasma look and feel theme
+ LliureX 21 default KDE Plasma look and feel themes (classic and default)
 
 Package: lliurex-desktop-plasma-theme
 Architecture: all
 Section: x11
-Description: LliureX 19.7 plasma theme
- LliureX 19.7 default KDE Plasma theme
+Description: LliureX 21 plasma theme
+ LliureX 21 default KDE Plasma theme
 
 Package: lliurex-desktop-wallpaper
 Architecture: all
 Section: x11
-Description: LliureX 19.7 desktop wallpaper
- LliureX 19.7 desktop wallpaper with KDE plasma package
+Description: LliureX 21 desktop wallpaper
+ LliureX 21 desktop wallpaper with KDE plasma package
 
 Package: lliurex-desktop-defaults
 Architecture: all
 Conflicts: neon-adwaita
 Depends: lliurex-desktop-color-scheme, lliurex-desktop-icon-theme, lliurex-desktop-plasma-look-and-feel, lliurex-desktop-plasma-theme, lliurex-desktop-wallpaper, lliurex-sddm-theme, lliurex-plymouth-theme, plasma-applet-places-widget, lliurex-breeze-gtk-theme
 Section: x11
-Description: LliureX 19.7 xdg defaults 
- LliureX 19.7 xdg scripts
-
-Package: lliurex-classroom-plasma-theme
-Architecture: all
-Section: x11
-Description: LliureX 19.7 classroom plasma theme
- LliureX 19.7 classroom KDE Plasma theme
+Description: LliureX 21 xdg defaults 
+ LliureX 21 xdg scripts
 
 Package: lliurex-classroom-wallpaper
 Architecture: all
 Section: x11
-Description: LliureX 19.7 classroom wallpaper
- LliureX 19.7 classroom wallpaper with KDE plasma package
+Description: LliureX 21 classroom wallpaper
+ LliureX 21 classroom wallpaper with KDE plasma package
 
 Package: lliurex-classroom-defaults
 Architecture: all
-Depends: lliurex-desktop-defaults, lliurex-classroom-wallpaper, lliurex-classroom-plasma-theme, lliurex-sddm-theme
+Depends: lliurex-desktop-defaults, lliurex-classroom-wallpaper, lliurex-sddm-theme
 Section: x11
-Description: LliureX 19.7 classroom xdg defaults 
- LliureX 19.7 xdg scripts
+Description: LliureX 21 classroom xdg defaults 
+ LliureX 21 xdg scripts
 
 Package: lliurex-server-defaults
 Architecture: all
 Depends: lliurex-classroom-defaults, lliurex-sddm-theme
 Section: x11
-Description: LliureX 19.7 server xdg defaults 
- LliureX 19.7 xdg scripts
+Description: LliureX 21 server xdg defaults 
+ LliureX 21 xdg scripts
 
 Package: lliurex-infantil-wallpaper
 Architecture: all
 Section: x11
-Description: LliureX 19.7 Infantil wallpaper
- LliureX 19.7 Infantil wallpaper with KDE plasma package
-
-Package: lliurex-infantil-plasma-theme
-Architecture: all
-Section: x11
-Description: LliureX 19.7 infantil plasma theme
- LliureX 19.7 infantil KDE Plasma theme
+Description: LliureX 21 Infantil wallpaper
+ LliureX 21 Infantil wallpaper with KDE plasma package
 
 Package: lliurex-infantil-defaults
 Architecture: all
-Depends: lliurex-desktop-defaults, lliurex-infantil-wallpaper, lliurex-infantil-plasma-theme
+Depends: lliurex-desktop-defaults, lliurex-infantil-wallpaper
 Section: x11
-Description: LliureX 19.7 infantil xdg defaults 
- LliureX 19.7 Infantil xdg scripts
+Description: LliureX 21 infantil xdg defaults 
+ LliureX 21 Infantil xdg scripts
 
 Package: lliurex-musica-wallpaper
 Architecture: all
 Section: x11
-Description: LliureX 19.7 Musica wallpaper
- LliureX 19.7 Musica wallpaper with KDE plasma package
-
-Package: lliurex-musica-plasma-theme
-Architecture: all
-Section: x11
-Description: LliureX 19.7 musica plasma theme
- LliureX 19.7 musica KDE Plasma theme
+Description: LliureX 21 Musica wallpaper
+ LliureX 21 Musica wallpaper with KDE plasma package
 
 Package: lliurex-musica-defaults
 Architecture: all
-Depends: lliurex-desktop-defaults, lliurex-musica-wallpaper, lliurex-musica-plasma-theme
+Depends: lliurex-desktop-defaults, lliurex-musica-wallpaper
 Section: x11
-Description: LliureX 19.7 Musica xdg defaults 
- LliureX 19.7 Musica xdg scripts
+Description: LliureX 21 Musica xdg defaults 
+ LliureX 21 Musica xdg scripts
 
 Package: lliurex-fp-wallpaper
 Architecture: all
 Section: x11
-Description: LliureX 19.7 FP wallpaper
- LliureX 19.7 FP wallpaper with KDE plasma package
-
-Package: lliurex-fp-plasma-theme
-Architecture: all
-Section: x11
-Description: LliureX 19.7 FP plasma theme
- LliureX 19.7 FP KDE Plasma theme
+Description: LliureX 21 FP wallpaper
+ LliureX 21 FP wallpaper with KDE plasma package
 
 Package: lliurex-fp-defaults
 Architecture: all
-Depends: lliurex-desktop-defaults, lliurex-fp-wallpaper, lliurex-fp-plasma-theme
+Depends: lliurex-desktop-defaults, lliurex-fp-wallpaper
 Section: x11
-Description: LliureX 19.7 FP xdg defaults 
- LliureX 19.7 FP xdg scripts
+Description: LliureX 21 FP xdg defaults 
+ LliureX 21 FP xdg scripts
 
 Package: lliurex-19-wallpaper
 Architecture: all
@@ -136,6 +112,6 @@ Package: lliurex-breeze-gtk-theme
 Architecture: all
 Depends: breeze-gtk-theme
 Section: x11
-Description: LliureX 19.7 fix for breeze-gtk-theme
- LliureX 19.7 custom css to fix vertical spinbuttons and togglebuttons
+Description: LliureX 21 fix for breeze-gtk-theme
+ LliureX 21 custom css to fix vertical spinbuttons and togglebuttons
  
