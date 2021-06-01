@@ -160,11 +160,7 @@ install: build
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
-	cp -r desktoptheme/lliurex-desktop $(DESTDIR)/usr/share/plasma/desktoptheme/
-	cp -r desktoptheme/lliurex-classroom $(DESTDIR)/usr/share/plasma/desktoptheme/
-	cp -r desktoptheme/lliurex-musica $(DESTDIR)/usr/share/plasma/desktoptheme/
-	cp -r desktoptheme/lliurex-infantil $(DESTDIR)/usr/share/plasma/desktoptheme/
-	cp -r desktoptheme/lliurex-fp $(DESTDIR)/usr/share/plasma/desktoptheme/
+	cp -r desktoptheme/net.lliurex.desktop $(DESTDIR)/usr/share/plasma/desktoptheme/
 	cp -r look-and-feel/net.lliurex.default $(DESTDIR)/usr/share/plasma/look-and-feel/
 	cp -r look-and-feel/net.lliurex.classic $(DESTDIR)/usr/share/plasma/look-and-feel/
 #wallpapers
@@ -211,8 +207,7 @@ install: build
 uninstall:
 
 #plasma theme
-	rm -rf $(DESTDIR)/usr/share/plasma/desktoptheme/lliurex-desktop
-	rm -rf $(DESTDIR)/usr/share/plasma/desktoptheme/lliurex-classroom
+	rm -rf $(DESTDIR)/usr/share/plasma/desktoptheme/net.lliurex.desktop
 	rm -rf $(DESTDIR)/usr/share/plasma/look-and-feel/net.lliurex.default
 	rm -rf $(DESTDIR)/usr/share/plasma/look-and-feel/net.lliurex.classic
 
