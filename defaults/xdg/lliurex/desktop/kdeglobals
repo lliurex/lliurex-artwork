@@ -1,9 +1,7 @@
-[Theme]
-name=lliurex-desktop
-
 [KDE]
 ChangeCursor=true
 contrast=4
 ShowDeleteCommand=false
 SingleClick=false
+LookAndFeelPackage=net.lliurex.default
 

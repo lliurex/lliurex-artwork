@@ -1,5 +1,9 @@
 var plasma = getApiVersion(1);
 
+const config = ConfigFile("lliurexrc");
+config.group = "plasma";
+var wname = config.readEntry("wallpaper");
+
 var layout = {
     "desktops": [
         {
@@ -24,6 +28,9 @@ var layout = {
                     "ToolBoxButtonState": "topcenter",
                     "ToolBoxButtonX": "565",
                     "sortMode": "-1"
+                },
+                "/Wallpaper/org.kde.image/General": {
+                    "Image": wname
                 }
             },
             "wallpaperPlugin": "org.kde.image"
