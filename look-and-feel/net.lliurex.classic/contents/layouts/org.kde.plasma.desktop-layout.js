@@ -131,7 +131,9 @@ var layout = {
                             "DialogWidth": "720"
                         },
                         "/Configuration/General" : {
-                            "showFullName": "false"
+                            "showFace": "true",
+                            "showFullName": "false",
+                            "showName": "false"
                         }
                     },
                     "plugin": "org.kde.plasma.userswitcher"
