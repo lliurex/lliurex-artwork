@@ -1,3 +1,11 @@
+lliurex-artwork (21.1.6.0) focal; urgency=medium
+
+  * Fixed makefile path
+  * Added custom lliurex avatar files
+  * fixed classic layout showing user name instead of avatar
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 01 Jun 2021 12:22:58 +0200
+
 lliurex-artwork (21.1.5.0) focal; urgency=medium
 
   * Overhauled whole look and feel mechanism
