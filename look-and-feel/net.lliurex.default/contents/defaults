@@ -9,7 +9,7 @@ ColorScheme=BreezeLight
 Theme=lliurex
 
 [plasmarc][Theme]
-name=lliurex-desktop
+name=net.lliurex.desktop
 
 [kcminputrc][Mouse]
 cursorTheme=Breeze_Snow
@@ -25,4 +25,4 @@ library=org.kde.breeze
 
 [ksplashrc][KSplash]
 Engine=KSplashQML
-Theme=lliurex-desktop
+Theme=net.lliurex.default
