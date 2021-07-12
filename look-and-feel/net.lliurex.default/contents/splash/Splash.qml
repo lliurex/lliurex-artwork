@@ -17,46 +17,94 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.1
+/* depends on lliurex sddm package */
+import Lliurex.Noise 1.0 as Noise
+//import "/usr/share/sddm/themes/lliurex/ui" as Lliurex
 
-Image {
-    
+import SddmComponents 2.0 as Sddm
+import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami 2.16 as Kirigami
+import org.kde.kcoreaddons 1.0 as KCoreAddons
+
+import QtQuick 2.6
+import QtQuick.Controls 2.6 as QQC2
+import QtQuick.Layouts 1.15
+
+Rectangle {
     id: root
-    source: "images/background.svg"
-
-    property int stage
-
-    onStageChanged: {
+    property int stage: 0
+    
+    anchors.fill:parent
+    
+    color: "#2980b9"
+    
+    Noise.UniformSurface {
+        opacity: 0.025
+        
+        anchors.fill: parent
     }
     
-    Image {
-        id: isotype
-        source: "images/isotype.svg"
-        
-        anchors.centerIn: parent
-    }
-    
-    Image {
-        id: logotype
-        source: "images/logotype.svg"
-        
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.top: isotype.bottom
+    KCoreAddons.KUser {
+        id: kuser
     }
     
     Rectangle {
-        id: progressbar
-        color: "#65b0dc"
-        height: 8
-        y: parent.height-48
-        x: 0
-        width: (stage==0) ? 0: (parent.width*stage/6.0)
-        Behavior on width { 
-            PropertyAnimation {
-                duration: 1000
-                easing.type: Easing.InOutQuad
+        id: shadow
+        color: "#40000000"
+        radius:5
+        anchors.centerIn: parent
+        width: pane.width+6
+        height: pane.height+6
+    }
+    
+    Rectangle {
+        id: pane
+        width: 320
+        height:240
+        radius: 5
+        color: "#eff0f1"
+        
+        anchors.centerIn:parent
+        
+        ColumnLayout {
+            anchors.fill: parent
+            anchors.margins:12
+            
+            Image {
+                sourceSize: Qt.size(64 ,64)
+                fillMode: Image.PreserveAspectCrop
+                Layout.alignment: Qt.AlignCenter
+                source: {
+                    if(kuser.faceIconUrl!="") {
+                        return kuser.faceIconUrl
+                    }
+                    else {
+                        return "user-identity"
+                    }
+                }
+            }
+            
+            QQC2.Label {
+                Layout.alignment: Qt.AlignCenter
+                text: kuser.fullName
+            }
+            
+            QQC2.Label {
+                Layout.alignment: Qt.AlignCenter
+                text: "Loading session..."
+            }
+            
+            QQC2.ProgressBar {
+                Layout.alignment: Qt.AlignCenter
+                value: root.stage/6.0
+                
+                Behavior on value { 
+                    PropertyAnimation {
+                        duration: 1000
+                        easing.type: Easing.InOutQuad
+                    }
+                }
             }
         }
     }
-    
 }
