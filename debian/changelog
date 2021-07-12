@@ -1,3 +1,11 @@
+lliurex-artwork (21.2.0.0) focal; urgency=medium
+
+  * Overhauled splash
+  * modifications to konsole
+  * new avatar added
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Mon, 12 Jul 2021 13:43:23 +0200
+
 lliurex-artwork (21.1.6.0) focal; urgency=medium
 
   * Fixed makefile path
