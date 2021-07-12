@@ -1,6 +1,8 @@
 [Desktop Entry]
 DefaultProfile=lliurex.profile
 
+[KonsoleWindow]
+SaveGeometryOnExit=false
 
 [MainWindow]
 Width = 600
