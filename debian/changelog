@@ -1,3 +1,10 @@
+lliurex-artwork (21.2.1.0) focal; urgency=medium
+
+  * Splash fixes
+  * Added dolphinrc settings
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 13 Jul 2021 00:01:14 +0200
+
 lliurex-artwork (21.2.0.0) focal; urgency=medium
 
   * Overhauled splash
