@@ -19,7 +19,6 @@
 
 /* depends on lliurex sddm package */
 import Lliurex.Noise 1.0 as Noise
-//import "/usr/share/sddm/themes/lliurex/ui" as Lliurex
 
 import SddmComponents 2.0 as Sddm
 import org.kde.plasma.core 2.0 as PlasmaCore
@@ -70,18 +69,15 @@ Rectangle {
             anchors.fill: parent
             anchors.margins:12
             
-            Image {
-                sourceSize: Qt.size(64 ,64)
-                fillMode: Image.PreserveAspectCrop
+            QQC2.Button {
+                flat:true
+                icon.width:64
+                icon.height:64
                 Layout.alignment: Qt.AlignCenter
-                source: {
-                    if(kuser.faceIconUrl!="") {
-                        return kuser.faceIconUrl
-                    }
-                    else {
-                        return "user-identity"
-                    }
-                }
+                
+                icon.source:kuser.faceIconUrl
+                icon.name:kuser.faceIconUrl=="" ? "user-identity" : ""
+                
             }
             
             QQC2.Label {
@@ -91,7 +87,7 @@ Rectangle {
             
             QQC2.Label {
                 Layout.alignment: Qt.AlignCenter
-                text: "Loading session..."
+                text: i18nd("lliurex-plasma-theme","Loading desktop...")
             }
             
             QQC2.ProgressBar {
