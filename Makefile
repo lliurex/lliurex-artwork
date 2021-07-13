@@ -200,9 +200,9 @@ install: build
 #icon theme
 	cp -r icons/lliurex $(DESTDIR)/usr/share/icons/
 
-#avatar
-	mkdir -p $(DESTDIR)/usr/share/plasma/avatar/lliurex
-	cp -r avatar/*.png $(DESTDIR)/usr/share/plasma/avatar/lliurex
+#avatars
+	mkdir -p $(DESTDIR)/usr/share/plasma/avatars/lliurex
+	cp -r avatar/*.png $(DESTDIR)/usr/share/plasma/avatars/lliurex
 	
 uninstall:
 
@@ -244,7 +244,7 @@ uninstall:
 #icon theme
 	rm -rf $(DESTDIR)/usr/share/icons/lliurex
 
-#avatar
-	rm -rf $(DESTDIR)/usr/share/plasma/avatar/lliurex
+#avatars
+	rm -rf $(DESTDIR)/usr/share/plasma/avatars/lliurex
 
 .PHONY: all clean install uninstall build
