@@ -202,7 +202,7 @@ install: build
 
 #avatars
 	mkdir -p $(DESTDIR)/usr/share/plasma/avatars/lliurex
-	cp -r avatar/*.png $(DESTDIR)/usr/share/plasma/avatars/lliurex
+	cp -r avatars/*.png $(DESTDIR)/usr/share/plasma/avatars/lliurex
 	
 uninstall:
 
