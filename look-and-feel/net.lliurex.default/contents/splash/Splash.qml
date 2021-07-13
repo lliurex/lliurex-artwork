@@ -69,14 +69,13 @@ Rectangle {
             anchors.fill: parent
             anchors.margins:12
             
-            QQC2.Button {
-                flat:true
-                icon.width:64
-                icon.height:64
+            Kirigami.Icon {
                 Layout.alignment: Qt.AlignCenter
+                Layout.minimumWidth: Kirigami.Units.iconSizes.huge
+                Layout.minimumHeight: width
                 
-                icon.source:kuser.faceIconUrl
-                icon.name:kuser.faceIconUrl=="" ? "user-identity" : ""
+                source: kuser.faceIconUrl
+                fallback: "preferences-system-user-sudo"
                 
             }
             

@@ -107,7 +107,7 @@ var layout = {
                             "DialogWidth": "720"
                         },
                         "/Configuration/General": {
-                            "launchers":[ "applications:org.kde.dolphin.desktop","applications:systemsettings.desktop","applications:org.kde.konsole.desktop","applications:firefox.desktop","applications:org.kde.kcalc.desktop","applications:org.kde.ksysguard.desktop"],
+                            "launchers":[ "applications:org.kde.dolphin.desktop","applications:systemsettings.desktop","applications:firefox.desktop","applications:org.kde.kcalc.desktop"],
                             "showOnlyCurrentDesktop": "false"
                         }
                     },
@@ -178,8 +178,8 @@ var layout = {
             "height": 2.7777777777777777,
             "hiding": "normal",
             "location": "bottom",
-            "maximumLength": 106.66666666666667,
-            "minimumLength": 82.44444444444444,
+            "maximumLength": 85.0,
+            "minimumLength": 80.0,
             "offset": 0
         }
     ],
