@@ -1,3 +1,11 @@
+lliurex-artwork (21.2.2.0) focal; urgency=medium
+
+  * Splash fixes
+  * Layout fixes (panel size and desktops)
+  * Avatar path
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 13 Jul 2021 20:42:42 +0200
+
 lliurex-artwork (21.2.1.0) focal; urgency=medium
 
   * Splash fixes
