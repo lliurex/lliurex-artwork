@@ -1,3 +1,10 @@
+lliurex-artwork (21.3.0.0) focal; urgency=medium
+
+  * Added locale support
+  * Updating copyright file
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Fri, 16 Jul 2021 12:49:41 +0200
+
 lliurex-artwork (21.2.2.1) focal; urgency=medium
 
   * Add statistics,inventory icons for appselector (calamares)

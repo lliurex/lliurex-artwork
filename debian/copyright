@@ -5,6 +5,11 @@ Upstream-Source: http://lliurex.net
 Files: *
 Copyright: Copyright © 2019 Enrique Medina Gremaldos <quiqueiii@gmail.com>
 License: GPL-3+
+
+Files: lliurex-escriptori lliurex-aula lliurex-infantil lliurex-musica lliurex-neutro
+Copyright:  Copyright © 2021 Pablo Broseta <pablobrosetamico@gmail.com>
+            Copyright © 2021 Enrique Medina Gremaldos <quiqueiii@gmail.com>
+License: CC-BY-SA 4.0
  
 License: GPL-3+
 
