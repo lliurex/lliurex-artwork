@@ -124,7 +124,13 @@ w21: lliurex-escriptori lliurex-aula lliurex-infantil lliurex-musica lliurex-neu
 
 wallpapers:w21 lliurex-sunset lliurex-xiquets lliurex-xiquet lliurex-19 lliurex-19+1
 
-build: wallpapers previews
+locale/%.mo:
+	@echo -e '$(COLOR_RED)* msgfmt [$*] $(COLOR_NONE)'
+	msgfmt locale/$*.po -o locale/$*.mo
+
+locales: locale/es.mo
+
+build: wallpapers previews locales
 
 all: build
 
@@ -203,6 +209,10 @@ install: build
 #avatars
 	mkdir -p $(DESTDIR)/usr/share/plasma/avatars/lliurex
 	cp -r avatars/*.png $(DESTDIR)/usr/share/plasma/avatars/lliurex
+	
+#locale
+	cp locale/es.mo /usr/share/locale/es/LC_MESSAGES/lliurex-plasma-theme.mo
+	
 	
 uninstall:
 
