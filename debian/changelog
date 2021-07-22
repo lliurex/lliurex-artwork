@@ -1,3 +1,9 @@
+lliurex-artwork (21.3.3.0) focal; urgency=medium
+
+  * yet antother try to get package working
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 22 Jul 2021 13:49:33 +0200
+
 lliurex-artwork (21.3.2.1) focal; urgency=medium
 
   * fixing packaging
