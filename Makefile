@@ -212,7 +212,7 @@ install: build
 	cp -r avatars/*.png $(DESTDIR)/usr/share/plasma/avatars/lliurex
 	
 #locale
-	cp -r locale/mos/* /usr/share/locale/
+	cp -r locale/mos/* $(DESTDIR)/usr/share/locale/
 	
 	
 uninstall:
