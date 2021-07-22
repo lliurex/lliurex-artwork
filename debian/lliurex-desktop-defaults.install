@@ -8,3 +8,5 @@ bin/*	/usr/bin/
 defaults/dconf/lliurex	/etc/dconf/profile/
 defaults/dconf/*settings	/etc/dconf/db/lliurex.d/
 avatar/*.png	/usr/share/plasma/avatar/lliurex/
+locale/es.mo /usr/share/locale/es/LC_MESSAGES/lliurex-plasma-theme.mo
+locale/ca@valencia.mo /usr/share/locale/ca@valencia/LC_MESSAGES/lliurex-plasma-theme.mo

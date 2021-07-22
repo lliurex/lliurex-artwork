@@ -1,3 +1,9 @@
+lliurex-artwork (21.3.1.0) focal; urgency=medium
+
+  * Added translations for qml stuff
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 22 Jul 2021 12:54:45 +0200
+
 lliurex-artwork (21.3.0.0) focal; urgency=medium
 
   * Added locale support
