@@ -126,7 +126,8 @@ wallpapers:w21 lliurex-sunset lliurex-xiquets lliurex-xiquet lliurex-19 lliurex-
 
 locale/%.mo:
 	@echo -e '$(COLOR_RED)* msgfmt [$*] $(COLOR_NONE)'
-	msgfmt locale/$*.po -o locale/$*.mo
+	mkdir -p locale/mos/$*/LC_MESSAGES
+	msgfmt locale/$*.po -o locale/mos/$*/LC_MESSAGES/lliurex-plasma-theme.mo
 
 locales: locale/es.mo locale/ca@valencia.mo
 
@@ -211,8 +212,7 @@ install: build
 	cp -r avatars/*.png $(DESTDIR)/usr/share/plasma/avatars/lliurex
 	
 #locale
-	cp locale/es.mo /usr/share/locale/es/LC_MESSAGES/lliurex-plasma-theme.mo
-	cp locale/ca@valencia.mo /usr/share/locale/ca@valencia/LC_MESSAGES/lliurex-plasma-theme.mo
+	cp -r locale/mos/* /usr/share/locale/
 	
 	
 uninstall:
