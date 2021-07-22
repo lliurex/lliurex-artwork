@@ -1,3 +1,9 @@
+lliurex-artwork (21.3.2.0) focal; urgency=medium
+
+  * Fixed translation build and install script
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 22 Jul 2021 13:14:41 +0200
+
 lliurex-artwork (21.3.1.0) focal; urgency=medium
 
   * Added translations for qml stuff
