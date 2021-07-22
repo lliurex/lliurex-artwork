@@ -7,6 +7,6 @@ defaults/searchproviders/* /usr/share/kservices5/searchproviders/
 bin/*	/usr/bin/
 defaults/dconf/lliurex	/etc/dconf/profile/
 defaults/dconf/*settings	/etc/dconf/db/lliurex.d/
-avatar/*.png	/usr/share/plasma/avatar/lliurex/
+avatars/*.png	/usr/share/plasma/avatars/lliurex/
 locale/mos/* /usr/share/locale/
 

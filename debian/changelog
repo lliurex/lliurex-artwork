@@ -1,3 +1,9 @@
+lliurex-artwork (21.3.4.1) focal; urgency=medium
+
+  * fixed typo in avatar install path
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 22 Jul 2021 14:04:01 +0200
+
 lliurex-artwork (21.3.4.0) focal; urgency=medium
 
   * really?
