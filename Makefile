@@ -128,7 +128,7 @@ locale/%.mo:
 	@echo -e '$(COLOR_RED)* msgfmt [$*] $(COLOR_NONE)'
 	msgfmt locale/$*.po -o locale/$*.mo
 
-locales: locale/es.mo
+locales: locale/es.mo locale/ca@valencia.mo
 
 build: wallpapers previews locales
 
@@ -212,6 +212,7 @@ install: build
 	
 #locale
 	cp locale/es.mo /usr/share/locale/es/LC_MESSAGES/lliurex-plasma-theme.mo
+	cp locale/ca@valencia.mo /usr/share/locale/ca@valencia/LC_MESSAGES/lliurex-plasma-theme.mo
 	
 	
 uninstall:
