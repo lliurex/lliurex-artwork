@@ -1,6 +1,7 @@
 lliurex-artwork (21.3.5.0) focal; urgency=medium
 
   * Forcing kicker defauls via diversion
+  * Added missing 4:3 svg wallpaper layer
 
  -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 26 Jul 2021 11:35:10 +0200
 
