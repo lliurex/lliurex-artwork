@@ -1,3 +1,9 @@
+lliurex-artwork (21.3.5.1) focal; urgency=medium
+
+  * Fixed lliurex-desktop-defaults plasmoids install path
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 26 Jul 2021 12:25:57 +0200
+
 lliurex-artwork (21.3.5.0) focal; urgency=medium
 
   * Forcing kicker defauls via diversion
