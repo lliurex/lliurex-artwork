@@ -7,8 +7,6 @@ case "$1" in
 
                 PACKAGE_NAME="lliurex-breeze-gtk-theme"
 
-                # GIMP
-
                 DEFAULT_CSS="/usr/share/themes/Breeze/gtk-3.0/gtk.css"
                 LLIUREX_CSS="/usr/share/themes/Breeze/gtk-3.0/lliurex-gtk.css"
                 DIVERTED_CSS="/usr/share/themes/Breeze/gtk-3.0/gtk.css.diverted"
