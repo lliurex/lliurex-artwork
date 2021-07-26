@@ -2,9 +2,22 @@
 
 set -e
 
+    PACKAGE_NAME="lliurex-desktop-default-settings"
+
+    DEFAULT_CONFIG="/usr/share/plasma/plasmoids/org.kde.plasma.kicker/contents/config/main.xml"
+    LLIUREX_CONFIG="/usr/share/plasma/plasmoids/org.kde.plasma.kicker/contents/config/main.xml.lliurex"
+    DIVERTED_CONFIG="/usr/share/plasma/plasmoids/org.kde.plasma.kicker/contents/config/main.xml.diverted"
+
 if [ "$1" = "configure" ] ; then
     #update dconf database, as we droped new settings
     dconf update
+    
+    if [ -f $DEFAULT_CONFIG ]; then
+        if dpkg-divert --package ${PACKAGE_NAME} --add  --rename  --divert ${DIVERTED_CONFIG} ${DEFAULT_CONFIG} ; then
+            ln -fs ${LLIUREX_CONFIG} ${DEFAULT_CONFIG} || true
+        fi
+    fi
+    
 fi
 
 #DEBHELPER#

@@ -1,3 +1,9 @@
+lliurex-artwork (21.3.5.0) focal; urgency=medium
+
+  * Forcing kicker defauls via diversion
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 26 Jul 2021 11:35:10 +0200
+
 lliurex-artwork (21.3.4.1) focal; urgency=medium
 
   * fixed typo in avatar install path
