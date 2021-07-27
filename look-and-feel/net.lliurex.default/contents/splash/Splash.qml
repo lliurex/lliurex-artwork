@@ -70,7 +70,7 @@ Rectangle {
             anchors.margins:12
             
             Kirigami.Icon {
-                Layout.alignment: Qt.AlignCenter
+                Layout.alignment: Qt.AlignCenter 
                 Layout.minimumWidth: Kirigami.Units.iconSizes.huge
                 Layout.minimumHeight: width
                 
@@ -80,7 +80,7 @@ Rectangle {
             }
             
             QQC2.Label {
-                Layout.alignment: Qt.AlignCenter
+                Layout.alignment: Qt.AlignCenter | Qt.AlignTop
                 text: kuser.fullName
             }
             
