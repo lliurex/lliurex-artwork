@@ -103,8 +103,8 @@ ForegroundPositive=46,204,113
 ForegroundVisited=61,174,230
 
 [General]
-ColorScheme=LliureX
-Name=LliureX
+ColorScheme=lliurex
+Name=lliurex
 shadeSortColumn=true
 
 [KDE]
