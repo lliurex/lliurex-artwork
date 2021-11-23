@@ -74,8 +74,14 @@ Rectangle {
                 Layout.minimumWidth: Kirigami.Units.iconSizes.huge
                 Layout.minimumHeight: width
                 
-                source: kuser.faceIconUrl
-                fallback: "preferences-system-user-sudo"
+                source: {
+                    if (kuser.faceIconUrl.toString().length==0) {
+                        return "user-identity";
+                    }
+                    else {
+                        return kuser.faceIconUrl;
+                    }
+                }
                 
             }
             
