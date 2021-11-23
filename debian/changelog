@@ -1,3 +1,9 @@
+lliurex-artwork (21.4.1.0) focal; urgency=medium
+
+  * Displaying an icon when avatar is not available
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 23 Nov 2021 23:43:52 +0100
+
 lliurex-artwork (21.4.0.0) focal; urgency=medium
 
   * Trying to fix window colors and classic layout splash
