@@ -1,3 +1,9 @@
+lliurex-artwork (21.4.2.0) focal; urgency=medium
+
+  * Add Anydesk icon
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Thu, 02 Dec 2021 09:53:12 +0100
+
 lliurex-artwork (21.4.1.0) focal; urgency=medium
 
   * Displaying an icon when avatar is not available
