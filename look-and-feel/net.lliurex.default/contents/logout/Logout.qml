@@ -99,7 +99,7 @@ Item {
                     implicitWidth: PlasmaCore.Units.gridUnit*6
                     icon.name: "system-shutdown"
                     display: QQC2.AbstractButton.TextUnderIcon
-                    focus: sdtype === ShutdownType.ShutdownTypeHalt
+                    focus: sdtype == ShutdownType.ShutdownTypeHalt
                     
                     onClicked: root.haltRequested();
                     
@@ -111,7 +111,7 @@ Item {
                     implicitWidth: PlasmaCore.Units.gridUnit*6
                     icon.name: "system-reboot"
                     display: QQC2.AbstractButton.TextUnderIcon
-                    focus: sdtype === ShutdownType.ShutdownTypeReboot
+                    focus: sdtype == ShutdownType.ShutdownTypeReboot
                     
                     onClicked: root.rebootRequested();
                     
@@ -123,7 +123,7 @@ Item {
                     implicitWidth: PlasmaCore.Units.gridUnit*6
                     icon.name: "system-log-out"
                     display: QQC2.AbstractButton.TextUnderIcon
-                    focus: sdtype === ShutdownType.ShutdownTypeNone
+                    focus: sdtype == ShutdownType.ShutdownTypeNone
                     
                     onClicked: root.logoutRequested();
                     
@@ -145,7 +145,7 @@ Item {
             
             PlasmaComponents.Button {
                 Layout.alignment: Qt.AlignRight
-                text: "Cancel:"+sdtype
+                text: i18nd("lliurex-sddm-theme","Cancel")
                 implicitWidth: PlasmaCore.Units.gridUnit * 6
                 
                 onClicked: root.cancelRequested();

@@ -18,6 +18,14 @@ Item {
     anchors.fill: parent
     property int lockCount : 0
     property Item topWindow: welcomeWindow
+    property var face: {
+        if (kscreenlocker_userImage.toString().length==0) {
+                return "user-identity";
+            }
+            else {
+                return kscreenlocker_userImage;
+            }
+    }
     
     SessionManagement {
         id: sessionManagement
@@ -96,7 +104,7 @@ Item {
     
     LLX.Window {
         id: welcomeWindow
-        title: "Locked Screen"
+        title: i18nd("lliurex-plasma-theme","Session locked")
         width:320
         height:240
         anchors.centerIn:parent
@@ -105,20 +113,32 @@ Item {
         ColumnLayout {
             anchors.fill: parent
             
+            PlasmaCore.IconItem {
+                Layout.alignment: Qt.AlignHCenter
+                
+                source: face
+                implicitWidth: 64
+                implicitHeight:64
+            }
+            
             QQC2.Label {
                 Layout.alignment: Qt.AlignHCenter
-                text: "Locked by quique"
+                text: kscreenlocker_userName
             }
         }
     }
     
     LLX.Window {
         id: unlockWindow
-        title: "Unlock"
+        title: i18nd("lliurex-plasma-theme","Unlock")
         width:320
         height:320
         visible: root.topWindow == this
         anchors.centerIn:parent
+        
+        onVisibleChanged: {
+            txtPass.focus = true;
+        }
         
         ColumnLayout {
             anchors.fill: parent
@@ -126,8 +146,7 @@ Item {
             PlasmaCore.IconItem {
                 Layout.alignment: Qt.AlignHCenter
                 
-                id: faceIcon
-                source: kscreenlocker_userImage
+                source: face
                 implicitWidth: 64
                 implicitHeight:64
             }
@@ -142,31 +161,43 @@ Item {
                 width: 200
                 Layout.alignment: Qt.AlignHCenter
                 echoMode: TextInput.Password
-                placeholderText: "password"
+                placeholderText: i18nd("lliurex-plasma-theme","Password")
+                
+                Keys.onReturnPressed: {
+                    authenticator.tryUnlock(txtPass.text)
+                }
             }
             
             PlasmaComponents.Button {
-                text: "Unlock"
+                text: i18nd("lliurex-plasma-theme","Unlock")
                 Layout.alignment: Qt.AlignHCenter
+                implicitWidth: PlasmaCore.Units.gridUnit * 6
                 
                 onClicked: {
                     authenticator.tryUnlock(txtPass.text)
                 }
             }
             
-            PlasmaComponents.Button {
-                text: "Change user"
-                Layout.alignment: Qt.AlignHCenter
-                
-                onClicked: {
-                    sessionsModel.startNewSession(true);
-                }
-            }
+            
             
             QQC2.Label {
                 id: msg
                 text:""
             }
+            
+            PlasmaComponents.Button {
+                text: i18nd("lliurex-plasma-theme","Change user")
+                icon.name:"system-users"
+                icon.width:24
+                icon.height:24
+                Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
+                display: QQC2.AbstractButton.TextBesideIcon
+                onClicked: {
+                    sessionsModel.startNewSession(true);
+                }
+            }
+            
+            
         }
     }
 }
