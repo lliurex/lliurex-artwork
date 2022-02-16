@@ -1,5 +1,5 @@
 /*
-    Lliurex Splash
+    Lliurex look and feel
 
     Copyright (C) 2019  Enrique Medina Gremaldos <quiqueiii@gmail.com>
 
@@ -18,61 +18,46 @@
 */
 
 /* depends on lliurex sddm package */
-import Lliurex.Noise 1.0 as Noise
+import net.lliurex.ui 1.0 as LLX
 
 import SddmComponents 2.0 as Sddm
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.kirigami 2.16 as Kirigami
+import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.kcoreaddons 1.0 as KCoreAddons
 
 import QtQuick 2.6
 import QtQuick.Controls 2.6 as QQC2
 import QtQuick.Layouts 1.15
 
-Rectangle {
+Item {
     id: root
     property int stage: 0
     
     anchors.fill:parent
     
-    color: "#2980b9"
-    
-    Noise.UniformSurface {
-        opacity: 0.025
-        
-        anchors.fill: parent
-    }
-    
     KCoreAddons.KUser {
         id: kuser
     }
     
-    Rectangle {
-        id: shadow
-        color: "#40000000"
-        radius:5
-        anchors.centerIn: parent
-        width: pane.width+6
-        height: pane.height+6
+    LLX.Background {
+        anchors.fill: parent
     }
-    
-    Rectangle {
+   
+    LLX.Window {
         id: pane
         width: 320
         height:240
-        radius: 5
-        color: "#eff0f1"
         
         anchors.centerIn:parent
         
         ColumnLayout {
             anchors.fill: parent
-            anchors.margins:12
+            anchors.margins:4
             
-            Kirigami.Icon {
+            PlasmaCore.IconItem {
                 Layout.alignment: Qt.AlignCenter 
-                Layout.minimumWidth: Kirigami.Units.iconSizes.huge
-                Layout.minimumHeight: width
+                implicitWidth: 64
+                implicitHeight: 64
                 
                 source: {
                     if (kuser.faceIconUrl.toString().length==0) {
@@ -85,18 +70,19 @@ Rectangle {
                 
             }
             
-            QQC2.Label {
+            PlasmaComponents.Label {
                 Layout.alignment: Qt.AlignCenter | Qt.AlignTop
                 text: kuser.fullName
             }
             
-            QQC2.Label {
+            PlasmaComponents.Label {
                 Layout.alignment: Qt.AlignCenter
                 text: i18nd("lliurex-plasma-theme","Loading desktop...")
             }
             
-            QQC2.ProgressBar {
+            PlasmaComponents.ProgressBar {
                 Layout.alignment: Qt.AlignCenter
+                implicitWidth: 200
                 value: root.stage/6.0
                 
                 Behavior on value { 

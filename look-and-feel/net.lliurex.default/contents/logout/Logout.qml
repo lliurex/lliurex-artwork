@@ -1,3 +1,22 @@
+/*
+    Lliurex look and feel
+
+    Copyright (C) 2022  Enrique Medina Gremaldos <quiqueiii@gmail.com>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 import net.lliurex.ui 1.0 as LLX
 
 import org.kde.plasma.core 2.0 as PlasmaCore
@@ -33,7 +52,7 @@ Item {
     Timer {
         id: timer
         running:true
-        interval: 1000
+        interval: 500
         repeat:true
         
         onTriggered: {
@@ -42,11 +61,41 @@ Item {
             if (root.timeRemaining == 0) {
                 repeat = false;
             }
+            else {
+                var action;
+                
+                switch (sdtype) {
+                    case ShutdownType.ShutdownTypeHalt:
+                        action = "shutdown";
+                    break;
+                    
+                    default:
+                        action = "";
+                }
+                
+                msgText.text="System is going to "+action+" in "+root.timeRemaining+" s";
+            }
         }
+    }
+    
+    Component.onCompleted: {
+        switch (sdtype) {
+            case ShutdownType.ShutdownTypeHalt:
+                btnHalt.forceActiveFocus();
+            break;
+            
+        }
+        
+        btnHalt.forceActiveFocus();
+    }
+    
+    Keys.onReturnPressed: {
+        console.log("Enter Item");
     }
     
     LLX.Background {
         anchors.fill: parent
+        focus: false
     }
     
     LLX.Window {
@@ -56,6 +105,7 @@ Item {
         height:320
         anchors.centerIn:parent
         //visible: root.topWindow == this
+        focus: true
         
         ColumnLayout {
             anchors.fill: parent
@@ -67,15 +117,17 @@ Item {
                 source: kuser.faceIconUrl
                 //visible: (face.status == Image.Error || face.status == Image.Null)
                 implicitWidth: 64
-                implicitHeight:64
+                implicitHeight: 64
+                focus: false
                 //anchors.fill: parent
                 //anchors.margins: PlasmaCore.Units.gridUnit * 0.5 // because mockup says so...
                 //colorGroup: PlasmaCore.ColorScope.colorGroup
             }
             
-            QQC2.Label {
+            PlasmaComponents.Label {
                 Layout.alignment: Qt.AlignHCenter
                 text: kuser.fullName
+                focus: false
             }
             
             RowLayout {
@@ -83,7 +135,7 @@ Item {
                 Layout.alignment: Qt.AlignHCenter
                 
                 PlasmaComponents.Button {
-                    text: i18nd("lliurex-sddm-theme","Suspend")
+                    text: i18nd("lliurex-plasma-theme","Suspend")
                     
                     implicitWidth: PlasmaCore.Units.gridUnit*6
                     icon.name: "system-suspend"
@@ -94,47 +146,54 @@ Item {
                 }
                 
                 PlasmaComponents.Button {
-                    text: i18nd("lliurex-sddm-theme","Power off")
+                    id: btnHalt
+                    text: i18nd("lliurex-plasma-theme","Power off")
                     
                     implicitWidth: PlasmaCore.Units.gridUnit*6
                     icon.name: "system-shutdown"
                     display: QQC2.AbstractButton.TextUnderIcon
-                    focus: sdtype == ShutdownType.ShutdownTypeHalt
+                    focus: sdtype === ShutdownType.ShutdownTypeHalt
+                    //focus: true
                     
                     onClicked: root.haltRequested();
                     
                 }
                 
                 PlasmaComponents.Button {
-                    text: i18nd("lliurex-sddm-theme","Reboot")
+                    text: i18nd("lliurex-plasma-theme","Reboot")
                     
                     implicitWidth: PlasmaCore.Units.gridUnit*6
                     icon.name: "system-reboot"
                     display: QQC2.AbstractButton.TextUnderIcon
-                    focus: sdtype == ShutdownType.ShutdownTypeReboot
+                    focus: sdtype === ShutdownType.ShutdownTypeReboot
                     
                     onClicked: root.rebootRequested();
                     
                 }
                 
                 PlasmaComponents.Button {
-                    text: i18nd("lliurex-sddm-theme","Log out")
+                    text: i18nd("lliurex-plasma-theme","Log out")
                     
                     implicitWidth: PlasmaCore.Units.gridUnit*6
                     icon.name: "system-log-out"
                     display: QQC2.AbstractButton.TextUnderIcon
-                    focus: sdtype == ShutdownType.ShutdownTypeNone
+                    focus: sdtype === ShutdownType.ShutdownTypeNone
                     
                     onClicked: root.logoutRequested();
                     
                 }
             }
             
-            QQC2.ProgressBar {
+            PlasmaComponents.Label {
+                id: msgText
+                focus: false
+            }
+            
+            PlasmaComponents.ProgressBar {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter
                 value: root.timeRemaining/20.0
-                
+                focus: false
                 Behavior on value { 
                     PropertyAnimation {
                         duration: 1000
@@ -145,9 +204,9 @@ Item {
             
             PlasmaComponents.Button {
                 Layout.alignment: Qt.AlignRight
-                text: i18nd("lliurex-sddm-theme","Cancel")
+                text: i18nd("lliurex-plasma-theme","Cancel")
                 implicitWidth: PlasmaCore.Units.gridUnit * 6
-                
+                focus: false
                 onClicked: root.cancelRequested();
             }
                 

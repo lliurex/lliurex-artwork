@@ -178,8 +178,6 @@ Item {
                 }
             }
             
-            
-            
             QQC2.Label {
                 id: msg
                 text:""
