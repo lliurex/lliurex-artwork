@@ -30,7 +30,7 @@ import QtQuick 2.6
 import QtQuick.Controls 2.6 as QQC2
 import QtQuick.Layouts 1.15
 
-Item {
+PlasmaCore.ColorScope {
     id: root
     focus: true
     anchors.fill: parent
@@ -52,7 +52,7 @@ Item {
     Timer {
         id: timer
         running:true
-        interval: 500
+        interval: 1000
         repeat:true
         
         onTriggered: {
@@ -60,42 +60,65 @@ Item {
             
             if (root.timeRemaining == 0) {
                 repeat = false;
+                
+                switch (sdtype) {
+                    case ShutdownType.ShutdownTypeHalt:
+                        root.haltRequested();
+                    break;
+                    
+                    case ShutdownType.ShutdownTypeReboot:
+                        root.rebootRequested();
+                    break;
+                    
+                    case ShutdownType.ShutdownTypeNone:
+                        root.logoutRequested();
+                    break;
+                }
+                
             }
             else {
                 var action;
                 
                 switch (sdtype) {
                     case ShutdownType.ShutdownTypeHalt:
-                        action = "shutdown";
+                        action = i18nd("lliurex-plasma-theme","System is about to power off");
                     break;
                     
+                    case ShutdownType.ShutdownTypeReboot:
+                        action = i18nd("lliurex-plasma-theme","System is about to reboot");
+                    break;
+                    
+                    case ShutdownType.ShutdownTypeNone:
+                        action = i18nd("lliurex-plasma-theme","Session is about to log out");
+                    break;
                     default:
                         action = "";
                 }
                 
-                msgText.text="System is going to "+action+" in "+root.timeRemaining+" s";
+                msgText.text=action + ": " + root.timeRemaining+i18nd("lliurex-plasma-theme"," seconds");;
             }
         }
     }
     
-    Component.onCompleted: {
+    Keys.onReturnPressed: {
+        
         switch (sdtype) {
             case ShutdownType.ShutdownTypeHalt:
-                btnHalt.forceActiveFocus();
+                root.haltRequested();
             break;
             
+            case ShutdownType.ShutdownTypeReboot:
+                root.rebootRequested();
+            break;
+            
+            case ShutdownType.ShutdownTypeNone:
+                root.logoutRequested();
+            break;
         }
-        
-        btnHalt.forceActiveFocus();
-    }
-    
-    Keys.onReturnPressed: {
-        console.log("Enter Item");
     }
     
     LLX.Background {
         anchors.fill: parent
-        focus: false
     }
     
     LLX.Window {
@@ -133,55 +156,9 @@ Item {
             RowLayout {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter
+                visible: false
                 
-                PlasmaComponents.Button {
-                    text: i18nd("lliurex-plasma-theme","Suspend")
-                    
-                    implicitWidth: PlasmaCore.Units.gridUnit*6
-                    icon.name: "system-suspend"
-                    display: QQC2.AbstractButton.TextUnderIcon
-                    
-                    onClicked: root.suspendRequested(2);
-                    
-                }
                 
-                PlasmaComponents.Button {
-                    id: btnHalt
-                    text: i18nd("lliurex-plasma-theme","Power off")
-                    
-                    implicitWidth: PlasmaCore.Units.gridUnit*6
-                    icon.name: "system-shutdown"
-                    display: QQC2.AbstractButton.TextUnderIcon
-                    focus: sdtype === ShutdownType.ShutdownTypeHalt
-                    //focus: true
-                    
-                    onClicked: root.haltRequested();
-                    
-                }
-                
-                PlasmaComponents.Button {
-                    text: i18nd("lliurex-plasma-theme","Reboot")
-                    
-                    implicitWidth: PlasmaCore.Units.gridUnit*6
-                    icon.name: "system-reboot"
-                    display: QQC2.AbstractButton.TextUnderIcon
-                    focus: sdtype === ShutdownType.ShutdownTypeReboot
-                    
-                    onClicked: root.rebootRequested();
-                    
-                }
-                
-                PlasmaComponents.Button {
-                    text: i18nd("lliurex-plasma-theme","Log out")
-                    
-                    implicitWidth: PlasmaCore.Units.gridUnit*6
-                    icon.name: "system-log-out"
-                    display: QQC2.AbstractButton.TextUnderIcon
-                    focus: sdtype === ShutdownType.ShutdownTypeNone
-                    
-                    onClicked: root.logoutRequested();
-                    
-                }
             }
             
             PlasmaComponents.Label {
@@ -192,7 +169,7 @@ Item {
             PlasmaComponents.ProgressBar {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter
-                value: root.timeRemaining/20.0
+                value: root.timeRemaining/20
                 focus: false
                 Behavior on value { 
                     PropertyAnimation {
@@ -202,15 +179,64 @@ Item {
                 }
             }
             
-            PlasmaComponents.Button {
+            RowLayout {
                 Layout.alignment: Qt.AlignRight
-                text: i18nd("lliurex-plasma-theme","Cancel")
-                implicitWidth: PlasmaCore.Units.gridUnit * 6
-                focus: false
-                onClicked: root.cancelRequested();
-            }
+                /*
+                PlasmaComponents.Button {
+                    text: i18nd("lliurex-plasma-theme","Suspend")
+                    
+                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    icon.name: "system-suspend"
+                    display: QQC2.AbstractButton.TextUnderIcon
+                    
+                    onClicked: root.suspendRequested(2);
+                    
+                }
+                */
+                PlasmaComponents.Button {
+                    id: btnHalt
+                    text: i18nd("lliurex-plasma-theme","Power off")
+                    
+                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    icon.name: "system-shutdown"
+                    //display: QQC2.AbstractButton.TextUnderIcon
+                    visible: sdtype === ShutdownType.ShutdownTypeHalt
+                    
+                    onClicked: root.haltRequested();
+                }
                 
-            
+                PlasmaComponents.Button {
+                    text: i18nd("lliurex-plasma-theme","Reboot")
+                    
+                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    icon.name: "system-reboot"
+                    //display: QQC2.AbstractButton.TextUnderIcon
+                    visible: sdtype === ShutdownType.ShutdownTypeReboot
+                    
+                    onClicked: root.rebootRequested();
+                }
+                
+                PlasmaComponents.Button {
+                    text: i18nd("lliurex-plasma-theme","Log out")
+                    
+                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    icon.name: "system-log-out"
+                    //display: QQC2.AbstractButton.TextUnderIcon
+                    visible: sdtype === ShutdownType.ShutdownTypeNone
+                    
+                    onClicked: root.logoutRequested();
+                    
+                }
+                
+                PlasmaComponents.Button {
+                    Layout.alignment: Qt.AlignRight
+                    text: i18nd("lliurex-plasma-theme","Cancel")
+                    implicitWidth: PlasmaCore.Units.gridUnit * 6
+                    
+                    onClicked: root.cancelRequested();
+                }
+                
+            }
             
         }
     }
