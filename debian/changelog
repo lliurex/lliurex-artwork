@@ -1,3 +1,9 @@
+lliurex-artwork (22.0.0.0~beta1) focal; urgency=medium
+
+  * Merged with master
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 17 Feb 2022 22:01:17 +0100
+
 lliurex-artwork (22.0.0.0~beta0) focal; urgency=medium
 
   * Added a custom lock and logout screen
