@@ -129,6 +129,66 @@ Item {
     }
     
     LLX.Window {
+        id: sessionWindow
+        title: i18nd("lliurex-plasma-theme","Sessions")
+        width: 320
+        height: 480
+        
+        anchors.centerIn:parent
+        visible: root.topWindow == this
+        
+        ColumnLayout {
+            anchors.fill: parent
+            
+            ListView {
+                Layout.alignment: Qt.AlignHCenter
+                height: 400
+                model: sessionsModel
+                
+                delegate: ColumnLayout {
+                    PlasmaComponents.Label {
+                        text: model.name
+                    }
+                    
+                    PlasmaCore.IconItem {
+                        implicitWidth: 48
+                        implicitHeight: 48
+                        source: {
+                            if (model.isTty) {
+                                return "utilities-terminal";
+                            }
+                            if (model.icon=="") {
+                                return "user-identity";
+                            }
+                            
+                            return model.icon;
+                        }
+                        
+                    }
+                    
+                    PlasmaComponents.Label {
+                        text: model.vtNumber
+                    }
+                    
+                    PlasmaComponents.Label {
+                        text: model.displayNumber
+                    }
+                }
+            }
+            
+            PlasmaComponents.Button {
+                text: i18nd("lliurex-plasma-theme","Cancel")
+                Layout.alignment: Qt.AlignRight | Qt.AlignBottom
+                implicitWidth: PlasmaCore.Units.gridUnit * 6
+                
+                onClicked: {
+                    root.topWindow=unlockWindow;
+                }
+            }
+        }
+    }
+    
+    LLX.Window {
         id: unlockWindow
         title: i18nd("lliurex-plasma-theme","Unlock")
         width:320
@@ -185,13 +245,19 @@ Item {
             
             PlasmaComponents.Button {
                 text: i18nd("lliurex-plasma-theme","Change user")
-                icon.name:"system-users"
+                icon.name:"system-switch-user"
                 icon.width:24
                 icon.height:24
                 Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
                 display: QQC2.AbstractButton.TextBesideIcon
+                visible: sessionsModel.canStartNewSession && sessionsModel.canSwitchUser
                 onClicked: {
-                    sessionsModel.startNewSession(true);
+                    if (sessionsModel.count === 0) {
+                        sessionsModel.startNewSession(true);
+                    }
+                    else {
+                        root.topWindow=sessionWindow;
+                    }
                 }
             }
             
