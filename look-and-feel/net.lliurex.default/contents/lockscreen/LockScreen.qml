@@ -93,14 +93,28 @@ Item {
         
         onTriggered: {
             root.lockCount+=1;
-            console.log("tick ",root.lockCount);
-            if (root.lockCount==10) {
+            if (root.lockCount==20) {
                 
                 root.topWindow = welcomeWindow;
                 running=false;
             }
         }
     }
+    
+    Timer {
+            id: clock
+            interval: 500
+            running: true
+            repeat: true
+            
+            onTriggered: {
+                
+                var date = Qt.formatDateTime(new Date(), "ddd d MMMM yyyy");
+                var time = Qt.formatDateTime(new Date(), "HH:mm");
+                
+                labelClock.text=date+"\n"+time;
+            }
+        }
     
     LLX.Window {
         id: welcomeWindow
@@ -112,6 +126,11 @@ Item {
         
         ColumnLayout {
             anchors.fill: parent
+            
+            QQC2.Label {
+                id: labelClock
+                Layout.alignment: Qt.AlignHCenter
+            }
             
             PlasmaCore.IconItem {
                 Layout.alignment: Qt.AlignHCenter
@@ -125,6 +144,8 @@ Item {
                 Layout.alignment: Qt.AlignHCenter
                 text: kscreenlocker_userName
             }
+            
+            
         }
     }
     
@@ -197,6 +218,7 @@ Item {
         anchors.centerIn:parent
         
         onVisibleChanged: {
+            txtPass.text = "";
             txtPass.focus = true;
         }
         
