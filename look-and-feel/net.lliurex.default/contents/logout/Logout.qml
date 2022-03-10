@@ -22,9 +22,9 @@ import net.lliurex.ui 1.0 as LLX
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.plasma.workspace.components 2.0 as PW
-import org.kde.kcoreaddons 1.0 as KCoreAddons
-
 import org.kde.plasma.private.sessions 2.0
+import org.kde.kcoreaddons 1.0 as KCoreAddons
+import org.kde.kirigami 2.16 as Kirigami
 
 import QtQuick 2.6
 import QtQuick.Controls 2.6 as QQC2
@@ -47,6 +47,23 @@ PlasmaCore.ColorScope {
     
     KCoreAddons.KUser {
         id: kuser
+    }
+    
+    SessionsModel {
+        id: sessionsModel
+        showNewSessionEntry: false
+    }
+    
+    Component.onCompleted: {
+        if (sdtype!=ShutdownType.ShutdownTypeNone) {
+            if (sessionsModel.count>0) {
+                message.type=Kirigami.MessageType.Warning;
+                message.text=i18nd("lliurex-sddm-theme","There are running sessions");
+                message.visible=true;
+                timer.running=false;
+                progressbar.value=1.0;
+            }
+        }
     }
     
     Timer {
@@ -166,7 +183,15 @@ PlasmaCore.ColorScope {
                 focus: false
             }
             
+            Kirigami.InlineMessage {
+                id: message
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
+                
+            }
+            
             PlasmaComponents.ProgressBar {
+                id: progressbar
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter
                 value: root.timeRemaining/20

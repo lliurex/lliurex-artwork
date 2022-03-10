@@ -1,3 +1,23 @@
+/*
+    Lliurex look and feel
+
+    Copyright (C) 2022  Enrique Medina Gremaldos <quiqueiii@gmail.com>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+import "." as Local
 
 import net.lliurex.ui 1.0 as LLX
 
@@ -93,15 +113,14 @@ Item {
         
         onTriggered: {
             root.lockCount+=1;
-            console.log("tick ",root.lockCount);
-            if (root.lockCount==10) {
+            if (root.lockCount==20) {
                 
                 root.topWindow = welcomeWindow;
                 running=false;
             }
         }
     }
-    
+      
     LLX.Window {
         id: welcomeWindow
         title: i18nd("lliurex-plasma-theme","Session locked")
@@ -112,6 +131,10 @@ Item {
         
         ColumnLayout {
             anchors.fill: parent
+            
+            Local.DateTime {
+                Layout.alignment: Qt.AlignHCenter
+            }
             
             PlasmaCore.IconItem {
                 Layout.alignment: Qt.AlignHCenter
@@ -125,6 +148,68 @@ Item {
                 Layout.alignment: Qt.AlignHCenter
                 text: kscreenlocker_userName
             }
+            
+            
+        }
+    }
+    
+    LLX.Window {
+        id: sessionWindow
+        title: i18nd("lliurex-plasma-theme","Sessions")
+        width: 320
+        height: 480
+        
+        anchors.centerIn:parent
+        visible: root.topWindow == this
+        
+        ColumnLayout {
+            anchors.fill: parent
+            
+            ListView {
+                Layout.alignment: Qt.AlignHCenter
+                height: 400
+                model: sessionsModel
+                
+                delegate: ColumnLayout {
+                    PlasmaComponents.Label {
+                        text: model.name
+                    }
+                    
+                    PlasmaCore.IconItem {
+                        implicitWidth: 48
+                        implicitHeight: 48
+                        source: {
+                            if (model.isTty) {
+                                return "utilities-terminal";
+                            }
+                            if (model.icon=="") {
+                                return "user-identity";
+                            }
+                            
+                            return model.icon;
+                        }
+                        
+                    }
+                    
+                    PlasmaComponents.Label {
+                        text: model.vtNumber
+                    }
+                    
+                    PlasmaComponents.Label {
+                        text: model.displayNumber
+                    }
+                }
+            }
+            
+            PlasmaComponents.Button {
+                text: i18nd("lliurex-plasma-theme","Cancel")
+                Layout.alignment: Qt.AlignRight | Qt.AlignBottom
+                implicitWidth: PlasmaCore.Units.gridUnit * 6
+                
+                onClicked: {
+                    root.topWindow=unlockWindow;
+                }
+            }
         }
     }
     
@@ -137,6 +222,7 @@ Item {
         anchors.centerIn:parent
         
         onVisibleChanged: {
+            txtPass.text = "";
             txtPass.focus = true;
         }
         
@@ -185,13 +271,19 @@ Item {
             
             PlasmaComponents.Button {
                 text: i18nd("lliurex-plasma-theme","Change user")
-                icon.name:"system-users"
+                icon.name:"system-switch-user"
                 icon.width:24
                 icon.height:24
                 Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
                 display: QQC2.AbstractButton.TextBesideIcon
+                visible: sessionsModel.canStartNewSession && sessionsModel.canSwitchUser
                 onClicked: {
-                    sessionsModel.startNewSession(true);
+                    if (sessionsModel.count === 0) {
+                        sessionsModel.startNewSession(true);
+                    }
+                    else {
+                        root.topWindow=sessionWindow;
+                    }
                 }
             }
             
