@@ -88,7 +88,9 @@ Item {
     }
     
     Keys.onPressed: {
-        
+        if (root.topWindow == unlockWindow) {
+            root.lockCount = 0;
+        }
     }
     
     LLX.Background {
@@ -125,7 +127,7 @@ Item {
         id: welcomeWindow
         title: i18nd("lliurex-plasma-theme","Session locked")
         width:320
-        height:240
+        height:320
         anchors.centerIn:parent
         visible: root.topWindow == this
         
@@ -136,8 +138,12 @@ Item {
                 Layout.alignment: Qt.AlignHCenter
             }
             
+            Item {
+                height: 8
+            }
+
             PlasmaCore.IconItem {
-                Layout.alignment: Qt.AlignHCenter
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
                 
                 source: face
                 implicitWidth: 64
@@ -145,10 +151,9 @@ Item {
             }
             
             QQC2.Label {
-                Layout.alignment: Qt.AlignHCenter
+                Layout.alignment: Qt.AlignHCenter| Qt.AlignBottom
                 text: kscreenlocker_userName
             }
-            
             
         }
     }
@@ -167,36 +172,50 @@ Item {
             
             ListView {
                 Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth:true
                 height: 400
                 model: sessionsModel
+
+                highlight:
+                    Rectangle {
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        color: "#bfdcf1"
+                        border.color: "#3daee9"
+                        border.width: 2
+                        radius: 5
+                    }
                 
-                delegate: ColumnLayout {
-                    PlasmaComponents.Label {
-                        text: model.name
-                    }
-                    
-                    PlasmaCore.IconItem {
-                        implicitWidth: 48
-                        implicitHeight: 48
-                        source: {
-                            if (model.isTty) {
-                                return "utilities-terminal";
-                            }
-                            if (model.icon=="") {
-                                return "user-identity";
-                            }
-                            
-                            return model.icon;
+                delegate: QQC2.Frame {
+                    width: parent.width
+
+                    ColumnLayout {
+                        PlasmaComponents.Label {
+                            text: model.name
                         }
-                        
-                    }
-                    
-                    PlasmaComponents.Label {
-                        text: model.vtNumber
-                    }
-                    
-                    PlasmaComponents.Label {
-                        text: model.displayNumber
+
+                        PlasmaCore.IconItem {
+                            implicitWidth: 48
+                            implicitHeight: 48
+                            source: {
+                                if (model.isTty) {
+                                    return "utilities-terminal";
+                                }
+                                if (model.icon=="") {
+                                    return "user-identity";
+                                }
+
+                                return model.icon;
+                            }
+
+                        }
+
+                        PlasmaComponents.Label {
+                            text: model.vtNumber
+                        }
+
+                        PlasmaComponents.Label {
+                            text: model.displayNumber
+                        }
                     }
                 }
             }
