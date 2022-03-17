@@ -133,17 +133,9 @@ Item {
         
         ColumnLayout {
             anchors.fill: parent
-            
-            Local.DateTime {
-                Layout.alignment: Qt.AlignHCenter
-            }
-            
-            Item {
-                height: 8
-            }
 
             PlasmaCore.IconItem {
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+                Layout.alignment: Qt.AlignHCenter
                 
                 source: face
                 implicitWidth: 64
@@ -151,9 +143,18 @@ Item {
             }
             
             QQC2.Label {
-                Layout.alignment: Qt.AlignHCenter| Qt.AlignBottom
+                Layout.alignment: Qt.AlignHCenter
                 text: kscreenlocker_userName
             }
+
+            Item {
+                height: 8
+            }
+
+            Local.DateTime {
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+            }
+
             
         }
     }
@@ -171,10 +172,13 @@ Item {
             anchors.fill: parent
             
             ListView {
+                id: sessionsView
                 Layout.alignment: Qt.AlignHCenter
                 Layout.fillWidth:true
                 height: 400
                 model: sessionsModel
+                highlightFollowsCurrentItem: true
+                focus: true
 
                 highlight:
                     Rectangle {
@@ -187,12 +191,18 @@ Item {
                 
                 delegate: QQC2.Frame {
                     width: parent.width
+                    height: 64
 
-                    ColumnLayout {
-                        PlasmaComponents.Label {
-                            text: model.name
-                        }
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                                sessionsView.currentIndex = index
+                            }
 
+                    }
+
+                    RowLayout {
+                        anchors.fill: parent
                         PlasmaCore.IconItem {
                             implicitWidth: 48
                             implicitHeight: 48
@@ -203,12 +213,14 @@ Item {
                                 if (model.icon=="") {
                                     return "user-identity";
                                 }
-
                                 return model.icon;
                             }
-
                         }
 
+                        PlasmaComponents.Label {
+                            text: model.name
+                        }
+                        /*
                         PlasmaComponents.Label {
                             text: model.vtNumber
                         }
@@ -216,6 +228,7 @@ Item {
                         PlasmaComponents.Label {
                             text: model.displayNumber
                         }
+                        */
                     }
                 }
             }
