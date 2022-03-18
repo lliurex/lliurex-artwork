@@ -1,3 +1,11 @@
+lliurex-artwork (22.0.0.0~beta3) lliurex22; urgency=medium
+
+  * Added a virtual keyboard support on lock screen
+  * Added a session switcher on lock screen
+  * minor visual enhacements
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Fri, 18 Mar 2022 12:43:35 +0100
+
 lliurex-artwork (22.0.0.0~beta2) lliurex22; urgency=medium
 
   * Some progress on logout screen
