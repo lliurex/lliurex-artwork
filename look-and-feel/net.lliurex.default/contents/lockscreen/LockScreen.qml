@@ -30,6 +30,7 @@ import org.kde.plasma.private.sessions 2.0
 import QtQuick 2.6
 import QtQuick.Controls 2.6 as QQC2
 import QtQuick.Layouts 1.15
+import QtQuick.VirtualKeyboard 2.1
 
 
 Item {
@@ -96,7 +97,18 @@ Item {
     LLX.Background {
         anchors.fill: parent
     }
-    
+
+    InputPanel {
+        id: vkey
+        width: 800
+        anchors.bottom : parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        active: chkVkey.checked
+
+        visible: active && Qt.inputMethod.visible
+    }
+
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true
@@ -119,6 +131,7 @@ Item {
                 
                 root.topWindow = welcomeWindow;
                 running=false;
+                Qt.inputMethod.hide();
             }
         }
     }
@@ -180,11 +193,12 @@ Item {
                         anchors.horizontalCenter: parent.horizontalCenter
                         color: "#bfdcf1"
                         border.color: "#3daee9"
-                        border.width: 2
-                        radius: 5
+                        border.width: 1
+                        radius: 3
                     }
                 
                 delegate: Item {
+                    id: item
                     width: parent.width
                     height: 64
 
@@ -200,9 +214,11 @@ Item {
                         anchors.fill: parent
 
                         PlasmaCore.IconItem {
-                            Layout.alignment: Qt.AlignVCenter
+                            Layout.alignment: Qt.AlignLeft
+                            Layout.margins: 4
                             implicitWidth: 48
                             implicitHeight: 48
+
                             source: {
                                 if (model.isTty) {
                                     return "utilities-terminal";
@@ -215,7 +231,7 @@ Item {
                         }
 
                         PlasmaComponents.Label {
-                            Layout.alignment: Qt.AlignVCenter
+                            Layout.alignment: Qt.AlignLeft
                             text: model.name
                         }
                         /*
@@ -227,6 +243,18 @@ Item {
                             text: model.displayNumber
                         }
                         */
+
+                        PlasmaComponents.Button {
+                            text: i18nd("lliurex-plasma-theme","Switch")
+                            Layout.alignment: Qt.AlignRight
+                            Layout.margins: 4
+                            implicitWidth: 64
+                            enabled: sessionsView.currentIndex==index
+
+                            onClicked: {
+                                sessionsModel.switchUser(model.vtNumber);
+                            }
+                        }
                     }
                 }
             }
@@ -299,24 +327,37 @@ Item {
                 text:""
             }
             
-            PlasmaComponents.Button {
-                text: i18nd("lliurex-plasma-theme","Change user")
-                icon.name:"system-switch-user"
-                icon.width:24
-                icon.height:24
-                Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-                display: QQC2.AbstractButton.TextBesideIcon
-                visible: sessionsModel.canStartNewSession && sessionsModel.canSwitchUser
-                onClicked: {
-                    if (sessionsModel.count === 0) {
-                        sessionsModel.startNewSession(true);
-                    }
-                    else {
-                        root.topWindow=sessionWindow;
+            RowLayout {
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+                spacing: 16
+
+                PlasmaComponents.Button {
+                    text: i18nd("lliurex-plasma-theme","Change user")
+                    Layout.alignment: Qt.AlignLeft
+                    icon.name:"system-switch-user"
+                    icon.width:24
+                    icon.height:24
+
+                    display: QQC2.AbstractButton.TextBesideIcon
+                    visible: sessionsModel.canStartNewSession && sessionsModel.canSwitchUser
+                    onClicked: {
+                        if (sessionsModel.count === 0) {
+                            sessionsModel.startNewSession(true);
+                        }
+                        else {
+                            root.topWindow=sessionWindow;
+                        }
                     }
                 }
+
+                PlasmaComponents.CheckBox {
+                    id: chkVkey
+                    Layout.alignment: Qt.AlignRight
+                    text:i18nd("lliurex-plasma-theme","Virtual keyboard")
+                    checked: false
+                }
             }
-            
             
         }
     }
