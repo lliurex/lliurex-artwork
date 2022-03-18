@@ -136,26 +136,21 @@ Item {
 
             PlasmaCore.IconItem {
                 Layout.alignment: Qt.AlignHCenter
-                
+
                 source: face
                 implicitWidth: 64
                 implicitHeight:64
             }
-            
+
             QQC2.Label {
                 Layout.alignment: Qt.AlignHCenter
                 text: kscreenlocker_userName
             }
 
-            Item {
-                height: 8
-            }
-
             Local.DateTime {
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+                Layout.alignment: Qt.AlignHCenter //| Qt.AlignBottom
+                Layout.fillWidth:true
             }
-
-            
         }
     }
     
@@ -189,7 +184,7 @@ Item {
                         radius: 5
                     }
                 
-                delegate: QQC2.Frame {
+                delegate: Item {
                     width: parent.width
                     height: 64
 
@@ -203,7 +198,9 @@ Item {
 
                     RowLayout {
                         anchors.fill: parent
+
                         PlasmaCore.IconItem {
+                            Layout.alignment: Qt.AlignVCenter
                             implicitWidth: 48
                             implicitHeight: 48
                             source: {
@@ -218,6 +215,7 @@ Item {
                         }
 
                         PlasmaComponents.Label {
+                            Layout.alignment: Qt.AlignVCenter
                             text: model.name
                         }
                         /*

@@ -7,10 +7,11 @@ import QtQuick.Layouts 1.15
 
 Item {
     id: root
-    anchors.fill: parent
     
     property string date;
     property string time;
+
+    height:PlasmaCore.Theme.defaultFont.pointSize * 8
     
     Timer {
         id: clock
@@ -25,22 +26,21 @@ Item {
             
         }
     }
-    
+
     ColumnLayout {
-        width: parent.width
-        height: PlasmaCore.Theme.defaultFont.pointSize * 4
-        
+        anchors.fill:parent
+
         PlasmaComponents.Label {
             Layout.alignment: Qt.AlignHCenter
             text:root.date
-            font.pointSize:PlasmaCore.Theme.defaultFont.pointSize * 1.5
+            font.pointSize:PlasmaCore.Theme.defaultFont.pointSize * 1.4
         }
-        
+
         PlasmaComponents.Label {
             Layout.alignment: Qt.AlignHCenter
             text:root.time
-            font.pointSize:PlasmaCore.Theme.defaultFont.pointSize * 1.5
+            font.pointSize:PlasmaCore.Theme.defaultFont.pointSize * 1.6
         }
-        
     }
+
 }
