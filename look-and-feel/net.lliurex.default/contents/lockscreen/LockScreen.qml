@@ -30,6 +30,7 @@ import org.kde.plasma.private.sessions 2.0
 import QtQuick 2.6
 import QtQuick.Controls 2.6 as QQC2
 import QtQuick.Layouts 1.15
+import QtQuick.VirtualKeyboard 2.1
 
 
 Item {
@@ -88,13 +89,26 @@ Item {
     }
     
     Keys.onPressed: {
-        
+        if (root.topWindow == unlockWindow) {
+            root.lockCount = 0;
+        }
     }
     
     LLX.Background {
         anchors.fill: parent
     }
-    
+
+    InputPanel {
+        id: vkey
+        width: 800
+        anchors.bottom : parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        active: chkVkey.checked
+
+        visible: active && Qt.inputMethod.visible
+    }
+
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true
@@ -117,6 +131,7 @@ Item {
                 
                 root.topWindow = welcomeWindow;
                 running=false;
+                Qt.inputMethod.hide();
             }
         }
     }
@@ -125,31 +140,30 @@ Item {
         id: welcomeWindow
         title: i18nd("lliurex-plasma-theme","Session locked")
         width:320
-        height:240
+        height:320
         anchors.centerIn:parent
         visible: root.topWindow == this
         
         ColumnLayout {
             anchors.fill: parent
-            
-            Local.DateTime {
-                Layout.alignment: Qt.AlignHCenter
-            }
-            
+
             PlasmaCore.IconItem {
                 Layout.alignment: Qt.AlignHCenter
-                
+
                 source: face
                 implicitWidth: 64
                 implicitHeight:64
             }
-            
+
             QQC2.Label {
                 Layout.alignment: Qt.AlignHCenter
                 text: kscreenlocker_userName
             }
-            
-            
+
+            Local.DateTime {
+                Layout.alignment: Qt.AlignHCenter //| Qt.AlignBottom
+                Layout.fillWidth:true
+            }
         }
     }
     
@@ -166,37 +180,81 @@ Item {
             anchors.fill: parent
             
             ListView {
+                id: sessionsView
                 Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth:true
                 height: 400
                 model: sessionsModel
+                highlightFollowsCurrentItem: true
+                focus: true
+
+                highlight:
+                    Rectangle {
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        color: "#bfdcf1"
+                        border.color: "#3daee9"
+                        border.width: 1
+                        radius: 3
+                    }
                 
-                delegate: ColumnLayout {
-                    PlasmaComponents.Label {
-                        text: model.name
+                delegate: Item {
+                    id: item
+                    width: parent.width
+                    height: 64
+
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                                sessionsView.currentIndex = index
+                            }
+
                     }
-                    
-                    PlasmaCore.IconItem {
-                        implicitWidth: 48
-                        implicitHeight: 48
-                        source: {
-                            if (model.isTty) {
-                                return "utilities-terminal";
+
+                    RowLayout {
+                        anchors.fill: parent
+
+                        PlasmaCore.IconItem {
+                            Layout.alignment: Qt.AlignLeft
+                            Layout.margins: 4
+                            implicitWidth: 48
+                            implicitHeight: 48
+
+                            source: {
+                                if (model.isTty) {
+                                    return "utilities-terminal";
+                                }
+                                if (model.icon=="") {
+                                    return "user-identity";
+                                }
+                                return model.icon;
                             }
-                            if (model.icon=="") {
-                                return "user-identity";
-                            }
-                            
-                            return model.icon;
                         }
-                        
-                    }
-                    
-                    PlasmaComponents.Label {
-                        text: model.vtNumber
-                    }
-                    
-                    PlasmaComponents.Label {
-                        text: model.displayNumber
+
+                        PlasmaComponents.Label {
+                            Layout.alignment: Qt.AlignLeft
+                            text: model.name
+                        }
+                        /*
+                        PlasmaComponents.Label {
+                            text: model.vtNumber
+                        }
+
+                        PlasmaComponents.Label {
+                            text: model.displayNumber
+                        }
+                        */
+
+                        PlasmaComponents.Button {
+                            text: i18nd("lliurex-plasma-theme","Switch")
+                            Layout.alignment: Qt.AlignRight
+                            Layout.margins: 4
+                            implicitWidth: 64
+                            enabled: sessionsView.currentIndex==index
+
+                            onClicked: {
+                                sessionsModel.switchUser(model.vtNumber);
+                            }
+                        }
                     }
                 }
             }
@@ -269,24 +327,37 @@ Item {
                 text:""
             }
             
-            PlasmaComponents.Button {
-                text: i18nd("lliurex-plasma-theme","Change user")
-                icon.name:"system-switch-user"
-                icon.width:24
-                icon.height:24
-                Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-                display: QQC2.AbstractButton.TextBesideIcon
-                visible: sessionsModel.canStartNewSession && sessionsModel.canSwitchUser
-                onClicked: {
-                    if (sessionsModel.count === 0) {
-                        sessionsModel.startNewSession(true);
-                    }
-                    else {
-                        root.topWindow=sessionWindow;
+            RowLayout {
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+                spacing: 16
+
+                PlasmaComponents.Button {
+                    text: i18nd("lliurex-plasma-theme","Change user")
+                    Layout.alignment: Qt.AlignLeft
+                    icon.name:"system-switch-user"
+                    icon.width:24
+                    icon.height:24
+
+                    display: QQC2.AbstractButton.TextBesideIcon
+                    visible: sessionsModel.canStartNewSession && sessionsModel.canSwitchUser
+                    onClicked: {
+                        if (sessionsModel.count === 0) {
+                            sessionsModel.startNewSession(true);
+                        }
+                        else {
+                            root.topWindow=sessionWindow;
+                        }
                     }
                 }
+
+                PlasmaComponents.CheckBox {
+                    id: chkVkey
+                    Layout.alignment: Qt.AlignRight
+                    text:i18nd("lliurex-plasma-theme","Virtual keyboard")
+                    checked: false
+                }
             }
-            
             
         }
     }
