@@ -46,16 +46,17 @@ var layout = {
                             "immutability": "1"
                         },
                         "/Configuration": {
-                            "PreloadWeight": "100"
+                            "PreloadWeight": "95"
                         },
                         "/Configuration/General": {
+                            "favoritesPortedToKAstats" : "true",
                             "favoriteApps":["firefox.desktop","systemsettings.desktop","zero-center.desktop","org.kde.dolphin.desktop","lliurex-store.desktop","org.kde.konsole.desktop"]
                         },
                         "/Shortcuts" : {
                             "global" : "Alt+F1"
                         }
                     },
-                    "plugin": "org.kde.plasma.kicker"
+                    "plugin": "org.kde.plasma.kickoff"
                 },
                 {
                     "config": {

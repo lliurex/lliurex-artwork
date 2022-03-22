@@ -351,11 +351,14 @@ Item {
                     }
                 }
 
-                PlasmaComponents.CheckBox {
+                PlasmaComponents.Button {
                     id: chkVkey
                     Layout.alignment: Qt.AlignRight
-                    text:i18nd("lliurex-plasma-theme","Virtual keyboard")
-                    checked: false
+                    icon.name:"input-keyboard-virtual"
+                    checkable: true
+                    display: AbstractButton.IconOnly
+                    icon.width:24
+                    icon.height:24
                 }
             }
             
