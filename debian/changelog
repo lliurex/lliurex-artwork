@@ -1,3 +1,10 @@
+lliurex-artwork (22.0.0.0~beta4) lliurex22; urgency=medium
+
+  * Using a new kick off menu
+  * Using a icon-only virtual keyboard checkbox
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 22 Mar 2022 14:57:40 +0100
+
 lliurex-artwork (22.0.0.0~beta3) lliurex22; urgency=medium
 
   * Added a virtual keyboard support on lock screen
