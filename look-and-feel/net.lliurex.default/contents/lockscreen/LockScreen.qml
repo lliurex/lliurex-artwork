@@ -155,7 +155,7 @@ Item {
                 implicitHeight:64
             }
 
-            QQC2.Label {
+            PlasmaComponents.Label {
                 Layout.alignment: Qt.AlignHCenter
                 text: kscreenlocker_userName
             }
