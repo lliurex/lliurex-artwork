@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 12:02+0200\n"
+"POT-Creation-Date: 2022-04-04 12:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Enrique Medina Gremaldos <quiqueiii@gmail.com>\n"
 "Language: es\n"
@@ -16,6 +16,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Splash.qml:89
+#: look-and-feel/net.lliurex.default/contents/lockscreen/LockScreen.qml:141
+msgid "Session locked"
+msgstr "Sesión bloqueada"
+
+#: look-and-feel/net.lliurex.default/contents/lockscreen/LockScreen.qml:172
+msgid "Sessions"
+msgstr "Sesiones"
+
+#: look-and-feel/net.lliurex.default/contents/lockscreen/LockScreen.qml:248
+msgid "Switch"
+msgstr "Cambiar"
+
+#: look-and-feel/net.lliurex.default/contents/lockscreen/LockScreen.qml:263
+#: look-and-feel/net.lliurex.default/contents/logout/Logout.qml:258
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: look-and-feel/net.lliurex.default/contents/lockscreen/LockScreen.qml:276
+#: look-and-feel/net.lliurex.default/contents/lockscreen/LockScreen.qml:316
+msgid "Unlock"
+msgstr "Desbloquear"
+
+#: look-and-feel/net.lliurex.default/contents/lockscreen/LockScreen.qml:308
+msgid "Password"
+msgstr "Contraseña"
+
+#: look-and-feel/net.lliurex.default/contents/lockscreen/LockScreen.qml:336
+msgid "Change user"
+msgstr "Cambiar de usuario"
+
+#: look-and-feel/net.lliurex.default/contents/logout/Logout.qml:61
+msgid "There are running sessions"
+msgstr "Hay sesiones activas"
+
+#: look-and-feel/net.lliurex.default/contents/logout/Logout.qml:101
+msgid "System is about to power off"
+msgstr "El sistema se apagará"
+
+#: look-and-feel/net.lliurex.default/contents/logout/Logout.qml:105
+msgid "System is about to reboot"
+msgstr "El sistema se reiniciará"
+
+#: look-and-feel/net.lliurex.default/contents/logout/Logout.qml:109
+msgid "Session is about to log out"
+msgstr "La sesión se cerrará"
+
+#: look-and-feel/net.lliurex.default/contents/logout/Logout.qml:115
+msgid " seconds"
+msgstr " segundos"
+
+#: look-and-feel/net.lliurex.default/contents/logout/Logout.qml:223
+msgid "Power off"
+msgstr "Apagar"
+
+#: look-and-feel/net.lliurex.default/contents/logout/Logout.qml:234
+msgid "Reboot"
+msgstr "Reiniciar"
+
+#: look-and-feel/net.lliurex.default/contents/logout/Logout.qml:245
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: look-and-feel/net.lliurex.default/contents/splash/Splash.qml:80
 msgid "Loading desktop..."
 msgstr "Cargando escritorio..."

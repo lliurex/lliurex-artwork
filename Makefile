@@ -131,6 +131,10 @@ locale/%.mo:
 
 locales: locale/es.mo locale/ca@valencia.mo
 
+get-po:
+	@echo -e '$(COLOR_RED)* Extracting locale strings... $(COLOR_NONE)'
+	xgettext -kde -ki18nd:2 look-and-feel/net.lliurex.default/contents/lockscreen/*.qml look-and-feel/net.lliurex.default/contents/logout/*.qml look-and-feel/net.lliurex.default/contents/splash/*.qml -o locale/messages.po
+
 build: wallpapers previews locales
 
 all: build
