@@ -1,3 +1,10 @@
+lliurex-artwork (22.0.0.0~beta6) lliurex22; urgency=medium
+
+  * Better virtual keyboard sizing
+  * Moving to welcome window when user switch to another session
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Mon, 09 May 2022 14:23:32 +0200
+
 lliurex-artwork (22.0.0.0~beta5) lliurex22; urgency=medium
 
   * Added ES translations
