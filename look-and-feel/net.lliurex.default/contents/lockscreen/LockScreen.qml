@@ -100,9 +100,12 @@ Item {
 
     InputPanel {
         id: vkey
-        width: 800
+        width: {
+            return ((root.height - (root.topWindow.height + root.topWindow.y) )* 3.2) *0.95;
+        }
         anchors.bottom : parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottomMargin: 8
 
         active: chkVkey.checked
 
@@ -252,6 +255,7 @@ Item {
                             enabled: sessionsView.currentIndex==index
 
                             onClicked: {
+                                root.topWindow = welcomeWindow;
                                 sessionsModel.switchUser(model.vtNumber);
                             }
                         }
@@ -277,7 +281,15 @@ Item {
         width:320
         height:320
         visible: root.topWindow == this
-        anchors.centerIn:parent
+        anchors.horizontalCenter: parent.horizontalCenter
+        y: {
+            if (vkey.active) {
+                return (parent.height*0.3)-(height*0.5);
+            }
+            else {
+                return (parent.height*0.5)-(height*0.5);
+            }
+        }
         
         onVisibleChanged: {
             txtPass.text = "";
