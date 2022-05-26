@@ -149,9 +149,9 @@ all: build
 clean:
 	rm -rf wallpapers/*.png
 	rm -rf wallpapers/lliurex-escriptori/contents
+	rm -rf wallpapers/lliurex-touch/contents
 	rm -rf wallpapers/lliurex-aula/contents
-	rm -rf wallpapers/lliurex-infantil/contents
-	rm -rf wallpapers/lliurex-musica/contents
+	rm -rf wallpapers/lliurex-server/contents
 	rm -rf wallpapers/lliurex-neutro/contents
 	rm -rf wallpapers/lliurex-sunset/contents
 	rm -rf wallpapers/lliurex-xiquets/contents
@@ -183,9 +183,9 @@ install: build
 	cp -r look-and-feel/net.lliurex.classic $(DESTDIR)/usr/share/plasma/look-and-feel/
 #wallpapers
 	cp -r wallpapers/lliurex-escriptori $(DESTDIR)/usr/share/wallpapers/
+	cp -r wallpapers/lliurex-touch $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-aula $(DESTDIR)/usr/share/wallpapers/
-	cp -r wallpapers/lliurex-infantil $(DESTDIR)/usr/share/wallpapers/
-	cp -r wallpapers/lliurex-musica $(DESTDIR)/usr/share/wallpapers/
+	cp -r wallpapers/lliurex-server $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-neutro $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-xiquet $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-xiquets $(DESTDIR)/usr/share/wallpapers/
@@ -226,7 +226,6 @@ install: build
 	mkdir -p $(DESTDIR)/usr/share/locale/
 	cp -r locale/mos/* $(DESTDIR)/usr/share/locale/
 	
-	
 uninstall:
 
 #plasma theme
@@ -236,9 +235,9 @@ uninstall:
 
 #wallpaper
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-escriptori
+	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-touch
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-aula
-	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-infantil
-	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-musica
+	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-server
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-neutro
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-sunset
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-fp
