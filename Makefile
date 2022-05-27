@@ -92,7 +92,11 @@ wallpapers/lliurex-%.4.3.jpg: wallpapers/%.jpg wallpapers/22.4.3.png
 wallpapers/lliurex-%.jpg: wallpapers/%.jpg wallpapers/22.png
 	@echo -e '$(COLOR_RED)* composing [$@] $(COLOR_NONE)'
 	convert $<  wallpapers/22.png -composite $@
-	
+
+wallpapers/lliurex-21.jpg: wallpapers/21/escriptori.jpg wallpapers/21.png
+	@echo -e '$(COLOR_RED)* composing [$@] $(COLOR_NONE)'
+	convert wallpapers/21/escriptori.jpg wallpapers/21.png -composite $@
+
 lliurex-%.render.22.16.9: wallpapers/lliurex-%.jpg
 	@echo -e '$(COLOR_RED)* creating [$@] $(COLOR_NONE)'
 	mkdir -p wallpapers/lliurex-$*/contents/images
@@ -108,6 +112,15 @@ lliurex-%.render.22.4.3: wallpapers/lliurex-%.4.3.jpg
 	cp $< wallpapers/lliurex-$*/contents/images/3750x2813.jpg
 	convert $< -resize 1024x768 wallpapers/lliurex-$*/contents/images/1024x768.jpg
 
+lliurex-21.render:wallpapers/lliurex-21.jpg wallpapers/21.png
+	@echo -e '$(COLOR_RED)* creating [$@] $(COLOR_NONE)'
+	mkdir -p wallpapers/lliurex-$*/contents/images
+	cp $< wallpapers/lliurex-$*/contents/images/5000x2813.jpg
+	convert $< -resize 1920x1080 wallpapers/lliurex-$*/contents/images/1920x1080.jpg
+	convert $< -resize 1408x792 wallpapers/lliurex-$*/contents/images/1408x792.jpg
+	convert $< -resize 1280x720 wallpapers/lliurex-$*/contents/images/1280x720.jpg
+	convert $< -resize 1152x648 wallpapers/lliurex-$*/contents/images/1152x648.jpg
+
 lliurex-escriptori: lliurex-escriptori.render.22.16.9 lliurex-escriptori.render.22.4.3
 lliurex-aula: lliurex-aula.render.22.16.9 lliurex-aula.render.22.4.3
 lliurex-server: lliurex-server.render.22.16.9 lliurex-server.render.22.4.3
@@ -122,6 +135,7 @@ lliurex-xiquet: lliurex-xiquet.render
 lliurex-fp: neutro.render
 lliurex-19: lliurex-19.render
 lliurex-19+1: lliurex-19+1.render
+lliurex-21: lliurex-21.render
 
 w21: lliurex-escriptori lliurex-aula lliurex-infantil lliurex-musica lliurex-neutro
 	@echo -e '$(COLOR_RED)* creating [$^] $(COLOR_NONE)'
@@ -129,7 +143,7 @@ w21: lliurex-escriptori lliurex-aula lliurex-infantil lliurex-musica lliurex-neu
 w22: lliurex-escriptori lliurex-aula lliurex-server lliurex-neutro lliurex-touch
 	@echo -e '$(COLOR_RED)* creating [$^] $(COLOR_NONE)'
 
-wallpapers:w22 lliurex-sunset lliurex-xiquets lliurex-xiquet lliurex-19 lliurex-19+1
+wallpapers:w22 lliurex-sunset lliurex-xiquets lliurex-xiquet lliurex-19 lliurex-19+1 lliurex-21
 
 locale/%.mo:
 	@echo -e '$(COLOR_RED)* msgfmt [$*] $(COLOR_NONE)'
