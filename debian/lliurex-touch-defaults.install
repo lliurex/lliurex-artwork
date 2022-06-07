@@ -1,0 +1,2 @@
+defaults/xdg/lliurex/touch	/etc/xdg/lliurex
+defaults/xsession/82lliurex-touch		/etc/X11//Xsession.d/

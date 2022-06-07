@@ -44,6 +44,13 @@ Section: x11
 Description: LliureX 22 xdg defaults
  LliureX 22 xdg scripts
 
+Package: lliurex-touch-defaults
+Architecture: all
+Depends: lliurex-desktop-defaults, lliurex-touch-wallpaper
+Section: x11
+Description: LliureX 22 touch xdg defaults
+ LliureX 22 xdg scripts
+
 Package: lliurex-touch-wallpaper
 Architecture: all
 Section: x11
