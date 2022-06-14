@@ -118,6 +118,11 @@ Item {
         
         onPositionChanged: {
             root.lockCount=0;
+
+            if (root.topWindow == welcomeWindow) {
+                root.topWindow = unlockWindow;
+                timer.running=true;
+            }
         }
         
     }
@@ -130,7 +135,7 @@ Item {
         
         onTriggered: {
             root.lockCount+=1;
-            if (root.lockCount==20) {
+            if (root.lockCount>=20) {
                 
                 root.topWindow = welcomeWindow;
                 running=false;
