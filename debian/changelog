@@ -1,3 +1,9 @@
+lliurex-artwork (22.0.1.0) lliurex22; urgency=medium
+
+  * Showing password prompt when mouse is moved
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 14 Jun 2022 13:29:33 +0200
+
 lliurex-artwork (22.0.0.0~beta8) lliurex22; urgency=medium
 
   * Disabled automount from user session
