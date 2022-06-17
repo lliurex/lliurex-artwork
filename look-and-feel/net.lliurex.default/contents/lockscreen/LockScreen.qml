@@ -35,6 +35,20 @@ import QtQuick.VirtualKeyboard 2.1
 
 Item {
     id: root
+
+     property bool debug: false
+    property string notification
+    signal clearPassword()
+
+        // These are magical properties that kscreenlocker looks for
+    property bool viewVisible: false
+    property bool suspendToRamSupported: false
+    property bool suspendToDiskSupported: false
+
+    // These are magical signals that kscreenlocker looks for
+    signal suspendToDisk()
+    signal suspendToRam()
+
     focus: true
     anchors.fill: parent
     property int lockCount : 0
@@ -63,25 +77,35 @@ Item {
         id: sessionsModel
         showNewSessionEntry: false
     }
-    
+
     Connections {
         target: authenticator
+
         function onFailed() {
-            msg.text="Failed";
+            msg.text="Login failed";
         }
-        function onGraceLockedChanged() {
-            if (!authenticator.graceLocked) {
-                txtPass.text="";
-            }
+
+        function onSucceeded() {
+            Qt.quit();
         }
-        function onMessage(message) {
-            msg.text = message;
+
+        function onInfoMessage(msg) {
+            msg.text="Info:"+msg;
         }
-        function onError(err) {
-            msg.text = err;
+
+        function onErrorMessage(msg) {
+            msg.text="Failed:"+msg;
+        }
+
+        function onPrompt(msg) {
+            authenticator.respond(txtPass.text);
+        }
+
+        function onPromptForSecret(msg) {
+            authenticator.respond(txtPass.text);
         }
     }
-    
+
     Keys.onEscapePressed: {
         root.topWindow = unlockWindow;
         root.lockCount=0;
@@ -169,6 +193,7 @@ Item {
             }
 
             Local.DateTime {
+                visible: config.showClock
                 Layout.alignment: Qt.AlignHCenter //| Qt.AlignBottom
                 Layout.fillWidth:true
             }
@@ -325,7 +350,8 @@ Item {
                 placeholderText: i18nd("lliurex-plasma-theme","Password")
                 
                 Keys.onReturnPressed: {
-                    authenticator.tryUnlock(txtPass.text)
+                    //authenticator.respond(txtPass.text);
+                    authenticator.tryUnlock();
                 }
             }
             
@@ -335,7 +361,8 @@ Item {
                 implicitWidth: PlasmaCore.Units.gridUnit * 6
                 
                 onClicked: {
-                    authenticator.tryUnlock(txtPass.text)
+                    //authenticator.respond(txtPass.text);
+                    authenticator.tryUnlock();
                 }
             }
             
@@ -373,7 +400,7 @@ Item {
                     Layout.alignment: Qt.AlignRight
                     icon.name:"input-keyboard-virtual"
                     checkable: true
-                    display: AbstractButton.IconOnly
+                    display: QQC2.AbstractButton.IconOnly
                     icon.width:24
                     icon.height:24
                 }
