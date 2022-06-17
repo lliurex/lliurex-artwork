@@ -24,6 +24,7 @@ import net.lliurex.ui 1.0 as LLX
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.plasma.workspace.components 2.0 as PW
+import org.kde.kirigami 2.16 as Kirigami
 
 import org.kde.plasma.private.sessions 2.0
 
@@ -82,7 +83,7 @@ Item {
         target: authenticator
 
         function onFailed() {
-            msg.text="Login failed";
+            message.text="Login failed";
         }
 
         function onSucceeded() {
@@ -90,11 +91,12 @@ Item {
         }
 
         function onInfoMessage(msg) {
-            msg.text="Info:"+msg;
+            message.text="Info:"+msg;
         }
 
         function onErrorMessage(msg) {
-            msg.text="Failed:"+msg;
+            message.text=i18nd("lliurex-plasma-theme","Error:")+msg;
+            txtPass.enabled=true;
         }
 
         function onPrompt(msg) {
@@ -351,24 +353,30 @@ Item {
                 
                 Keys.onReturnPressed: {
                     //authenticator.respond(txtPass.text);
+                    txtPass.enabled=false;
+                    btnUnlock.enabled=false;
                     authenticator.tryUnlock();
                 }
             }
             
             PlasmaComponents.Button {
+                id: btnUnlock
                 text: i18nd("lliurex-plasma-theme","Unlock")
                 Layout.alignment: Qt.AlignHCenter
                 implicitWidth: PlasmaCore.Units.gridUnit * 6
                 
                 onClicked: {
                     //authenticator.respond(txtPass.text);
+                    btnUnlock.enabled=false;
+                    txtPass.enabled=false;
                     authenticator.tryUnlock();
                 }
             }
             
-            QQC2.Label {
-                id: msg
-                text:""
+            PlasmaComponents.Label {
+                id: message
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
             }
             
             RowLayout {
