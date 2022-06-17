@@ -24,16 +24,15 @@ import org.kde.kirigami 2.12 as Kirigami
 import org.kde.kcm 1.5 as KCM
 
 Kirigami.FormLayout {
-    property bool showClock: true
 
     twinFormLayouts: parentLayout
 
     QQC2.CheckBox {
-        id: chkShowClock
-        Kirigami.FormData.label: i18nd("lliurex-plasma-theme","Alpha")
-        text: i18nd("lliurex-plasma-theme","Beta")
+        id: showClock
+        Kirigami.FormData.label: i18nd("lliurex-plasma-theme","Clock")
+        text: i18nd("lliurex-plasma-theme","Display a date & time clock")
         KCM.SettingHighlighter {
-            highlight: showClock!=true
+            highlight: showClock.checked!=true
         }
     }
 }

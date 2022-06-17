@@ -83,7 +83,9 @@ Item {
         target: authenticator
 
         function onFailed() {
-            message.text="Login failed";
+            message.text=i18nd("lliurex-plasma-theme","Login failed");
+            txtPass.enabled=true;
+            btnUnlock.enabled=true;
         }
 
         function onSucceeded() {
@@ -97,6 +99,7 @@ Item {
         function onErrorMessage(msg) {
             message.text=i18nd("lliurex-plasma-theme","Error:")+msg;
             txtPass.enabled=true;
+            btnUnlock.enabled=true;
         }
 
         function onPrompt(msg) {
@@ -242,7 +245,6 @@ Item {
                         onClicked: {
                                 sessionsView.currentIndex = index
                             }
-
                     }
 
                     RowLayout {
@@ -346,16 +348,19 @@ Item {
             
             PlasmaComponents.TextField {
                 id: txtPass
-                width: 200
+                implicitWidth: 200
                 Layout.alignment: Qt.AlignHCenter
                 echoMode: TextInput.Password
                 placeholderText: i18nd("lliurex-plasma-theme","Password")
                 
                 Keys.onReturnPressed: {
-                    //authenticator.respond(txtPass.text);
                     txtPass.enabled=false;
                     btnUnlock.enabled=false;
                     authenticator.tryUnlock();
+                }
+
+                Keys.onPressed: {
+                    root.lockCount=0;
                 }
             }
             
@@ -366,7 +371,6 @@ Item {
                 implicitWidth: PlasmaCore.Units.gridUnit * 6
                 
                 onClicked: {
-                    //authenticator.respond(txtPass.text);
                     btnUnlock.enabled=false;
                     txtPass.enabled=false;
                     authenticator.tryUnlock();
@@ -377,6 +381,7 @@ Item {
                 id: message
                 Layout.alignment: Qt.AlignHCenter
                 Layout.fillWidth: true
+                width: PlasmaCore.Units.gridUnit * 16
             }
             
             RowLayout {
