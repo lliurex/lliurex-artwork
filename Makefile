@@ -12,6 +12,9 @@ previews:
 	
 	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/net.lliurex.default/contents/previews/preview.png preview-default.svg
 	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/net.lliurex.default/contents/previews/splash.png preview-splash.svg 
+	cp look-and-feel/net.lliurex.default/contents/previews/splash.png look-and-feel/net.lliurex.default/contents/previews/lockscreen.png
+	cp look-and-feel/net.lliurex.default/contents/previews/splash.png look-and-feel/net.lliurex.classic/contents/previews/splash.png
+	look-and-feel/net.lliurex.default/contents/previews/lockscreen.png look-and-feel/net.lliurex.classic/contents/previews/lockscreen.png
 
 wallpapers/lliurex-%-background.png: wallpapers/%-background.svg
 	@echo -e '$(COLOR_RED)* rendering background [$(basename $@)] $(COLOR_NONE)'

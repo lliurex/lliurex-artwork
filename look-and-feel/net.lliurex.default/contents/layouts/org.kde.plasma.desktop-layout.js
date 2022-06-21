@@ -49,6 +49,9 @@ var layout = {
                             "PreloadWeight": "95"
                         },
                         "/Configuration/General": {
+                            "applicationsDisplay": "0",
+                            "primaryActions": "1",
+                            "systemFavorites": "lock-screen\\,logout\\,save-session\\,switch-user",
                             "favoritesPortedToKAstats" : "true",
                             "favoriteApps":["firefox.desktop","systemsettings.desktop","zero-center.desktop","org.kde.dolphin.desktop","lliurex-store.desktop","org.kde.konsole.desktop"]
                         },
