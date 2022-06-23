@@ -1,3 +1,10 @@
+lliurex-artwork (22.1.0.0) lliurex22; urgency=medium
+
+  * Upgraded lockscreen api to kde 5.25
+  * Some mix visual enhacements and fixes
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 23 Jun 2022 12:45:40 +0200
+
 lliurex-artwork (22.0.1.0) lliurex22; urgency=medium
 
   * Showing password prompt when mouse is moved
