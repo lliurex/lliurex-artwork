@@ -1,3 +1,9 @@
+lliurex-artwork (22.1.1.0) lliurex22; urgency=medium
+
+  * Fixed makefile
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 23 Jun 2022 13:25:16 +0200
+
 lliurex-artwork (22.1.0.0) lliurex22; urgency=medium
 
   * Upgraded lockscreen api to kde 5.25
