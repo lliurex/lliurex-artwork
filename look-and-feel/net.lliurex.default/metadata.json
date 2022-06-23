@@ -1,0 +1,22 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "LliureX Team"
+            }
+        ],
+        "Category": "",
+        "Description": "Lliurex theme",
+        "Id": "net.lliurex.default",
+        "License": "GPLv2+",
+        "Name": "LliureX",
+        "ServiceTypes": [
+            "Plasma/LookAndFeel"
+        ],
+        "Version": "2.0",
+        "Website": "https://www.lliurex.net"
+    },
+    "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
+    "X-Plasma-APIVersion": "2",
+    "X-Plasma-MainScript": "defaults"
+}
