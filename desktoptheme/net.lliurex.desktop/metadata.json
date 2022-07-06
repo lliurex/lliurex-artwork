@@ -8,9 +8,9 @@
         "Category": "",
         "Description": "LliureX theme, based on breeze",
         "EnabledByDefault": true,
-        "Id": "default",
+        "Id": "net.lliurex.desktop",
         "License": "LGPL",
-        "Name": "net.lliurex.desktop",
+        "Name": "LliureX",
         "Version": "22.0",
         "Website": "https://github.com/lliurex/lliurex-artwork"
     },
