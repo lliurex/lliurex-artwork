@@ -5,3 +5,5 @@ ShowDeleteCommand=false
 SingleClick=false
 LookAndFeelPackage=net.lliurex.default
 
+[Icons]
+Theme=lliurex
