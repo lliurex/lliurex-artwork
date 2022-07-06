@@ -6,8 +6,8 @@
             }
         ],
         "Category": "",
-        "Description": "Lliurex theme",
-        "Id": "net.lliurex.default",
+        "Description": "Lliurex classic theme",
+        "Id": "net.lliurex.classic",
         "License": "GPLv2+",
         "Name": "LliureX",
         "ServiceTypes": [

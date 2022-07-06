@@ -1,0 +1,18 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "LliureX Team"
+            }
+        ],
+        "Category": "",
+        "Description": "LliureX theme, based on breeze",
+        "EnabledByDefault": true,
+        "Id": "default",
+        "License": "LGPL",
+        "Name": "net.lliurex.desktop",
+        "Version": "22.0",
+        "Website": "https://github.com/lliurex/lliurex-artwork"
+    },
+    "X-Plasma-API": "5.0"
+}
