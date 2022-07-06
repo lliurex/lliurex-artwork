@@ -1,3 +1,9 @@
+lliurex-artwork (22.3.1.0) lliurex22; urgency=medium
+
+  * Yet another fix
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Wed, 06 Jul 2022 13:58:04 +0200
+
 lliurex-artwork (22.3.0.0) lliurex22; urgency=medium
 
   * Updated plasma theme config files (new theme API)
