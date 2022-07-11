@@ -4,6 +4,11 @@ const config = ConfigFile("lliurexrc");
 config.group = "plasma";
 var wname = config.readEntry("wallpaper");
 
+var gridSize = 18;
+var maxWidth = screenGeometry(0).width/gridSize;
+maxWidth = maxWidth * 0.95;
+var minWidth = maxWidth * 0.90;
+
 var layout = {
     "desktops": [
         {
@@ -182,8 +187,8 @@ var layout = {
             "height": 2.7777777777777777,
             "hiding": "normal",
             "location": "bottom",
-            "maximumLength": 85.0,
-            "minimumLength": 80.0,
+            "maximumLength": maxWidth,
+            "minimumLength": minWidth,
             "offset": 0
         }
     ],
