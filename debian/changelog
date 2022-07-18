@@ -1,3 +1,10 @@
+lliurex-artwork (22.5.0.0) lliurex22; urgency=medium
+
+  * Panel may be opaque again
+  * Classic layout panel size corrected on small screens
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Mon, 18 Jul 2022 10:44:26 +0200
+
 lliurex-artwork (22.4.0.0) lliurex22; urgency=medium
 
   * Panel width is now smart. Size computed using current screen dimensions.
