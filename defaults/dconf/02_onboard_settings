@@ -4,3 +4,6 @@ theme='/usr/share/onboard/themes/Droid.theme'
 
 [org/onboard/auto-show]
 enabled=true
+
+[org/gnome/desktop/a11y/applications]
+secreen-keyboard-enabled=true
