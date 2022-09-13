@@ -27,12 +27,15 @@ Kirigami.FormLayout {
 
     twinFormLayouts: parentLayout
 
+    property alias cfg_showClock: showClock.checked
+    property bool cfg_showClockDefault: true
+
     QQC2.CheckBox {
         id: showClock
         Kirigami.FormData.label: i18nd("lliurex-plasma-theme","Clock")
         text: i18nd("lliurex-plasma-theme","Display a date & time clock")
         KCM.SettingHighlighter {
-            highlight: showClock.checked!=true
+            highlight: cfg_showClockDefault != cfg_showClock
         }
     }
 }

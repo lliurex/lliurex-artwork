@@ -50,7 +50,6 @@ Item {
     signal suspendToDisk()
     signal suspendToRam()
 
-    focus: true
     anchors.fill: parent
     property int lockCount : 0
     property Item topWindow: welcomeWindow
@@ -185,7 +184,8 @@ Item {
             anchors.fill: parent
 
             PlasmaCore.IconItem {
-                Layout.alignment: Qt.AlignHCenter
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+                Layout.topMargin: 12
 
                 source: face
                 implicitWidth: 64
@@ -193,7 +193,7 @@ Item {
             }
 
             PlasmaComponents.Label {
-                Layout.alignment: Qt.AlignHCenter
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
                 text: kscreenlocker_userName
             }
 
@@ -201,6 +201,10 @@ Item {
                 visible: config.showClock
                 Layout.alignment: Qt.AlignHCenter //| Qt.AlignBottom
                 Layout.fillWidth:true
+            }
+
+            Item {
+                Layout.fillHeight: true
             }
         }
     }
@@ -315,6 +319,7 @@ Item {
         width:320
         height:320
         visible: root.topWindow == this
+
         anchors.horizontalCenter: parent.horizontalCenter
         y: {
             if (vkey.active) {
@@ -352,7 +357,8 @@ Item {
                 Layout.alignment: Qt.AlignHCenter
                 echoMode: TextInput.Password
                 placeholderText: i18nd("lliurex-plasma-theme","Password")
-                
+                focus: true
+
                 Keys.onReturnPressed: {
                     txtPass.enabled=false;
                     btnUnlock.enabled=false;
@@ -416,6 +422,10 @@ Item {
                     display: QQC2.AbstractButton.IconOnly
                     icon.width:24
                     icon.height:24
+
+                    onClicked: {
+                        txtPass.forceActiveFocus();
+                    }
                 }
             }
             
