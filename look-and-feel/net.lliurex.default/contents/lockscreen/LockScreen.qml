@@ -183,29 +183,38 @@ Item {
         ColumnLayout {
             anchors.fill: parent
 
-            PlasmaCore.IconItem {
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+            ColumnLayout {
                 Layout.topMargin: 12
-
-                source: face
-                implicitWidth: 64
-                implicitHeight:64
-            }
-
-            PlasmaComponents.Label {
+                Layout.bottomMargin: 12
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-                text: kscreenlocker_userName
+
+                PlasmaCore.IconItem {
+                    Layout.alignment: Qt.AlignHCenter
+
+                    source: face
+                    implicitWidth: 64
+                    implicitHeight:64
+                }
+
+                PlasmaComponents.Label {
+                    Layout.alignment: Qt.AlignHCenter
+                    text: kscreenlocker_userName
+                }
             }
 
             Local.DateTime {
                 visible: config.showClock
-                Layout.alignment: Qt.AlignHCenter //| Qt.AlignBottom
+                Layout.alignment: Qt.AlignHCenter
                 Layout.fillWidth:true
             }
 
-            Item {
+            Local.AnalogClock {
+                visible: !config.showClock
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
                 Layout.fillHeight: true
             }
+
         }
     }
     
