@@ -346,20 +346,26 @@ Item {
         
         ColumnLayout {
             anchors.fill: parent
-            
-            PlasmaCore.IconItem {
-                Layout.alignment: Qt.AlignHCenter
-                
-                source: face
-                implicitWidth: 64
-                implicitHeight:64
+
+            ColumnLayout {
+                Layout.topMargin: 12
+                Layout.bottomMargin: 12
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+
+                PlasmaCore.IconItem {
+                    Layout.alignment: Qt.AlignHCenter
+
+                    source: face
+                    implicitWidth: 64
+                    implicitHeight:64
+                }
+
+                PlasmaComponents.Label {
+                    Layout.alignment: Qt.AlignHCenter
+                    text: kscreenlocker_userName
+                }
             }
-            
-            PlasmaComponents.Label {
-                Layout.alignment: Qt.AlignHCenter
-                text: kscreenlocker_userName
-            }
-            
+
             PlasmaComponents.TextField {
                 id: txtPass
                 implicitWidth: 200
