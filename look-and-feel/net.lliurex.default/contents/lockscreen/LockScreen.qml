@@ -78,6 +78,12 @@ Item {
         showNewSessionEntry: false
     }
 
+    PlasmaCore.DataSource {
+        id: keystateSource
+        engine: "keystate"
+        connectedSources: "Caps Lock"
+    }
+
     Connections {
         target: authenticator
 
@@ -326,7 +332,7 @@ Item {
         id: unlockWindow
         title: i18nd("lliurex-plasma-theme","Unlock")
         width:320
-        height:320
+        height:360
         visible: root.topWindow == this
 
         anchors.horizontalCenter: parent.horizontalCenter
@@ -366,6 +372,29 @@ Item {
                 }
             }
 
+            RowLayout {
+
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
+                Layout.minimumHeight: 22
+                height:22
+
+                PlasmaCore.IconItem {
+                    visible: keystateSource.data["Caps Lock"]["Locked"]
+                    Layout.alignment: Qt.AlignLeft
+                    implicitWidth: 22
+                    implicitHeight: 22
+
+                    source: "data-warning"
+                }
+
+                PlasmaComponents.Label {
+                    visible: keystateSource.data["Caps Lock"]["Locked"]
+                    Layout.alignment: Qt.AlignHCenter
+                    text: i18nd("lliurex-plasma-theme","Caps lock")
+                }
+            }
+
             PlasmaComponents.TextField {
                 id: txtPass
                 implicitWidth: 200
@@ -402,6 +431,8 @@ Item {
                 id: message
                 Layout.alignment: Qt.AlignHCenter
                 Layout.fillWidth: true
+                horizontalAlignment: Text.AlignHCenter
+                color: PlasmaCore.Theme.negativeTextColor
                 width: PlasmaCore.Units.gridUnit * 16
             }
             
