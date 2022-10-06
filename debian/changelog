@@ -1,3 +1,13 @@
+lliurex-artwork (22.7.0.0) lliurex22; urgency=medium
+
+  * Logout osd allows now to switch action
+  * Added an analog clock option to lock screen 
+  * Warning about Caps Lock on lock screen
+  * Some visual enhancements on lock screen
+  * Added a custom onboard autostart on touch flavour
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 06 Oct 2022 13:00:44 +0200
+
 lliurex-artwork (22.6.1.0) lliurex22; urgency=medium
 
   * Fixed broken dconf
