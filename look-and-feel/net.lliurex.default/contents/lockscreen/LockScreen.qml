@@ -348,6 +348,7 @@ Item {
         onVisibleChanged: {
             txtPass.text = "";
             txtPass.focus = true;
+            message.text = "";
         }
         
         ColumnLayout {
@@ -377,7 +378,7 @@ Item {
                 Layout.alignment: Qt.AlignHCenter
                 Layout.fillWidth: true
                 Layout.minimumHeight: 22
-                height:22
+                Layout.maximumHeight: 22
 
                 PlasmaCore.IconItem {
                     visible: keystateSource.data["Caps Lock"]["Locked"]
