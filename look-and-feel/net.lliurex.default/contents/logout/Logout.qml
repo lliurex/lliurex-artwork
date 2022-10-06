@@ -139,7 +139,68 @@ PlasmaCore.ColorScope {
     }
     
     LLX.Window {
-        id: logoutWIndow
+        id: allWindow
+        title: ""
+        width:480
+        height:220
+        anchors.centerIn:parent
+        visible: false
+
+        ColumnLayout {
+            anchors.fill: parent
+
+            RowLayout {
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignHCenter
+
+                PlasmaComponents.Button {
+
+                    text: i18nd("lliurex-plasma-theme","Power off")
+
+                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    icon.name: "system-shutdown"
+                    display: QQC2.AbstractButton.TextUnderIcon
+                    visible: maysd
+
+                    onClicked: root.haltRequested();
+                }
+
+                PlasmaComponents.Button {
+                    text: i18nd("lliurex-plasma-theme","Reboot")
+
+                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    icon.name: "system-reboot"
+                    display: QQC2.AbstractButton.TextUnderIcon
+                    visible: maysd
+
+                    onClicked: root.rebootRequested();
+                }
+
+                PlasmaComponents.Button {
+                    text: i18nd("lliurex-plasma-theme","Log out")
+
+                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    icon.name: "system-log-out"
+                    display: QQC2.AbstractButton.TextUnderIcon
+
+                    onClicked: root.logoutRequested();
+
+                }
+            }
+
+            PlasmaComponents.Button {
+                Layout.alignment: Qt.AlignRight
+                text: i18nd("lliurex-plasma-theme","Cancel")
+                implicitWidth: PlasmaCore.Units.gridUnit * 6
+
+                onClicked: root.cancelRequested();
+            }
+        }
+
+    }
+
+    LLX.Window {
+        id: logoutWindow
         title: ""
         width:480
         height:320
@@ -218,6 +279,24 @@ PlasmaCore.ColorScope {
                     
                 }
                 */
+
+                PlasmaComponents.Button {
+                    Layout.alignment: Qt.AlignLeft
+                    //text: i18nd("lliurex-plasma-theme","Other")
+                    implicitWidth: PlasmaCore.Units.gridUnit * 3
+                    icon.name: "arrow-left"
+
+                    onClicked: {
+                        logoutWindow.visible=false;
+                        allWindow.visible=true;
+                        timer.running=false;
+                    }
+                }
+
+                Item {
+                    Layout.fillWidth: true
+                }
+
                 PlasmaComponents.Button {
                     id: btnHalt
                     text: i18nd("lliurex-plasma-theme","Power off")

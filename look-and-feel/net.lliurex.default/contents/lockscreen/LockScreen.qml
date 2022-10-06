@@ -50,7 +50,6 @@ Item {
     signal suspendToDisk()
     signal suspendToRam()
 
-    focus: true
     anchors.fill: parent
     property int lockCount : 0
     property Item topWindow: welcomeWindow
@@ -77,6 +76,12 @@ Item {
     SessionsModel {
         id: sessionsModel
         showNewSessionEntry: false
+    }
+
+    PlasmaCore.DataSource {
+        id: keystateSource
+        engine: "keystate"
+        connectedSources: "Caps Lock"
     }
 
     Connections {
@@ -177,31 +182,45 @@ Item {
         id: welcomeWindow
         title: i18nd("lliurex-plasma-theme","Session locked")
         width:320
-        height:320
+        height:340
         anchors.centerIn:parent
         visible: root.topWindow == this
         
         ColumnLayout {
             anchors.fill: parent
 
-            PlasmaCore.IconItem {
-                Layout.alignment: Qt.AlignHCenter
+            ColumnLayout {
+                Layout.topMargin: 12
+                Layout.bottomMargin: 12
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
 
-                source: face
-                implicitWidth: 64
-                implicitHeight:64
-            }
+                PlasmaCore.IconItem {
+                    Layout.alignment: Qt.AlignHCenter
 
-            PlasmaComponents.Label {
-                Layout.alignment: Qt.AlignHCenter
-                text: kscreenlocker_userName
+                    source: face
+                    implicitWidth: 64
+                    implicitHeight:64
+                }
+
+                PlasmaComponents.Label {
+                    Layout.alignment: Qt.AlignHCenter
+                    text: kscreenlocker_userName
+                }
             }
 
             Local.DateTime {
                 visible: config.showClock
-                Layout.alignment: Qt.AlignHCenter //| Qt.AlignBottom
+                Layout.alignment: Qt.AlignHCenter
                 Layout.fillWidth:true
             }
+
+            Local.AnalogClock {
+                visible: !config.showClock
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+            }
+
         }
     }
     
@@ -313,8 +332,9 @@ Item {
         id: unlockWindow
         title: i18nd("lliurex-plasma-theme","Unlock")
         width:320
-        height:320
+        height:340
         visible: root.topWindow == this
+
         anchors.horizontalCenter: parent.horizontalCenter
         y: {
             if (vkey.active) {
@@ -328,31 +348,62 @@ Item {
         onVisibleChanged: {
             txtPass.text = "";
             txtPass.focus = true;
+            message.text = "";
         }
         
         ColumnLayout {
             anchors.fill: parent
-            
-            PlasmaCore.IconItem {
-                Layout.alignment: Qt.AlignHCenter
-                
-                source: face
-                implicitWidth: 64
-                implicitHeight:64
+
+            ColumnLayout {
+                Layout.topMargin: 12
+                Layout.bottomMargin: 12
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+
+                PlasmaCore.IconItem {
+                    Layout.alignment: Qt.AlignHCenter
+
+                    source: face
+                    implicitWidth: 64
+                    implicitHeight:64
+                }
+
+                PlasmaComponents.Label {
+                    Layout.alignment: Qt.AlignHCenter
+                    text: kscreenlocker_userName
+                }
             }
-            
-            PlasmaComponents.Label {
+
+            RowLayout {
+
                 Layout.alignment: Qt.AlignHCenter
-                text: kscreenlocker_userName
+                Layout.fillWidth: true
+                Layout.minimumHeight: 22
+                Layout.maximumHeight: 22
+
+                PlasmaCore.IconItem {
+                    visible: keystateSource.data["Caps Lock"]["Locked"]
+                    Layout.alignment: Qt.AlignLeft
+                    implicitWidth: 22
+                    implicitHeight: 22
+
+                    source: "data-warning"
+                }
+
+                PlasmaComponents.Label {
+                    visible: keystateSource.data["Caps Lock"]["Locked"]
+                    Layout.alignment: Qt.AlignHCenter
+                    text: i18nd("lliurex-plasma-theme","Caps lock")
+                }
             }
-            
+
             PlasmaComponents.TextField {
                 id: txtPass
                 implicitWidth: 200
                 Layout.alignment: Qt.AlignHCenter
                 echoMode: TextInput.Password
                 placeholderText: i18nd("lliurex-plasma-theme","Password")
-                
+                focus: true
+
                 Keys.onReturnPressed: {
                     txtPass.enabled=false;
                     btnUnlock.enabled=false;
@@ -381,6 +432,8 @@ Item {
                 id: message
                 Layout.alignment: Qt.AlignHCenter
                 Layout.fillWidth: true
+                horizontalAlignment: Text.AlignHCenter
+                color: PlasmaCore.Theme.negativeTextColor
                 width: PlasmaCore.Units.gridUnit * 16
             }
             
@@ -416,6 +469,10 @@ Item {
                     display: QQC2.AbstractButton.IconOnly
                     icon.width:24
                     icon.height:24
+
+                    onClicked: {
+                        txtPass.forceActiveFocus();
+                    }
                 }
             }
             
