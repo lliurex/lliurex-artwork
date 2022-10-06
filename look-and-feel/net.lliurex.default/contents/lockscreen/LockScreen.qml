@@ -182,7 +182,7 @@ Item {
         id: welcomeWindow
         title: i18nd("lliurex-plasma-theme","Session locked")
         width:320
-        height:320
+        height:340
         anchors.centerIn:parent
         visible: root.topWindow == this
         
@@ -332,7 +332,7 @@ Item {
         id: unlockWindow
         title: i18nd("lliurex-plasma-theme","Unlock")
         width:320
-        height:360
+        height:340
         visible: root.topWindow == this
 
         anchors.horizontalCenter: parent.horizontalCenter
