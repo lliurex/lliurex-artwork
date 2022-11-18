@@ -112,7 +112,9 @@ Item {
         }
 
         function onPromptForSecret(msg) {
-            authenticator.respond(txtPass.text);
+            if (!btnUnlock.enabled) {
+                authenticator.respond(txtPass.text);
+            }
         }
     }
 
