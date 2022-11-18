@@ -1,2 +1,2 @@
-defaults/xdg/lliurex/classroom	/etc/xdg/lliurex
-defaults/xsession/81lliurex-classroom		/etc/X11//Xsession.d/
+defaults/xdg/lliurex/server	/etc/xdg/lliurex
+defaults/xsession/82lliurex-server	/etc/X11//Xsession.d/
