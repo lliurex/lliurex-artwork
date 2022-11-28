@@ -6,7 +6,7 @@ defaults/skel/.[a-zA-Z0-9]*			/etc/skel/
 defaults/searchproviders/* /usr/share/kservices5/searchproviders/
 bin/*	/usr/bin/
 defaults/dconf/lliurex	/etc/dconf/profile/
-defaults/dconf/*settings	/etc/dconf/db/lliurex.d/
+defaults/dconf/01_desktop_settings	/etc/dconf/db/lliurex.d/
 avatars/*.png	/usr/share/plasma/avatars/lliurex/
 locale/mos/* /usr/share/locale/
 plasmoids/*	/usr/share/plasma/plasmoids/
