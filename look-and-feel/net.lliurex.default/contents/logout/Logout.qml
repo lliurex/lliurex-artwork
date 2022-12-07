@@ -58,7 +58,7 @@ PlasmaCore.ColorScope {
         if (sdtype!=ShutdownType.ShutdownTypeNone) {
             if (sessionsModel.count>0) {
                 message.type=Kirigami.MessageType.Warning;
-                message.text=i18nd("lliurex-sddm-theme","There are running sessions");
+                message.text=i18nd("lliurex-plasma-theme","There are running sessions");
                 message.visible=true;
                 timer.running=false;
                 progressbar.value=1.0;
