@@ -230,7 +230,7 @@ Item {
         id: sessionWindow
         title: i18nd("lliurex-plasma-theme","Sessions")
         width: 320
-        height: 480
+        height: 490
         
         anchors.centerIn:parent
         visible: root.topWindow == this
@@ -290,7 +290,14 @@ Item {
 
                         PlasmaComponents.Label {
                             Layout.alignment: Qt.AlignLeft
-                            text: model.name
+                            text: {
+                                if(model.isTty) {
+                                    return model.name + " (TTY " + model.vtNumber+")";
+                                }
+                                else {
+                                    return model.name;
+                                }
+                            }
                         }
                         /*
                         PlasmaComponents.Label {
@@ -318,13 +325,37 @@ Item {
                 }
             }
             
-            PlasmaComponents.Button {
-                text: i18nd("lliurex-plasma-theme","Cancel")
-                Layout.alignment: Qt.AlignRight | Qt.AlignBottom
-                implicitWidth: PlasmaCore.Units.gridUnit * 6
-                
-                onClicked: {
-                    root.topWindow=unlockWindow;
+            RowLayout {
+                Layout.alignment: Qt.AlignBottom
+                Layout.fillWidth: true
+
+                PlasmaComponents.Button {
+                    text: i18nd("lliurex-plasma-theme","New session")
+                    Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
+                    visible: sessionsModel.canStartNewSession
+                    icon.name:"list-add"
+                    icon.width:24
+                    icon.height:24
+                    display: QQC2.AbstractButton.TextBesideIcon
+
+                    onClicked: {
+                            root.topWindow = welcomeWindow;
+                            sessionsModel.startNewSession(true);
+                    }
+                }
+
+                Item {
+                    Layout.fillWidth: true
+                }
+
+                PlasmaComponents.Button {
+                    text: i18nd("lliurex-plasma-theme","Cancel")
+                    Layout.alignment: Qt.AlignRight | Qt.AlignBottom
+                    implicitWidth: PlasmaCore.Units.gridUnit * 6
+
+                    onClicked: {
+                        root.topWindow=unlockWindow;
+                    }
                 }
             }
         }
@@ -454,7 +485,9 @@ Item {
                     display: QQC2.AbstractButton.TextBesideIcon
                     visible: sessionsModel.canStartNewSession && sessionsModel.canSwitchUser
                     onClicked: {
+                        sessionsModel.reload();
                         if (sessionsModel.count === 0) {
+                            root.topWindow=welcomeWindow;
                             sessionsModel.startNewSession(true);
                         }
                         else {
