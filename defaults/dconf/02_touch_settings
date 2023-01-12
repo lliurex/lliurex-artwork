@@ -7,6 +7,7 @@ enabled=true
 
 [org/onboard/window]
 docking-enabled=true
+reposition-method-docked='none'
 
 [org/gnome/desktop/a11y/applications]
 screen-keyboard-enabled=true
