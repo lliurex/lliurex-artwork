@@ -1,3 +1,9 @@
+lliurex-artwork (22.9.0.0) focal; urgency=medium
+
+  * Fixed lock-screen focus behaviour (related to last qml-module-lliurex-ui update)
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Tue, 21 Mar 2023 16:03:43 +0100
+
 lliurex-artwork (22.8.3.0) focal; urgency=medium
 
   * Disabled onboard move strategy
