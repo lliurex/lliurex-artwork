@@ -187,7 +187,8 @@ Item {
         height:340
         anchors.centerIn:parent
         visible: root.topWindow == this
-        
+        focus:visible
+
         ColumnLayout {
             anchors.fill: parent
 
@@ -234,7 +235,8 @@ Item {
         
         anchors.centerIn:parent
         visible: root.topWindow == this
-        
+        focus: visible
+
         ColumnLayout {
             anchors.fill: parent
             
@@ -245,7 +247,6 @@ Item {
                 height: 400
                 model: sessionsModel
                 highlightFollowsCurrentItem: true
-                focus: true
 
                 highlight:
                     Rectangle {
@@ -367,6 +368,7 @@ Item {
         width:320
         height:340
         visible: root.topWindow == this
+        focus: visible
 
         anchors.horizontalCenter: parent.horizontalCenter
         y: {
@@ -380,7 +382,7 @@ Item {
         
         onVisibleChanged: {
             txtPass.text = "";
-            txtPass.focus = true;
+            txtPass.focus = visible;
             message.text = "";
         }
         
