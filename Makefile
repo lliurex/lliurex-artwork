@@ -78,6 +78,10 @@ wallpapers/22.4.3.png: wallpapers/22.4.3.svg
 	@echo -e '$(COLOR_RED)* rendering [$@] $(COLOR_NONE)'
 	rsvg-convert -f png -o wallpapers/22.4.3.png -w 3750 -h 2813 wallpapers/22.4.3.svg
 
+wallpapers/21.4.3.png: wallpapers/21.4.3.svg
+	@echo -e '$(COLOR_RED)* rendering [$@] $(COLOR_NONE)'
+	rsvg-convert -f png -o wallpapers/21.4.3.png -w 3750 -h 2813 wallpapers/21.4.3.svg
+
 %.render: wallpapers/%.png
 	@echo -e '$(COLOR_RED)* creating [$(basename $@)] $(COLOR_NONE)'
 	mkdir -p wallpapers/$(basename $@)/contents/images
@@ -86,19 +90,23 @@ wallpapers/22.4.3.png: wallpapers/22.4.3.svg
 	convert $< -resize 1280x720 wallpapers/$(basename $@)/contents/images/1280x720.png
 	convert $< -resize 1152x648 wallpapers/$(basename $@)/contents/images/1152x648.png
 
-wallpapers/lliurex-%.4.3.jpg: wallpapers/%.jpg wallpapers/22.4.3.png
+wallpapers/lliurex-%.4.3.jpg: wallpapers/%.jpg wallpapers/21.4.3.png
 	@echo -e '$(COLOR_RED)* composing [$@] $(COLOR_NONE)'
 	#convert $< -resize 3750x2813 $@
 	convert $< -crop 3750x2813+625+0 $@
-	convert $@  wallpapers/22.4.3.png -composite $@
+	convert $@  wallpapers/21.4.3.png -composite $@
 
-wallpapers/lliurex-%.jpg: wallpapers/%.jpg wallpapers/22.png
+wallpapers/lliurex-%.jpg: wallpapers/%.jpg wallpapers/21.png
 	@echo -e '$(COLOR_RED)* composing [$@] $(COLOR_NONE)'
-	convert $<  wallpapers/22.png -composite $@
+	convert $<  wallpapers/21.png -composite $@
 
 wallpapers/lliurex-21.jpg: wallpapers/21/escriptori.jpg wallpapers/21.png
 	@echo -e '$(COLOR_RED)* composing [$@] $(COLOR_NONE)'
 	convert wallpapers/21/escriptori.jpg wallpapers/21.png -composite $@
+
+wallpapers/lliurex-21.22.jpg: wallpapers/21.22/escriptori.jpg wallpapers/22.png
+	@echo -e '$(COLOR_RED)* composing [$@] $(COLOR_NONE)'
+	convert wallpapers/21.22/escriptori.jpg wallpapers/22.png -composite $@
 
 lliurex-%.render.22.16.9: wallpapers/lliurex-%.jpg
 	@echo -e '$(COLOR_RED)* creating [$@] $(COLOR_NONE)'
@@ -115,19 +123,28 @@ lliurex-%.render.22.4.3: wallpapers/lliurex-%.4.3.jpg
 	cp $< wallpapers/lliurex-$*/contents/images/3750x2813.jpg
 	convert $< -resize 1024x768 wallpapers/lliurex-$*/contents/images/1024x768.jpg
 
-lliurex-21.render:wallpapers/lliurex-21.jpg wallpapers/21.png
+lliurex-21.render: wallpapers/lliurex-21.jpg wallpapers/21.png
 	@echo -e '$(COLOR_RED)* creating [$@] $(COLOR_NONE)'
-	mkdir -p wallpapers/lliurex-$*/contents/images
-	cp $< wallpapers/lliurex-$*/contents/images/5000x2813.jpg
-	convert $< -resize 1920x1080 wallpapers/lliurex-$*/contents/images/1920x1080.jpg
-	convert $< -resize 1408x792 wallpapers/lliurex-$*/contents/images/1408x792.jpg
-	convert $< -resize 1280x720 wallpapers/lliurex-$*/contents/images/1280x720.jpg
-	convert $< -resize 1152x648 wallpapers/lliurex-$*/contents/images/1152x648.jpg
+	mkdir -p wallpapers/lliurex-21/contents/images
+	cp $< wallpapers/lliurex-21/contents/images/5000x2813.jpg
+	convert $< -resize 1920x1080 wallpapers/lliurex-21/contents/images/1920x1080.jpg
+	convert $< -resize 1408x792 wallpapers/lliurex-21/contents/images/1408x792.jpg
+	convert $< -resize 1280x720 wallpapers/lliurex-21/contents/images/1280x720.jpg
+	convert $< -resize 1152x648 wallpapers/lliurex-21/contents/images/1152x648.jpg
+
+lliurex-21.22.render: wallpapers/lliurex-21.22.jpg wallpapers/22.png
+	@echo -e '$(COLOR_RED)* creating [$@] $(COLOR_NONE)'
+	mkdir -p wallpapers/lliurex-21.22/contents/images
+	cp $< wallpapers/lliurex-21.22/contents/images/5000x2813.jpg
+	convert $< -resize 1920x1080 wallpapers/lliurex-21.22/contents/images/1920x1080.jpg
+	convert $< -resize 1408x792 wallpapers/lliurex-21.22/contents/images/1408x792.jpg
+	convert $< -resize 1280x720 wallpapers/lliurex-21.22/contents/images/1280x720.jpg
+	convert $< -resize 1152x648 wallpapers/lliurex-21.22/contents/images/1152x648.jpg
 
 lliurex-escriptori: lliurex-escriptori.render.22.16.9 lliurex-escriptori.render.22.4.3
 lliurex-aula: lliurex-aula.render.22.16.9 lliurex-aula.render.22.4.3
 lliurex-server: lliurex-server.render.22.16.9 lliurex-server.render.22.4.3
-lliurex-touch: lliurex-touch.render.22.16.9 lliurex-touch.render.22.4.3
+#lliurex-touch: lliurex-touch.render.22.16.9 lliurex-touch.render.22.4.3
 #lliurex-infantil: lliurex-infantil.render.21.16.9 lliurex-infantil.render.21.4.3
 #lliurex-musica: lliurex-musica.render.21.16.9 lliurex-musica.render.21.4.3
 lliurex-neutro: lliurex-neutro.render.22.16.9 lliurex-neutro.render.22.4.3
@@ -139,14 +156,15 @@ lliurex-fp: neutro.render
 lliurex-19: lliurex-19.render
 lliurex-19+1: lliurex-19+1.render
 lliurex-21: lliurex-21.render
+lliurex-21.22: lliurex-21.22.render
 
 w21: lliurex-escriptori lliurex-aula lliurex-infantil lliurex-musica lliurex-neutro
 	@echo -e '$(COLOR_RED)* creating [$^] $(COLOR_NONE)'
 
-w22: lliurex-escriptori lliurex-aula lliurex-server lliurex-neutro lliurex-touch
+w22: lliurex-escriptori lliurex-aula lliurex-server lliurex-neutro
 	@echo -e '$(COLOR_RED)* creating [$^] $(COLOR_NONE)'
 
-wallpapers:w22 lliurex-sunset lliurex-xiquets lliurex-xiquet lliurex-19 lliurex-19+1 lliurex-21
+wallpapers:w22 lliurex-sunset lliurex-xiquets lliurex-xiquet lliurex-19 lliurex-19+1 lliurex-21 lliurex-21.22
 
 locale/%.mo:
 	@echo -e '$(COLOR_RED)* msgfmt [$*] $(COLOR_NONE)'
@@ -166,7 +184,7 @@ all: build
 clean:
 	rm -rf wallpapers/*.png
 	rm -rf wallpapers/lliurex-escriptori/contents
-	rm -rf wallpapers/lliurex-touch/contents
+#	rm -rf wallpapers/lliurex-touch/contents
 	rm -rf wallpapers/lliurex-aula/contents
 	rm -rf wallpapers/lliurex-server/contents
 	rm -rf wallpapers/lliurex-neutro/contents
@@ -176,6 +194,8 @@ clean:
 	rm -rf wallpapers/lliurex-fp/contents
 	rm -rf wallpapers/lliurex-19/contents
 	rm -rf wallpapers/lliurex-19+1/contents
+	rm -rf wallpapers/lliurex-21/contents
+	rm -rf wallpapers/lliurex-21.22/contents
 	rm -rf look-and-feel/net.lliurex.default/contents/previews
 	rm -rf look-and-feel/net.lliurex.classic/contents/previews
 
@@ -200,7 +220,7 @@ install: build
 	cp -r look-and-feel/net.lliurex.classic $(DESTDIR)/usr/share/plasma/look-and-feel/
 #wallpapers
 	cp -r wallpapers/lliurex-escriptori $(DESTDIR)/usr/share/wallpapers/
-	cp -r wallpapers/lliurex-touch $(DESTDIR)/usr/share/wallpapers/
+#	cp -r wallpapers/lliurex-touch $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-aula $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-server $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-neutro $(DESTDIR)/usr/share/wallpapers/
