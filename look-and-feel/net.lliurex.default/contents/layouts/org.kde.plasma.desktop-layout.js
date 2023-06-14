@@ -39,6 +39,35 @@ var layout = {
                 }
             },
             "wallpaperPlugin": "org.kde.image"
+        },
+        {
+            "applets": [
+            ],
+            "config": {
+                "/": {
+                    "ItemGeometriesHorizontal": "",
+                    "formfactor": "0",
+                    "immutability": "1",
+                    "lastScreen": "0",
+                    "wallpaperplugin": "org.kde.image"
+                },
+                "/ConfigDialog": {
+                    "DialogHeight": "540",
+                    "DialogWidth": "720"
+                },
+                "/Configuration": {
+                    "PreloadWeight": "0"
+                },
+                "/General": {
+                    "ToolBoxButtonState": "topcenter",
+                    "ToolBoxButtonX": "565",
+                    "sortMode": "-1"
+                },
+                "/Wallpaper/org.kde.image/General": {
+                    "Image": "lliurex-neutro"
+                }
+            },
+            "wallpaperPlugin": "org.kde.image"
         }
     ],
     "panels": [
