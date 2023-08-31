@@ -1,3 +1,10 @@
+lliurex-artwork (23.1.0.0) jammy; urgency=medium
+
+  * Jammy release.
+  * Using default breeze panel design.
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 31 Aug 2023 10:34:23 +0200
+
 lliurex-artwork (23.0.1.0) focal; urgency=medium
 
   * Add Valencian translations
