@@ -1,3 +1,9 @@
+lliurex-artwork (23.2.0.0) jammy; urgency=medium
+
+  * Reworked layout js scripts
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Wed, 06 Sep 2023 13:36:13 +0200
+
 lliurex-artwork (23.1.0.0) jammy; urgency=medium
 
   * Jammy release.
