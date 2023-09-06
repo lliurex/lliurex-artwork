@@ -1,228 +1,48 @@
+/*
+ * Heavily inspired on KDE layout script
+*/
+
 var plasma = getApiVersion(1);
 
 const config = ConfigFile("lliurexrc");
 config.group = "plasma";
-var wname = config.readEntry("wallpaper");
+var wname = "/usr/share/wallpapers/" + config.readEntry("wallpaper");
 
-var gridSize = 18;
-var maxWidth = screenGeometry(0).width/gridSize;
-maxWidth = maxWidth * 0.95;
-var minWidth = maxWidth * 0.90;
+var panel = new Panel;
+var panelScreen = panel.screen
 
-var layout = {
-    "desktops": [
-        {
-            "applets": [
-            ],
-            "config": {
-                "/": {
-                    "ItemGeometriesHorizontal": "",
-                    "formfactor": "0",
-                    "immutability": "1",
-                    "lastScreen": "0",
-                    "wallpaperplugin": "org.kde.image"
-                },
-                "/ConfigDialog": {
-                    "DialogHeight": "540",
-                    "DialogWidth": "720"
-                },
-                "/Configuration": {
-                    "PreloadWeight": "0"
-                },
-                "/General": {
-                    "ToolBoxButtonState": "topcenter",
-                    "ToolBoxButtonX": "565",
-                    "sortMode": "-1"
-                },
-                "/Wallpaper/org.kde.image/General": {
-                    "Image": wname
-                }
-            },
-            "wallpaperPlugin": "org.kde.image"
-        },
-        {
-            "applets": [
-            ],
-            "config": {
-                "/": {
-                    "ItemGeometriesHorizontal": "",
-                    "formfactor": "0",
-                    "immutability": "1",
-                    "lastScreen": "0",
-                    "wallpaperplugin": "org.kde.image"
-                },
-                "/ConfigDialog": {
-                    "DialogHeight": "540",
-                    "DialogWidth": "720"
-                },
-                "/Configuration": {
-                    "PreloadWeight": "0"
-                },
-                "/General": {
-                    "ToolBoxButtonState": "topcenter",
-                    "ToolBoxButtonX": "565",
-                    "sortMode": "-1"
-                },
-                "/Wallpaper/org.kde.image/General": {
-                    "Image": "lliurex-neutro"
-                }
-            },
-            "wallpaperPlugin": "org.kde.image"
-        }
-    ],
-    "panels": [
-        {
-            "alignment": "center",
-            "applets": [
-                {
-                    "config": {
-                        "/": {
-                            "immutability": "1"
-                        },
-                        "/Configuration": {
-                            "PreloadWeight": "95"
-                        },
-                        "/Configuration/General": {
-                            "applicationsDisplay": "0",
-                            "primaryActions": "1",
-                            "systemFavorites": "lock-screen\\,logout\\,save-session\\,switch-user",
-                            "favoritesPortedToKAstats" : "true",
-                            "favoriteApps":["firefox.desktop","systemsettings.desktop","zero-center.desktop","org.kde.dolphin.desktop","lliurex-store.desktop","org.kde.konsole.desktop"]
-                        },
-                        "/Shortcuts" : {
-                            "global" : "Alt+F1"
-                        }
-                    },
-                    "plugin": "org.kde.plasma.kickoff"
-                },
-                {
-                    "config": {
-                        "/": {
-                            "immutability": "1"
-                        },
-                        "/Configuration": {
-                            "PreloadWeight": "65"
-                        },
-                        "/Configuration/ConfigDialog": {
-                            "DialogHeight": "540",
-                            "DialogWidth": "720"
-                        },
-                        "/Configuration/General": {
-                            "length": "1165",
-                            "widgetWidth": "300"
-                        }
-                    },
-                    "plugin": "org.kde.placesWidget"
-                },
-                {
-                    "config": {
-                        "/": {
-                            "immutability": "1"
-                        },
-                        "/Configuration": {
-                            "PreloadWeight": "42"
-                        },
-                        "/Configuration/ConfigDialog": {
-                            "DialogHeight": "540",
-                            "DialogWidth": "720"
-                        },
-                        "/Shortcuts" : {
-                            "global" : "Alt+d"
-                        }
-                    },
-                    "plugin": "org.kde.plasma.minimizeall"
-                },
-                {
-                    "config": {
-                        "/": {
-                            "immutability": "1"
-                        },
-                        "/Configuration": {
-                            "PreloadWeight": "0"
-                        },
-                        "/Configuration/ConfigDialog": {
-                            "DialogHeight": "540",
-                            "DialogWidth": "720"
-                        },
-                        "/Configuration/General": {
-                            "launchers":[ "applications:org.kde.dolphin.desktop","applications:systemsettings.desktop","applications:firefox.desktop","applications:org.kde.kcalc.desktop","applications:zero-center.desktop"],
-                            "showOnlyCurrentDesktop": "false"
-                        }
-                    },
-                    "plugin": "org.kde.plasma.icontasks"
-                },
-                {
-                    "config": {
-                        "/": {
-                            "immutability": "1"
-                        },
-                        "/Configuration": {
-                            "PreloadWeight": "128"
-                        }
-                    },
-                    "plugin": "org.kde.plasma.systemtray"
-                },
-                {
-                    "config": {
-                        "/": {
-                            "immutability": "1"
-                        },
-                        "/Configuration": {
-                            "PreloadWeight": "3"
-                        },
-                        "/Configuration/ConfigDialog": {
-                            "DialogHeight": "540",
-                            "DialogWidth": "720"
-                        }
-                    },
-                    "plugin": "org.kde.plasma.digitalclock"
-                },
-                {
-                    "config": {
-                        "/": {
-                            "immutability": "1"
-                        },
-                        "/Configuration": {
-                            "PreloadWeight": "64"
-                        },
-                        "/Configuration/ConfigDialog": {
-                            "DialogHeight": "540",
-                            "DialogWidth": "720"
-                        },
-                        "/Configuration/General": {
-                            "showFace": "true",
-                            "showFullName": "false",
-                            "showName": "false"
-                        }
-                    },
-                    "plugin": "org.kde.plasma.userswitcher"
-                }
-            ],
-            "config": {
-                "/": {
-                    "formfactor": "2",
-                    "immutability": "1",
-                    "lastScreen": "0",
-                    "wallpaperplugin": "org.kde.image"
-                },
-                "/ConfigDialog": {
-                    "DialogHeight": "84",
-                    "DialogWidth": "1920"
-                },
-                "/Configuration": {
-                    "PreloadWeight": "0"
-                }
-            },
-            "height": 2.7777777777777777,
-            "hiding": "normal",
-            "location": "bottom",
-            "maximumLength": maxWidth,
-            "minimumLength": minWidth,
-            "offset": 0
-        }
-    ],
-    "serializationFormatVersion": "1"
+panel.height = 2 * Math.floor(gridUnit * 2.5 / 2)
+
+const geo = screenGeometry(panelScreen);
+const maximumWidth = geo.width * 0.8;
+
+panel.alignment = "center";
+panel.minimumLength = maximumWidth;
+panel.maximumLength = maximumWidth;
+
+var kickoff = panel.addWidget("org.kde.plasma.kickoff");
+panel.addWidget("org.kde.placesWidget");
+var iconTasks = panel.addWidget("org.kde.plasma.icontasks");
+panel.addWidget("org.kde.plasma.marginsseparator");
+panel.addWidget("org.kde.plasma.systemtray");
+panel.addWidget("org.kde.plasma.digitalclock");
+var userSwitcher = panel.addWidget("org.kde.plasma.userswitcher");
+
+kickoff.currentConfigGroup = ["Shortcuts"];
+kickoff.writeConfig("global", "Alt+F1");
+
+iconTasks.currentConfigGroup = ["General"];
+iconTasks.writeConfig("launchers",[ "applications:org.kde.dolphin.desktop","applications:systemsettings.desktop","applications:firefox.desktop","applications:org.kde.kcalc.desktop","applications:zero-center.desktop"]);
+iconTasks.writeConfig("showOnlyCurrentDesktop",false);
+
+userSwitcher.currentConfigGroup = ["General"];
+userSwitcher.writeConfig("showFace",true);
+userSwitcher.writeConfig("showFullname",false);
+userSwitcher.writeConfig("showName",false);
+
+var desktopsArray = desktopsForActivity(currentActivity());
+for( var j = 0; j < desktopsArray.length; j++) {
+    desktopsArray[j].wallpaperPlugin = 'org.kde.image';
+    desktopsArray[j].currentConfigGroup = ["Wallpaper","org.kde.image","General"];
+    desktopsArray[j].writeConfig("Image",wname);
 }
-;
-
-plasma.loadSerializedLayout(layout);
