@@ -1,3 +1,9 @@
+lliurex-artwork (23.3.0.0) jammy; urgency=medium
+
+  * Removed transparecies from panel
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Wed, 20 Sep 2023 11:17:05 +0200
+
 lliurex-artwork (23.2.0.0) jammy; urgency=medium
 
   * Reworked layout js scripts
