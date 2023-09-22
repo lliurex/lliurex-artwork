@@ -1,1 +1,4 @@
 look-and-feel/*	/usr/share/plasma/look-and-feel/
+look-and-feel/net.lliurex.default/contents/lockscreen   /usr/share/plasma/look-and-feel/net.lliurex.classic/contents/
+look-and-feel/net.lliurex.default/contents/logout   /usr/share/plasma/look-and-feel/net.lliurex.classic/contents/
+look-and-feel/net.lliurex.default/contents/splash   /usr/share/plasma/look-and-feel/net.lliurex.classic/contents/
