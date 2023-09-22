@@ -218,6 +218,9 @@ install: build
 	cp -r desktoptheme/net.lliurex.desktop $(DESTDIR)/usr/share/plasma/desktoptheme/
 	cp -r look-and-feel/net.lliurex.default $(DESTDIR)/usr/share/plasma/look-and-feel/
 	cp -r look-and-feel/net.lliurex.classic $(DESTDIR)/usr/share/plasma/look-and-feel/
+	cp -r look-and-feel/net.lliurex.default/contents/lockscreen $(DESTDIR)/usr/share/plasma/look-and-feel/net.lliurex.classic/contents/
+	cp -r look-and-feel/net.lliurex.default/contents/logout $(DESTDIR)/usr/share/plasma/look-and-feel/net.lliurex.classic/contents/
+	cp -r look-and-feel/net.lliurex.default/contents/splash $(DESTDIR)/usr/share/plasma/look-and-feel/net.lliurex.classic/contents/
 #wallpapers
 	cp -r wallpapers/lliurex-escriptori $(DESTDIR)/usr/share/wallpapers/
 #	cp -r wallpapers/lliurex-touch $(DESTDIR)/usr/share/wallpapers/
