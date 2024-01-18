@@ -134,20 +134,6 @@ Item {
         anchors.fill: parent
     }
 
-    InputPanel {
-        id: vkey
-        width: {
-            return ((root.height - (root.topWindow.height + root.topWindow.y) )* 3.2) *0.95;
-        }
-        anchors.bottom : parent.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottomMargin: 8
-
-        active: chkVkey.checked
-
-        visible: active && Qt.inputMethod.visible
-    }
-
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true
@@ -160,7 +146,20 @@ Item {
                 timer.running=true;
             }
         }
-        
+    }
+
+    InputPanel {
+        id: vkey
+        width: {
+            return ((root.height - (root.topWindow.height + root.topWindow.y) )* 3.2) *0.95;
+        }
+        anchors.bottom : parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottomMargin: 8
+
+        active: chkVkey.checked
+
+        visible: active && Qt.inputMethod.visible
     }
     
     Timer {
