@@ -1,3 +1,9 @@
+lliurex-artwork (23.4.2.0) jammy; urgency=medium
+
+  * Fixed bug on lockscreen window, preventing virtual keyboard to work properly
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Thu, 18 Jan 2024 09:34:43 +0100
+
 lliurex-artwork (23.4.1.0) jammy; urgency=medium
 
   * No longer using soft links on look and feel themes.
