@@ -1,0 +1,19 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "quiqueiii@gmail.com",
+                "Name": "Enrique Medina"
+
+            }
+        ],
+        "Category": "",
+        "Description": "Lliurex Wallpaper",
+
+        "Icon": "preferences-desktop-wallpaper",
+        "Id": "net.lliurex.wallpaper",
+        "License": "GPLv3",
+        "Name": "LliureX"
+    }
+
+}
