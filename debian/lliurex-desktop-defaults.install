@@ -10,4 +10,5 @@ defaults/dconf/01_desktop_settings	/etc/dconf/db/lliurex.d/
 avatars/*.png	/usr/share/plasma/avatars/lliurex/
 locale/mos/* /usr/share/locale/
 plasmoids/*	/usr/share/plasma/plasmoids/
+wallpapers/net.lliurex.wallpaper /usr/share/plasma/wallpapers/
 
