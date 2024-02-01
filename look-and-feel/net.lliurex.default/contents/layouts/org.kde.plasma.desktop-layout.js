@@ -42,7 +42,7 @@ userSwitcher.writeConfig("showName",false);
 
 var desktopsArray = desktopsForActivity(currentActivity());
 for( var j = 0; j < desktopsArray.length; j++) {
-    desktopsArray[j].wallpaperPlugin = 'org.kde.image';
-    desktopsArray[j].currentConfigGroup = ["Wallpaper","org.kde.image","General"];
-    desktopsArray[j].writeConfig("Image",wname);
+    desktopsArray[j].wallpaperPlugin = 'net.lliurex.wallpaper';
+    //desktopsArray[j].currentConfigGroup = ["Wallpaper","org.kde.image","General"];
+    //desktopsArray[j].writeConfig("Image",wname);
 }
