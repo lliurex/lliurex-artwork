@@ -233,6 +233,8 @@ install: build
 	cp -r wallpapers/lliurex-fp $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-19 $(DESTDIR)/usr/share/wallpapers/
 	cp -r wallpapers/lliurex-19+1 $(DESTDIR)/usr/share/wallpapers/
+
+	cp -r wallpapers/net.lliurex.wallpaper $(DESTDIR)/usr/share/plasma/wallpapers/
 	
 	#xsession files
 	cp -r defaults/xsession/* $(DESTDIR)/etc/X11/Xsession.d/
@@ -283,6 +285,8 @@ uninstall:
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-fp
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-19
 	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-19+1
+
+	rm -rf /$(DESTDIR)/usr/share/plasma/wallpapers/net.lliurex.wallpaper
 	
 #xsession
 	rm -rf $(DESTDIR)/etc/X11/Xsession.d/*lliurex*
