@@ -1,3 +1,10 @@
+lliurex-artwork (23.5-beta1) jammy; urgency=medium
+
+  * Added power profile
+  * Some wallpaper fixes
+
+ -- Enrique Medina Gremaldos <quiqueiii@gmail.com>  Mon, 12 Feb 2024 11:47:23 +0100
+
 lliurex-artwork (23.5-beta0) jammy; urgency=medium
 
   * Testing a new custom wallpaper plugin. Pre-release version.
