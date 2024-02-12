@@ -39,12 +39,10 @@ Rectangle
         id: kuser
     }
 
-    TiledSurface
+    LLX.Background
     {
-        opacity: 0.1
         anchors.fill: parent
-
-
+        isWallpaper: true
     }
 
     Image
