@@ -1,0 +1,9 @@
+[AC][DPMSControl]
+idleTime=840
+lockBeforeTurnOff=0
+
+[AC][SuspendSession]
+idleTime=900000
+suspendThenHibernate=false
+suspendType=32
+
