@@ -22,7 +22,6 @@ import net.lliurex.ui.noise 1.0
 
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
-import org.kde.kcoreaddons 1.0 as KCoreAddons
 
 import QtQuick 2.6
 import QtQuick.Controls 2.6 as QQC2
@@ -34,15 +33,17 @@ Rectangle
     color: "#2980b9"
     anchors.fill:parent
 
-    KCoreAddons.KUser
+    Component.onCompleted:
     {
-        id: kuser
+
     }
 
     LLX.Background
     {
         anchors.fill: parent
         isWallpaper: true
+        rats: true
+        ambient: 0.3
     }
 
     Image
