@@ -20,6 +20,8 @@
 import net.lliurex.ui 1.0 as LLX
 import net.lliurex.ui.noise 1.0
 
+import Edupals.Base 1.0 as Edupals
+
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
 
@@ -33,17 +35,76 @@ Rectangle
     color: "#2980b9"
     anchors.fill:parent
 
+    function computeDaylight()
+    {
+        const date = new Date();
+
+        var h = date.getHours();
+
+        if (h > 6 && h < 18 ) {
+            var f =  ((17 - h) / 10);
+
+            background.ambient = Math.sin(3.1416 * f);
+        }
+        else {
+            background.ambient = 0;
+        }
+
+    }
+
     Component.onCompleted:
     {
+        console.log(user.name);
+        console.log(user.group);
+        console.log(user.groups);
 
+        const date = new Date();
+        background.seed = (date.getDate() * 4) + date.getDay();
+        console.log("seed:",background.seed);
+
+        computeDaylight();
+
+        for (var n=0;n<user.groups.length;n++) {
+            var group = user.groups[n];
+            /*
+            if (group == "adm") {
+                background.rats = false;
+                background.ambient = 0.5;
+            }
+
+            if (group == "adm") {
+                background.isWallpaper = false;
+                background.baseColor = Qt.rgba(0.9,0.1,0.1,1);
+            }
+            */
+        }
+    }
+
+    Edupals.User
+    {
+        id: user
     }
 
     LLX.Background
     {
+        id: background
         anchors.fill: parent
         isWallpaper: true
         rats: true
         ambient: 0.3
+    }
+
+    Timer
+    {
+        interval: 1000 * 60
+        running: true
+        repeat: true
+
+        onTriggered:
+        {
+            computeDaylight();
+            background.requestPaint();
+        }
     }
 
     Image
