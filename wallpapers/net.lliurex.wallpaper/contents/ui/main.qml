@@ -1,7 +1,7 @@
 /*
     Lliurex wallpaper
 
-    Copyright (C) 2019  Enrique Medina Gremaldos <quiqueiii@gmail.com>
+    Copyright (C) 2024  Enrique Medina Gremaldos <quique@necos.es>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -64,19 +64,42 @@ Rectangle
 
         computeDaylight();
 
-        for (var n=0;n<user.groups.length;n++) {
-            var group = user.groups[n];
-            /*
-            if (group == "adm") {
-                background.rats = false;
-                background.ambient = 0.5;
-            }
+        var children = false;
+        var admin = false;
 
-            if (group == "adm") {
-                background.isWallpaper = false;
-                background.baseColor = Qt.rgba(0.9,0.1,0.1,1);
+        if (name == "alumnat") {
+            children = true;
+        }
+        else {
+            for (var n=0;n<user.groups.length;n++) {
+                var group = user.groups[n];
+
+                if (group.startsWith("ALU_PRI") || group.startsWith("ALU_ESO")) {
+                    children = true;
+                }
+
+                if (group == "AdminSai") {
+                    children = false;
+                    admin = true;
+                }
+
             }
-            */
+        }
+
+        if (children) {
+            background.isWallpaper = true;
+            background.rats = true;
+        }
+        else {
+            if (admin) {
+                background.isWallpaper = false;
+                background.rats = false;
+                background.baseColor = Qt.rgba(0.8,0.1,0.1,1.0);
+            }
+            else {
+                background.isWallpaper = true;
+                background.rats = false;
+            }
         }
     }
 

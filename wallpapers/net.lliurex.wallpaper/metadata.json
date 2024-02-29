@@ -1,0 +1,22 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "quique@necos.es",
+                "Name": "Enrique Medina Gremaldos"
+            }
+        ],
+        "Category": "",
+        "Description": "LliureX wallpaper plugin",
+        "Icon": "preferences-desktop-wallpaper",
+        "Id": "net.lliurex.wallpaper",
+        "License": "GPLv2+",
+        "Name": "LliureX",
+        "ServiceTypes": [
+            "Plasma/Wallpaper"
+        ],
+        "Website": "https://github.com/lliurex/lliurex-artwork"
+    },
+    "Keywords": "",
+    "X-KDE-ParentApp": "org.kde.plasmashell"
+}
