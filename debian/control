@@ -33,6 +33,7 @@ Description: LliureX 21.23 plasma theme
 Package: lliurex-desktop-wallpaper
 Architecture: all
 Section: x11
+Depends: qml-module-edupals-base
 Description: LliureX 21.23 desktop wallpaper
  LliureX 21.23 desktop wallpaper with KDE plasma package
 

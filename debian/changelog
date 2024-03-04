@@ -1,3 +1,9 @@
+lliurex-artwork (23.6.1.1) jammy; urgency=medium
+
+  * missing dependency
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Mon, 04 Mar 2024 19:41:08 +0100
+
 lliurex-artwork (23.6.1.0) jammy; urgency=medium
 
   * Fixed missing json on wallpaper plugin
