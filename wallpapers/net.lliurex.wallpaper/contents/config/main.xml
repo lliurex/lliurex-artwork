@@ -9,12 +9,12 @@
 
     <entry name="Color" type="Color">
       <label>Color of the wallpaper</label>
-      <default>#000000</default>
+      <default>#2980b9</default>
     </entry>
 
     <entry name="Mode" type="StringList">
       <label>Wallapaper mode</label>
-      <default></default>
+      <default>preferred://auto</default>
     </entry>
 
   </group>

@@ -32,7 +32,7 @@ import QtQuick.Layouts 1.15
 Rectangle
 {
     id: root
-    color: "#2980b9"
+    color: wallpaper.configuration.Color
     anchors.fill:parent
 
     function computeDaylight()
