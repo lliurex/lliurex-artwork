@@ -25,13 +25,17 @@ ColumnLayout {
 
     RowLayout {
         PlasmaComponents.Label {
-            text: "Wallpaper mode:"
+            text: i18nd("lliurex-plasma-theme","Wallpaper mode:")
         }
 
         PlasmaComponents.ComboBox {
             id: comboMode
 
-            model: ["Auto", "Infantil", "Sobrio", "Plano", "Manual"]
+            model: ["Auto", "Infantil", "Neutral", "Admin", "Manual"]
+
+            Component.onCompleted: {
+                currentIndex = find(root.cfg_Mode);
+            }
 
             onActivated: {
                 root.cfg_Mode = comboMode.currentText;
@@ -41,13 +45,13 @@ ColumnLayout {
 
     RowLayout {
         PlasmaComponents.Label {
-            text: "Color:"
+            text: i18nd("lliurex-plasma-theme","Color:")
         }
 
         KQuickControls.ColorButton
         {
             id: btnColor
-            dialogTitle: "Select Background Color"
+            dialogTitle: i18nd("lliurex-plasma-theme","Background color")
 
             onColorChanged: {
 
@@ -57,14 +61,13 @@ ColumnLayout {
 
     RowLayout {
         PlasmaComponents.Button {
-            text: "Restore"
+            text: i18nd("lliurex-plasma-theme","Restore defaults")
 
             onClicked: {
                 comboMode.currentIndex = 0;
                 btnColor.color = "#2980b9";
             }
         }
-
 
     }
 

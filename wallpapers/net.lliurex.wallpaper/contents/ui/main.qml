@@ -33,6 +33,8 @@ Rectangle
 {
     id: root
     color: wallpaper.configuration.Color
+    property var mode: wallpaper.configuration.Mode
+
     anchors.fill:parent
 
     function computeDaylight()
@@ -52,7 +54,7 @@ Rectangle
 
     }
 
-    Component.onCompleted:
+    function computeWallpaper()
     {
         console.log(user.name);
         console.log(user.group);
@@ -66,8 +68,9 @@ Rectangle
 
         var children = false;
         var admin = false;
+        var auto = true;
 
-        if (name == "alumnat") {
+        if (user.name == "alumnat") {
             children = true;
         }
         else {
@@ -86,21 +89,69 @@ Rectangle
             }
         }
 
-        if (children) {
-            background.isWallpaper = true;
-            background.rats = true;
+        console.log(root.mode);
+        background.baseColor = "#2980b9";
+
+        if (root.mode === "Auto") {
+            auto = true;
         }
-        else {
-            if (admin) {
-                background.isWallpaper = false;
-                background.rats = false;
-                background.baseColor = Qt.rgba(0.8,0.1,0.1,1.0);
+
+        if (root.mode === "Infantil") {
+            children = true;
+        }
+
+        if (root.mode === "Neutral") {
+            children = true;
+            background.rats = false;
+        }
+
+        if (root.mode === "Admin") {
+            children = false;
+            background.rats = false;
+            admin = true;
+        }
+
+        if (root.mode === "Manual") {
+            auto = false;
+            children = false;
+            background.rats = false;
+            background.baseColor = root.color;
+        }
+
+        if (auto) {
+            if (children) {
+                background.isWallpaper = true;
+                background.rats = true;
             }
             else {
-                background.isWallpaper = true;
-                background.rats = false;
+                if (admin) {
+                    background.isWallpaper = false;
+                    background.rats = false;
+                    background.baseColor = Qt.rgba(0.8,0.1,0.1,1.0);
+                }
+                else {
+                    background.isWallpaper = true;
+                    background.rats = false;
+                }
             }
         }
+    }
+
+    onColorChanged:
+    {
+        computeWallpaper();
+        background.requestPaint();
+    }
+
+    onModeChanged:
+    {
+        computeWallpaper();
+        background.requestPaint();
+    }
+
+    Component.onCompleted:
+    {
+        computeWallpaper();
     }
 
     Edupals.User
@@ -151,6 +202,13 @@ Rectangle
 
         anchors.right:parent.right
         anchors.top:parent.top
+    }
+
+    Text
+    {
+        text: root.mode
+        x:0
+        y:root.height/2
     }
 }
 

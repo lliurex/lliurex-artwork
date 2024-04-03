@@ -12,9 +12,9 @@
       <default>#2980b9</default>
     </entry>
 
-    <entry name="Mode" type="StringList">
+    <entry name="Mode" type="String">
       <label>Wallapaper mode</label>
-      <default>preferred://auto</default>
+      <default>Auto</default>
     </entry>
 
   </group>
