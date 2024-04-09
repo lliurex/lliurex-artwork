@@ -9,12 +9,22 @@
 
     <entry name="Color" type="Color">
       <label>Color of the wallpaper</label>
-      <default>#000000</default>
+      <default>#2980b9</default>
     </entry>
 
-    <entry name="Mode" type="StringList">
+    <entry name="Mode" type="String">
       <label>Wallapaper mode</label>
-      <default></default>
+      <default>Auto</default>
+    </entry>
+
+    <entry name="Light" type="Bool">
+      <label>Light effect</label>
+      <default>0</default>
+    </entry>
+
+    <entry name="Characters" type="Bool">
+      <label>Characters</label>
+      <default>0</default>
     </entry>
 
   </group>

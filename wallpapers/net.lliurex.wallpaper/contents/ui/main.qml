@@ -32,17 +32,26 @@ import QtQuick.Layouts 1.15
 Rectangle
 {
     id: root
-    color: "#2980b9"
+    color: wallpaper.configuration.Color
+    property var mode: wallpaper.configuration.Mode
+    property var light: wallpaper.configuration.Light
+    property var characters: wallpaper.configuration.Characters
+
     anchors.fill:parent
 
     function computeDaylight()
     {
         const date = new Date();
 
-        var h = date.getHours();
+        var h = date.getUTCHours();
+        var m = date.getUTCMinutes();
 
-        if (h > 6 && h < 18 ) {
-            var f =  ((17 - h) / 10);
+        var now = (h * 60) + m;
+        var sunrise = 7 * 60;
+        var sunset = 19 * 60;
+
+        if (now >= sunrise && now <= sunset ) {
+            var f =  ((sunset - now) / (sunset-sunrise));
 
             background.ambient = Math.sin(3.1416 * f);
         }
@@ -52,22 +61,19 @@ Rectangle
 
     }
 
-    Component.onCompleted:
+    function computeWallpaper()
     {
-        console.log(user.name);
-        console.log(user.group);
-        console.log(user.groups);
 
         const date = new Date();
         background.seed = (date.getDate() * 4) + date.getDay();
-        console.log("seed:",background.seed);
 
         computeDaylight();
 
         var children = false;
         var admin = false;
+        var auto = true;
 
-        if (name == "alumnat") {
+        if (user.name == "alumnat") {
             children = true;
         }
         else {
@@ -86,21 +92,85 @@ Rectangle
             }
         }
 
-        if (children) {
+        console.log(root.mode);
+        background.baseColor = "#2980b9";
+
+        if (root.mode === "Auto") {
+            auto = true;
+        }
+
+        if (root.mode === "Infantil") {
+            auto = false;
             background.isWallpaper = true;
             background.rats = true;
         }
-        else {
-            if (admin) {
-                background.isWallpaper = false;
-                background.rats = false;
-                background.baseColor = Qt.rgba(0.8,0.1,0.1,1.0);
+
+        if (root.mode === "Neutral") {
+            auto = false;
+            background.isWallpaper = true;
+            background.rats = false;
+        }
+
+        if (root.mode === "Admin") {
+            children = false;
+            admin = true;
+        }
+
+        if (root.mode === "Manual") {
+            auto = false;
+            background.isWallpaper = root.light;
+            background.rats = root.characters;
+            background.baseColor = root.color;
+        }
+
+        if (auto) {
+            if (children) {
+                background.isWallpaper = true;
+                background.rats = true;
             }
             else {
-                background.isWallpaper = true;
-                background.rats = false;
+                if (admin) {
+                    background.isWallpaper = false;
+                    background.rats = false;
+                    background.baseColor = Qt.rgba(0.8,0.1,0.1,1.0);
+                }
+                else {
+                    background.isWallpaper = true;
+                    background.rats = false;
+                }
             }
         }
+
+        background.computeMap();
+    }
+
+    onColorChanged:
+    {
+        computeWallpaper();
+        background.requestPaint();
+    }
+
+    onModeChanged:
+    {
+        computeWallpaper();
+        background.requestPaint();
+    }
+
+    onLightChanged:
+    {
+        computeWallpaper();
+        background.requestPaint();
+    }
+
+    onCharactersChanged:
+    {
+        computeWallpaper();
+        background.requestPaint();
+    }
+
+    Component.onCompleted:
+    {
+        computeWallpaper();
     }
 
     Edupals.User
