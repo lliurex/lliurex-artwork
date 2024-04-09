@@ -7,7 +7,7 @@
 */
 
 import QtQuick 2.5
-import QtQuick.Controls 2.5 as QtControls2
+import QtQuick.Controls 2.5 as QQC2
 import QtQuick.Layouts 1.0
 import QtQuick.Window 2.0 // for Screen
 import org.kde.plasma.wallpapers.image 2.0 as PlasmaWallpaper
@@ -22,6 +22,8 @@ ColumnLayout {
 
     property string cfg_Mode
     property alias cfg_Color : btnColor.color
+    property alias cfg_Light : chkLight.checked
+    property alias cfg_Characters : chkCharacters.checked
 
     RowLayout {
         PlasmaComponents.Label {
@@ -30,6 +32,8 @@ ColumnLayout {
 
         PlasmaComponents.ComboBox {
             id: comboMode
+
+            property bool manual : (currentText === "Manual")
 
             model: ["Auto", "Infantil", "Neutral", "Admin", "Manual"]
 
@@ -52,10 +56,29 @@ ColumnLayout {
         {
             id: btnColor
             dialogTitle: i18nd("lliurex-plasma-theme","Background color")
+            enabled: comboMode.manual
 
             onColorChanged: {
 
             }
+        }
+    }
+
+    RowLayout {
+
+        QQC2.CheckBox {
+            id: chkLight
+            enabled: comboMode.manual
+            text: i18nd("lliurex-plasma-theme","Light effect")
+        }
+    }
+
+    RowLayout {
+
+        QQC2.CheckBox {
+            id: chkCharacters
+            enabled: comboMode.manual
+            text: i18nd("lliurex-plasma-theme","Characters")
         }
     }
 

@@ -34,6 +34,8 @@ Rectangle
     id: root
     color: wallpaper.configuration.Color
     property var mode: wallpaper.configuration.Mode
+    property var light: wallpaper.configuration.Light
+    property var characters: wallpaper.configuration.Characters
 
     anchors.fill:parent
 
@@ -41,10 +43,15 @@ Rectangle
     {
         const date = new Date();
 
-        var h = date.getHours();
+        var h = date.getUTCHours();
+        var m = date.getUTCMinutes();
 
-        if (h > 6 && h < 18 ) {
-            var f =  ((17 - h) / 10);
+        var now = (h * 60) + m;
+        var sunrise = 7 * 60;
+        var sunset = 19 * 60;
+
+        if (now >= sunrise && now <= sunset ) {
+            var f =  ((sunset - now) / (sunset-sunrise));
 
             background.ambient = Math.sin(3.1416 * f);
         }
@@ -56,13 +63,9 @@ Rectangle
 
     function computeWallpaper()
     {
-        console.log(user.name);
-        console.log(user.group);
-        console.log(user.groups);
 
         const date = new Date();
         background.seed = (date.getDate() * 4) + date.getDay();
-        console.log("seed:",background.seed);
 
         computeDaylight();
 
@@ -97,24 +100,26 @@ Rectangle
         }
 
         if (root.mode === "Infantil") {
-            children = true;
+            auto = false;
+            background.isWallpaper = true;
+            background.rats = true;
         }
 
         if (root.mode === "Neutral") {
-            children = true;
+            auto = false;
+            background.isWallpaper = true;
             background.rats = false;
         }
 
         if (root.mode === "Admin") {
             children = false;
-            background.rats = false;
             admin = true;
         }
 
         if (root.mode === "Manual") {
             auto = false;
-            children = false;
-            background.rats = false;
+            background.isWallpaper = root.light;
+            background.rats = root.characters;
             background.baseColor = root.color;
         }
 
@@ -135,6 +140,8 @@ Rectangle
                 }
             }
         }
+
+        background.computeMap();
     }
 
     onColorChanged:
@@ -144,6 +151,18 @@ Rectangle
     }
 
     onModeChanged:
+    {
+        computeWallpaper();
+        background.requestPaint();
+    }
+
+    onLightChanged:
+    {
+        computeWallpaper();
+        background.requestPaint();
+    }
+
+    onCharactersChanged:
     {
         computeWallpaper();
         background.requestPaint();
@@ -202,13 +221,6 @@ Rectangle
 
         anchors.right:parent.right
         anchors.top:parent.top
-    }
-
-    Text
-    {
-        text: root.mode
-        x:0
-        y:root.height/2
     }
 }
 
