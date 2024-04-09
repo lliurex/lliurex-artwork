@@ -1,3 +1,11 @@
+lliurex-artwork (23.7.0.0) jammy; urgency=medium
+
+  * Added new avatar artwork based on 23 wallpaper
+  * Wallpaper is now fully customizable
+  * Some minor improvements on daylight computation
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Tue, 09 Apr 2024 13:01:34 +0200
+
 lliurex-artwork (23.6.1.1) jammy; urgency=medium
 
   * missing dependency
