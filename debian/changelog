@@ -1,3 +1,9 @@
+lliurex-artwork (23.7.1.0) jammy; urgency=medium
+
+  * Added a default touchpad tap-to-click settings for some known laptops
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Mon, 17 Jun 2024 13:32:21 +0200
+
 lliurex-artwork (23.7.0.0) jammy; urgency=medium
 
   * Added new avatar artwork based on 23 wallpaper
