@@ -1,0 +1,11 @@
+[SynPS/2 Synaptics TouchPad]
+tapDragLock=true
+tapToClick=true
+
+[ELAN0647:00 04F3:31B2 Touchpad]
+tapDragLock=true
+tapToClick=true
+
+[ELAN0799:00 04F3:31B4 Touchpad]
+tapDragLock=true
+tapToClick=true
