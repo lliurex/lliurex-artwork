@@ -447,6 +447,11 @@ Item {
 
                 Keys.onPressed: {
                     root.lockCount=0;
+
+                    // workaround for inputpanel eating Return key press
+                    if (!vkey.active) {
+                        Qt.inputMethod.hide();
+                    }
                 }
             }
             
