@@ -1,0 +1,12 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Pablo Broseta"
+            }
+        ],
+        "Id": "lliurex-aula",
+        "License": "CC-BY-SA-4.0",
+        "Name": "LliureX Aula"
+    }
+}
