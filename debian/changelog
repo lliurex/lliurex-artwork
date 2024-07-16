@@ -1,4 +1,10 @@
-lliurex-artwork (23.0.2.0) noble; urgency=medium
+lliurex-artwork (23.0.3.0) focal; urgency=medium
+
+  * Updated wallpaper info format
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Tue, 16 Jul 2024 09:58:57 +0200
+
+lliurex-artwork (23.0.2.0) focal; urgency=medium
 
   * InputPanel bug workaround
 
