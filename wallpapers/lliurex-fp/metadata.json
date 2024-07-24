@@ -1,0 +1,12 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "LliureX Team"
+            }
+        ],
+        "Id": "lliurex-fp",
+        "License": "CC-BY-SA-4.0",
+        "Name": "LliureX FP"
+    }
+}
