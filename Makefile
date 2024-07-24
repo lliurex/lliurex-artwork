@@ -6,9 +6,9 @@ COLOR_RED = \x1b[31;01m
 previews:
 	@echo -e '$(COLOR_RED)* rendering previews $(COLOR_NONE)'
 	mkdir -p look-and-feel/net.lliurex.default/contents/previews/
-	mkdir -p look-and-feel/net.lliurex.classic/contents/previews/
+	#mkdir -p look-and-feel/net.lliurex.classic/contents/previews/
 	
-	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/net.lliurex.classic/contents/previews/preview.png preview-classic.svg 
+	#rsvg-convert -f png --width=300 --height=169 -o look-and-feel/net.lliurex.classic/contents/previews/preview.png preview-classic.svg
 	
 	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/net.lliurex.default/contents/previews/preview.png preview-default.svg
 	rsvg-convert -f png --width=300 --height=169 -o look-and-feel/net.lliurex.default/contents/previews/splash.png preview-splash.svg 
@@ -177,7 +177,8 @@ get-po:
 	@echo -e '$(COLOR_RED)* Extracting locale strings... $(COLOR_NONE)'
 	xgettext -kde -ki18nd:2 look-and-feel/net.lliurex.default/contents/lockscreen/*.qml look-and-feel/net.lliurex.default/contents/logout/*.qml look-and-feel/net.lliurex.default/contents/splash/*.qml -o locale/messages.po
 
-build: wallpapers previews locales
+#disabled wallpaper
+build: previews locales
 
 all: build
 
@@ -267,48 +268,6 @@ install: build
 #locale
 	mkdir -p $(DESTDIR)/usr/share/locale/
 	cp -r locale/mos/* $(DESTDIR)/usr/share/locale/
-	
-uninstall:
 
-#plasma theme
-	rm -rf $(DESTDIR)/usr/share/plasma/desktoptheme/net.lliurex.desktop
-	rm -rf $(DESTDIR)/usr/share/plasma/look-and-feel/net.lliurex.default
-	rm -rf $(DESTDIR)/usr/share/plasma/look-and-feel/net.lliurex.classic
-
-#wallpaper
-	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-escriptori
-	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-touch
-	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-aula
-	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-server
-	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-neutro
-	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-sunset
-	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-fp
-	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-19
-	rm -rf $(DESTDIR)/usr/share/wallpapers/lliurex-19+1
-	
-#xsession
-	rm -rf $(DESTDIR)/etc/X11/Xsession.d/*lliurex*
-
-#skel
-	rm -rf $(DESTDIR)/etc/skel/.local/share/konsole
-
-#xdg
-	rm -rf $(DESTDIR)/etc/xdg/lliurex
-
-#color scheme
-	rm -rf $(DESTDIR)/usr/share/color-schemes/lliurex.colors
-
-#searchproviders
-	rm -rf $(DESTDIR)/usr/share/kservices5/searchproviders/foroLliurex.desktop
-
-#dconf
-	rm -rf $(DESTDIR)/etc/dconf/profile/lliurex
-	rm -rf $(DESTDIR)/etc/dconf/db/lliurex.d
-
-#icon theme
-	rm -rf $(DESTDIR)/usr/share/icons/lliurex
-
-#avatars
-	rm -rf $(DESTDIR)/usr/share/plasma/avatars/lliurex
 
 .PHONY: all clean install uninstall build
