@@ -202,39 +202,22 @@ clean:
 
 install: build
 	@echo -e '$(COLOR_RED)* creating paths... $(COLOR_NONE)'
-	mkdir -p $(DESTDIR)/usr/share/wallpapers
 	mkdir -p $(DESTDIR)/usr/share/color-schemes
 	mkdir -p $(DESTDIR)/usr/share/aurorae/themes
 	mkdir -p $(DESTDIR)/usr/share/plasma/desktoptheme
-	mkdir -p $(DESTDIR)/usr/share/plasma/look-and-feel/
+	mkdir -p $(DESTDIR)/usr/share/plasma/look-and-feel
+	mkdir -p $(DESTDIR)/usr/share/plasma/wallpapers
 	mkdir -p $(DESTDIR)/etc/X11/Xsession.d
 	mkdir -p $(DESTDIR)/etc/xdg
-	mkdir -p $(DESTDIR)/etc/skel/
-	mkdir -p $(DESTDIR)/usr/share/kservices5/searchproviders/
-	mkdir -p $(DESTDIR)/etc/dconf/profile/
-	mkdir -p $(DESTDIR)/etc/dconf/db/lliurex.d/
+	mkdir -p $(DESTDIR)/etc/skel
+	mkdir -p $(DESTDIR)/usr/share/kservices5/searchproviders
+	mkdir -p $(DESTDIR)/etc/dconf/profile
+	mkdir -p $(DESTDIR)/etc/dconf/db/lliurex.d
 
 	@echo -e '$(COLOR_RED)* installing... $(COLOR_NONE)'
 #plasma theme
 	cp -r desktoptheme/net.lliurex.desktop $(DESTDIR)/usr/share/plasma/desktoptheme/
 	cp -r look-and-feel/net.lliurex.default $(DESTDIR)/usr/share/plasma/look-and-feel/
-	cp -r look-and-feel/net.lliurex.classic $(DESTDIR)/usr/share/plasma/look-and-feel/
-	cp -r look-and-feel/net.lliurex.default/contents/lockscreen $(DESTDIR)/usr/share/plasma/look-and-feel/net.lliurex.classic/contents/
-	cp -r look-and-feel/net.lliurex.default/contents/logout $(DESTDIR)/usr/share/plasma/look-and-feel/net.lliurex.classic/contents/
-	cp -r look-and-feel/net.lliurex.default/contents/splash $(DESTDIR)/usr/share/plasma/look-and-feel/net.lliurex.classic/contents/
-#wallpapers
-	cp -r wallpapers/lliurex-escriptori $(DESTDIR)/usr/share/wallpapers/
-#	cp -r wallpapers/lliurex-touch $(DESTDIR)/usr/share/wallpapers/
-	cp -r wallpapers/lliurex-aula $(DESTDIR)/usr/share/wallpapers/
-	cp -r wallpapers/lliurex-server $(DESTDIR)/usr/share/wallpapers/
-	cp -r wallpapers/lliurex-neutro $(DESTDIR)/usr/share/wallpapers/
-	cp -r wallpapers/lliurex-xiquet $(DESTDIR)/usr/share/wallpapers/
-	cp -r wallpapers/lliurex-xiquets $(DESTDIR)/usr/share/wallpapers/
-	cp -r wallpapers/lliurex-sunset $(DESTDIR)/usr/share/wallpapers/
-	cp -r wallpapers/lliurex-fp $(DESTDIR)/usr/share/wallpapers/
-	cp -r wallpapers/lliurex-19 $(DESTDIR)/usr/share/wallpapers/
-	cp -r wallpapers/lliurex-19+1 $(DESTDIR)/usr/share/wallpapers/
-
 	cp -r wallpapers/net.lliurex.wallpaper $(DESTDIR)/usr/share/plasma/wallpapers/
 	
 	#xsession files
@@ -259,6 +242,7 @@ install: build
 	@echo -e "You may want to perfom a dconf update as root"
 
 #icon theme
+	mkdir -p $(DESTDIR)/usr/share/icons
 	cp -r icons/lliurex $(DESTDIR)/usr/share/icons/
 
 #avatars
