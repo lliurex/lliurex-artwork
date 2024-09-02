@@ -2,7 +2,7 @@ Source: lliurex-artwork
 Section: x11
 Priority: optional
 Maintainer: LliureX Team <lliurex@gva.es>
-Build-Depends: debhelper-compat (= 13), librsvg2-bin, imagemagick-6.q16
+Build-Depends: debhelper-compat (= 13), librsvg2-bin, imagemagick-6.q16, gettext, make
 Standards-Version: 4.6.0
 Rules-Requires-Root: no
 
