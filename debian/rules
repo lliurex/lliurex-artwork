@@ -12,5 +12,7 @@
 %:
 	dh $@ 
 
+override_dh_auto_build:
+	make all
 override_dh_auto_install:
 	# ignoring Makefile install
