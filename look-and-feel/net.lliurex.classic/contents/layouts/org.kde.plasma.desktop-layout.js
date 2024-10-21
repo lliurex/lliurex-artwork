@@ -2,7 +2,7 @@ var plasma = getApiVersion(1);
 
 const config = ConfigFile("lliurexrc");
 config.group = "plasma";
-var wname = config.readEntry("wallpaper");
+var wname = "/usr/share/wallpapers/" + config.readEntry("wallpaper");
 
 var gridSize = 18;
 var maxWidth = screenGeometry(0).width/gridSize;
