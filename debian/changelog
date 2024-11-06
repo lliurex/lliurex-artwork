@@ -1,4 +1,4 @@
-lliurex-artwork (25.0.0.0+build1) UNRELEASED; urgency=medium
+lliurex-artwork (25.0.0.0+build1) noble; urgency=medium
 
   * Dummy build to match newer qt6 dependencies
 
