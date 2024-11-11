@@ -21,7 +21,7 @@ Description: LliureX 25 color scheme
 Package: lliurex-desktop-plasma-look-and-feel
 Architecture: all
 Section: x11
-Depends: qml6-module-lliurex-ui, qml6-module-edupals-base, kf6-coreaddons
+Depends: qml6-module-lliurex-ui, qml6-module-edupals-base, kf6-kcoreaddons
 Description: LliureX 25 plasma look and feel theme
  LliureX 25 default KDE Plasma look and feel theme
 
