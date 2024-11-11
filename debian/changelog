@@ -1,3 +1,9 @@
+lliurex-artwork (25.0.0.0+build2) noble; urgency=medium
+
+  * Lots fo fixes for Plasma 6.2
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Mon, 11 Nov 2024 15:13:28 +0100
+
 lliurex-artwork (25.0.0.0+build1) noble; urgency=medium
 
   * Dummy build to match newer qt6 dependencies
