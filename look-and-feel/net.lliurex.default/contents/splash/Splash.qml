@@ -23,7 +23,8 @@ import net.lliurex.ui 1.0 as LLX
 import SddmComponents 2.0 as Sddm
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
-import org.kde.kcoreaddons 1.0 as KCoreAddons
+import org.kde.coreaddons 1.0 as KCoreAddons
+import org.kde.kirigami 2.16 as Kirigami
 
 import QtQuick 2.6
 import QtQuick.Controls 2.6 as QQC2
@@ -54,7 +55,7 @@ Item {
             anchors.fill: parent
             anchors.margins:4
             
-            PlasmaCore.IconItem {
+            Kirigami.Icon {
                 Layout.alignment: Qt.AlignCenter 
                 implicitWidth: 64
                 implicitHeight: 64

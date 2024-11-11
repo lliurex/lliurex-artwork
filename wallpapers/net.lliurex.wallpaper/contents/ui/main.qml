@@ -24,18 +24,19 @@ import Edupals.Base 1.0 as Edupals
 
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
+import org.kde.plasma.plasmoid 2.0
 
 import QtQuick 2.6
 import QtQuick.Controls 2.6 as QQC2
 import QtQuick.Layouts 1.15
 
-Rectangle
+WallpaperItem
 {
     id: root
-    color: wallpaper.configuration.Color
-    property var mode: wallpaper.configuration.Mode
-    property var light: wallpaper.configuration.Light
-    property var characters: wallpaper.configuration.Characters
+    property color: root.configuration.Color
+    property var mode: root.configuration.Mode
+    property var light: root.configuration.Light
+    property var characters: root.configuration.Characters
 
     anchors.fill:parent
 
