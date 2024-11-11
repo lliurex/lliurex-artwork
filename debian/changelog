@@ -1,3 +1,9 @@
+lliurex-artwork (25.0.0.0+build3) noble; urgency=medium
+
+  * Fix dependency
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Mon, 11 Nov 2024 18:49:28 +0100
+
 lliurex-artwork (25.0.0.0+build2) noble; urgency=medium
 
   * Lots fo fixes for Plasma 6.2
