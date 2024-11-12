@@ -33,7 +33,7 @@ import QtQuick.Layouts 1.15
 WallpaperItem
 {
     id: root
-    property color: root.configuration.Color
+    property var color: root.configuration.Color
     property var mode: root.configuration.Mode
     property var light: root.configuration.Light
     property var characters: root.configuration.Characters
