@@ -1,7 +1,9 @@
 defaults/xdg/lliurex/desktop	/etc/xdg/lliurex
 defaults/xdg/lliurex/layouts	/etc/xdg/lliurex
 defaults/xsession/80lliurex-desktop		/etc/X11//Xsession.d/
+defaults/xsession/80lliurex-desktop		/etc/xdg/Xwayland-session.d/
 defaults/xsession/90lliurex		/etc/X11//Xsession.d/
+defaults/xsession/90lliurex		/etc/xdg/Xwayland-session.d/
 defaults/skel/.[a-zA-Z0-9]*			/etc/skel/
 defaults/searchproviders/* /usr/share/kservices5/searchproviders/
 bin/*	/usr/bin/
