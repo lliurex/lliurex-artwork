@@ -1,3 +1,9 @@
+lliurex-artwork (23.7.2.0) jammy; urgency=medium
+
+  * Added a default (bigger) screen locker timeout
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Wed, 20 Nov 2024 22:51:41 +0100
+
 lliurex-artwork (23.7.1.0) jammy; urgency=medium
 
   * Added a default touchpad tap-to-click settings for some known laptops
