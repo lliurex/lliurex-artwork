@@ -27,11 +27,18 @@ DialogSizes=16,22,32,48,64,128,256
 KDE-Extensions=.svg
 
 
-Directories=apps/48
+Directories=apps/48,places/48
 
 [apps/48]
 Size=48
 Context=Applications
+Type=Scalable
+MinSize=48
+MaxSize=256
+
+[places/48]
+Size=48
+Context=Places
 Type=Scalable
 MinSize=48
 MaxSize=256
