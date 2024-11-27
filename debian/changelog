@@ -1,3 +1,10 @@
+lliurex-artwork (25.0.0.0+build5) noble; urgency=medium
+
+  * Using profile.d in order to set default xdg dirs (and plasma lnf)
+  * custom start here icon
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Wed, 27 Nov 2024 10:27:59 +0100
+
 lliurex-artwork (25.0.0.0+build4) noble; urgency=medium
 
   * Some minor fixes to get this working at least
