@@ -28,11 +28,14 @@ panel.addWidget("org.kde.plasma.systemtray");
 panel.addWidget("org.kde.plasma.digitalclock");
 var userSwitcher = panel.addWidget("org.kde.plasma.userswitcher");
 
+kickoff.currentConfigGroup = ["General"];
+kickoff.writeConfig("icon", "start-here-lliurex");
+
 kickoff.currentConfigGroup = ["Shortcuts"];
 kickoff.writeConfig("global", "Alt+F1");
 
 iconTasks.currentConfigGroup = ["General"];
-iconTasks.writeConfig("launchers",[ "applications:org.kde.dolphin.desktop","applications:systemsettings.desktop","applications:firefox.desktop","applications:org.kde.kcalc.desktop","applications:zero-center.desktop"]);
+iconTasks.writeConfig("launchers",[ "applications:org.kde.dolphin.desktop","applications:systemsettings.desktop","applications:chromium.desktop","applications:org.kde.kcalc.desktop","applications:zero-center.desktop"]);
 iconTasks.writeConfig("showOnlyCurrentDesktop",false);
 
 userSwitcher.currentConfigGroup = ["General"];
