@@ -1,3 +1,3 @@
 #!/bin/sh
 export DCONF_PROFILE=lliurex
-export XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:/etc/xdg/lliurex/desktop"
+export XDG_CONFIG_DIRS=/usr/share/lliurex-plasma-settings/xdg/:${XDG_CONFIG_DIRS:-/etc/xdg}
