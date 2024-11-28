@@ -9,3 +9,7 @@ tapToClick=true
 [ELAN0799:00 04F3:31B4 Touchpad]
 tapDragLock=true
 tapToClick=true
+
+[SYNA3602:00 093A:0255 Touchpad]
+tapDragLock=true
+tapToClick=true
