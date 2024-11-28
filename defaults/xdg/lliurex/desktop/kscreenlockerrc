@@ -1,0 +1,6 @@
+[Daemon]
+LockGrace=5
+Timeout=45
+
+[Greeter]
+WallpaperPlugin=net.lliurex.wallpaper
