@@ -1,3 +1,11 @@
+lliurex-artwork (25.0.0.0+build7) noble; urgency=medium
+
+  * Fixed logout screen
+  * Showing lliurex wallpaper on lock screen
+  * Lock defaults to 45min
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Thu, 28 Nov 2024 10:56:37 +0100
+
 lliurex-artwork (25.0.0.0+build6) noble; urgency=medium
 
   * Moving path of xdg settings and fixed profile script
