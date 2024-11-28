@@ -23,14 +23,14 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.plasma.workspace.components 2.0 as PW
 import org.kde.plasma.private.sessions 2.0
-import org.kde.kcoreaddons 1.0 as KCoreAddons
+import org.kde.coreaddons 1.0 as KCoreAddons
 import org.kde.kirigami 2.16 as Kirigami
 
 import QtQuick 2.6
 import QtQuick.Controls 2.6 as QQC2
 import QtQuick.Layouts 1.15
 
-PlasmaCore.ColorScope {
+Item {
     id: root
     focus: true
     anchors.fill: parent
@@ -141,7 +141,7 @@ PlasmaCore.ColorScope {
     LLX.Window {
         id: allWindow
         title: ""
-        width:480
+        width:580
         height:220
         anchors.centerIn:parent
         visible: false
@@ -157,7 +157,7 @@ PlasmaCore.ColorScope {
 
                     text: i18nd("lliurex-plasma-theme","Power off")
 
-                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    implicitWidth: Kirigami.Units.gridUnit*6
                     icon.name: "system-shutdown"
                     display: QQC2.AbstractButton.TextUnderIcon
                     visible: maysd
@@ -168,7 +168,7 @@ PlasmaCore.ColorScope {
                 PlasmaComponents.Button {
                     text: i18nd("lliurex-plasma-theme","Reboot")
 
-                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    implicitWidth: Kirigami.Units.gridUnit*6
                     icon.name: "system-reboot"
                     display: QQC2.AbstractButton.TextUnderIcon
                     visible: maysd
@@ -179,7 +179,7 @@ PlasmaCore.ColorScope {
                 PlasmaComponents.Button {
                     text: i18nd("lliurex-plasma-theme","Log out")
 
-                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    implicitWidth: Kirigami.Units.gridUnit*6
                     icon.name: "system-log-out"
                     display: QQC2.AbstractButton.TextUnderIcon
 
@@ -191,7 +191,7 @@ PlasmaCore.ColorScope {
             PlasmaComponents.Button {
                 Layout.alignment: Qt.AlignRight
                 text: i18nd("lliurex-plasma-theme","Cancel")
-                implicitWidth: PlasmaCore.Units.gridUnit * 6
+                implicitWidth: Kirigami.Units.gridUnit * 6
 
                 onClicked: root.cancelRequested();
             }
@@ -211,7 +211,7 @@ PlasmaCore.ColorScope {
         ColumnLayout {
             anchors.fill: parent
             
-            PlasmaCore.IconItem {
+            Kirigami.Icon {
                 Layout.alignment: Qt.AlignHCenter
                 
                 id: faceIcon
@@ -221,7 +221,7 @@ PlasmaCore.ColorScope {
                 implicitHeight: 64
                 focus: false
                 //anchors.fill: parent
-                //anchors.margins: PlasmaCore.Units.gridUnit * 0.5 // because mockup says so...
+                //anchors.margins: Kirigami.Units.gridUnit * 0.5 // because mockup says so...
                 //colorGroup: PlasmaCore.ColorScope.colorGroup
             }
             
@@ -271,7 +271,7 @@ PlasmaCore.ColorScope {
                 PlasmaComponents.Button {
                     text: i18nd("lliurex-plasma-theme","Suspend")
                     
-                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    implicitWidth: Kirigami.Units.gridUnit*6
                     icon.name: "system-suspend"
                     display: QQC2.AbstractButton.TextUnderIcon
                     
@@ -283,7 +283,7 @@ PlasmaCore.ColorScope {
                 PlasmaComponents.Button {
                     Layout.alignment: Qt.AlignLeft
                     //text: i18nd("lliurex-plasma-theme","Other")
-                    implicitWidth: PlasmaCore.Units.gridUnit * 3
+                    implicitWidth: Kirigami.Units.gridUnit * 3
                     icon.name: "arrow-left"
 
                     onClicked: {
@@ -301,7 +301,7 @@ PlasmaCore.ColorScope {
                     id: btnHalt
                     text: i18nd("lliurex-plasma-theme","Power off")
                     
-                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    implicitWidth: Kirigami.Units.gridUnit*6
                     icon.name: "system-shutdown"
                     //display: QQC2.AbstractButton.TextUnderIcon
                     visible: sdtype === ShutdownType.ShutdownTypeHalt
@@ -312,7 +312,7 @@ PlasmaCore.ColorScope {
                 PlasmaComponents.Button {
                     text: i18nd("lliurex-plasma-theme","Reboot")
                     
-                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    implicitWidth: Kirigami.Units.gridUnit*6
                     icon.name: "system-reboot"
                     //display: QQC2.AbstractButton.TextUnderIcon
                     visible: sdtype === ShutdownType.ShutdownTypeReboot
@@ -323,7 +323,7 @@ PlasmaCore.ColorScope {
                 PlasmaComponents.Button {
                     text: i18nd("lliurex-plasma-theme","Log out")
                     
-                    implicitWidth: PlasmaCore.Units.gridUnit*6
+                    implicitWidth: Kirigami.Units.gridUnit*6
                     icon.name: "system-log-out"
                     //display: QQC2.AbstractButton.TextUnderIcon
                     visible: sdtype === ShutdownType.ShutdownTypeNone
@@ -335,7 +335,7 @@ PlasmaCore.ColorScope {
                 PlasmaComponents.Button {
                     Layout.alignment: Qt.AlignRight
                     text: i18nd("lliurex-plasma-theme","Cancel")
-                    implicitWidth: PlasmaCore.Units.gridUnit * 6
+                    implicitWidth: Kirigami.Units.gridUnit * 6
                     
                     onClicked: root.cancelRequested();
                 }
