@@ -1,3 +1,9 @@
+lliurex-artwork (25.0.0.0+build6) noble; urgency=medium
+
+  * Moving path of xdg settings and fixed profile script
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Thu, 28 Nov 2024 09:45:17 +0100
+
 lliurex-artwork (25.0.0.0+build5) noble; urgency=medium
 
   * Using profile.d in order to set default xdg dirs (and plasma lnf)

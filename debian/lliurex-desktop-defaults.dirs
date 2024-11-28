@@ -1,5 +1,4 @@
-/etc/xdg/lliurex/desktop
-/etc/xdg/lliurex/layouts
+/usr/share/lliurex-plasma-settings/xdg
 /etc/dconf/profile/
 /etc/dconf/db/lliurex.d/
 /usr/share/plasma/avatar/lliurex
