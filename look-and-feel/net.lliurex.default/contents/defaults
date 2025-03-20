@@ -1,6 +1,7 @@
 
 [kdeglobals][KDE]
-widgetStyle=Breeze
+cursorSize=24
+cursorTheme=Breeze_Light
 
 [kdeglobals][General]
 ColorScheme=lliurex

@@ -95,7 +95,7 @@ Item {
                 
             }
             else {
-                var action;
+                var action = "";
                 
                 switch (sdtype) {
                     case ShutdownType.ShutdownTypeHalt:
@@ -109,8 +109,7 @@ Item {
                     case ShutdownType.ShutdownTypeNone:
                         action = i18nd("lliurex-plasma-theme","Session is about to log out");
                     break;
-                    default:
-                        action = "";
+
                 }
                 
                 msgText.text=action + ": " + root.timeRemaining+i18nd("lliurex-plasma-theme"," seconds");;
@@ -135,8 +134,14 @@ Item {
         }
     }
     
+    /*
     LLX.Background {
         anchors.fill: parent
+    }
+    */
+    Rectangle {
+        color: "#000000"
+        opacity: 0.8
     }
     
     LLX.Window {

@@ -142,7 +142,6 @@ WallpaperItem
             }
         }
 
-        background.computeMap();
     }
 
     onColorChanged:
