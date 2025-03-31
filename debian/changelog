@@ -1,3 +1,9 @@
+lliurex-artwork (25.1.2.0) noble; urgency=medium
+
+  * Ambient light tunning
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Mon, 31 Mar 2025 13:28:54 +0200
+
 lliurex-artwork (25.1.1.0) noble; urgency=medium
 
   * Some random fixes here and there in the way to achieve release 25
