@@ -54,7 +54,7 @@ WallpaperItem
         if (now >= sunrise && now <= sunset ) {
             var f =  ((sunset - now) / (sunset-sunrise));
 
-            background.ambient = Math.sin(3.1416 * f);
+            background.ambient = 0.3 * (Math.sin(3.1416 * f));
         }
         else {
             background.ambient = 0;
