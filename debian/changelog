@@ -1,3 +1,9 @@
+lliurex-artwork (25.2.0.0) noble; urgency=medium
+
+  * Added custom console look and feel
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Mon, 14 Apr 2025 14:28:54 +0200
+
 lliurex-artwork (25.1.2.0) noble; urgency=medium
 
   * Ambient light tunning

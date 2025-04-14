@@ -6,6 +6,12 @@ Build-Depends: debhelper-compat (= 13), librsvg2-bin, imagemagick-6.q16, gettext
 Standards-Version: 4.6.0
 Rules-Requires-Root: no
 
+Package: lliurex-desktop-console
+Architecture: all
+Section: x11
+Description: LliureX 25 console settings
+ LliureX 25 console prompt and settings
+
 Package: lliurex-desktop-icon-theme
 Architecture: all
 Section: x11
@@ -34,7 +40,7 @@ Description: LliureX 25 plasma theme
 Package: lliurex-desktop-defaults
 Architecture: all
 Conflicts: neon-adwaita
-Depends: lliurex-desktop-color-scheme, lliurex-desktop-icon-theme, lliurex-desktop-plasma-look-and-feel, lliurex-desktop-plasma-theme, lliurex-sddm-theme, lliurex-plymouth-theme, plasma-applet-places-widget, qml6-module-lliurex-ui
+Depends: lliurex-desktop-color-scheme, lliurex-desktop-icon-theme, lliurex-desktop-plasma-look-and-feel, lliurex-desktop-plasma-theme, lliurex-desktop-console, lliurex-sddm-theme, lliurex-plymouth-theme, plasma-applet-places-widget, qml6-module-lliurex-ui
 Section: x11
 Description: LliureX 25 xdg defaults
  LliureX 25 xdg scripts

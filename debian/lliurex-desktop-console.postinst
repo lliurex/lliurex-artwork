@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+if [ "$1" = "configure" ] ; then
+     grep -q lliurexrc "/etc/skel/.bashrc" || echo "source /usr/share/lliurex-console/lliurexrc" > /etc/skel/.bashrc
+fi
+
+#DEBHELPER#
+
+exit 0
