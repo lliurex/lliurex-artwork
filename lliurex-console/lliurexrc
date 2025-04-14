@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source /usr/share/lliurex-console/trueline.sh
+
+echo -e "Welcome to \e[34mLliureX 25\e[0m\n"
