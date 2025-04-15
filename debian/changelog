@@ -1,3 +1,9 @@
+lliurex-artwork (25.2.1.0) noble; urgency=medium
+
+  * Fixed trueline not working as git submodule
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Tue, 15 Apr 2025 13:37:33 +0200
+
 lliurex-artwork (25.2.0.0) noble; urgency=medium
 
   * Added custom console look and feel
