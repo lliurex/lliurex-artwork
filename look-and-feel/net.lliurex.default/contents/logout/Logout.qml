@@ -92,6 +92,7 @@ Item {
                         root.rebootRequested();
                     break;
                     
+                    case ShutdownType.ShutdownTypeDefault:
                     case ShutdownType.ShutdownTypeNone:
                         root.logoutRequested();
                     break;
@@ -110,6 +111,7 @@ Item {
                         action = i18nd("lliurex-plasma-theme","System is about to reboot");
                     break;
                     
+                    case ShutdownType.ShutdownTypeDefault:
                     case ShutdownType.ShutdownTypeNone:
                         action = i18nd("lliurex-plasma-theme","Session is about to log out");
                     break;
@@ -132,6 +134,7 @@ Item {
                 root.rebootRequested();
             break;
             
+            case ShutdownType.ShutdownTypeDefault:
             case ShutdownType.ShutdownTypeNone:
                 root.logoutRequested();
             break;
