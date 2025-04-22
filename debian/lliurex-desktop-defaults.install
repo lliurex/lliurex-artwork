@@ -2,6 +2,7 @@ defaults/xdg/lliurex/desktop/*	/usr/share/lliurex-plasma-settings/xdg/
 defaults/profile.d/* /etc/profile.d/
 defaults/skel/.[a-zA-Z0-9]*			/etc/skel/
 defaults/searchproviders/* /usr/share/kservices5/searchproviders/
+defaults/konsole/* /usr/share/konsole/
 bin/*	/usr/bin/
 defaults/dconf/lliurex	/etc/dconf/profile/
 defaults/dconf/01_desktop_settings	/etc/dconf/db/lliurex.d/
