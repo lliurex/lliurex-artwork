@@ -109,7 +109,7 @@ WallpaperItem
         if (root.mode === "Neutral") {
             auto = false;
             background.isWallpaper = true;
-            background.rats = false;
+            background.rats = true; //check this
         }
 
         if (root.mode === "Admin") {
