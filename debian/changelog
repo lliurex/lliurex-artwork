@@ -1,3 +1,10 @@
+lliurex-artwork (25.2.2.0) noble; urgency=medium
+
+  * Several UI fixes
+  * Fixed console settings
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Tue, 22 Apr 2025 09:10:08 +0200
+
 lliurex-artwork (25.2.1.0) noble; urgency=medium
 
   * Fixed trueline not working as git submodule
