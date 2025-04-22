@@ -65,6 +65,10 @@ Item {
                 progressbar.value=1.0;
             }
         }
+        else {
+            allWindow.visible = true;
+            logoutWindow.visible = false;
+        }
     }
     
     Timer {
