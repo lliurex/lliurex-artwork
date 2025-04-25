@@ -3,7 +3,7 @@
 set -e
 
 if [ "$1" = "configure" ] ; then
-     grep -q lliurexrc "/etc/skel/.bashrc" || echo "source /usr/share/lliurex-console/lliurexrc" > /etc/skel/.bashrc
+     grep -q lliurexrc "/etc/skel/.bashrc" || echo "source /usr/share/lliurex-console/lliurexrc" >> /etc/skel/.bashrc
 fi
 
 #DEBHELPER#
