@@ -1,3 +1,9 @@
+lliurex-artwork (25.2.5.0) noble; urgency=medium
+
+  * Fixed typo
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Fri, 02 May 2025 13:46:33 +0200
+
 lliurex-artwork (25.2.4.0) noble; urgency=medium
 
   * Showing mices as default desktop
