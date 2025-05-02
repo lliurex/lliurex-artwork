@@ -137,7 +137,7 @@ WallpaperItem
                 }
                 else {
                     background.isWallpaper = true;
-                    background.rats = false;
+                    background.rats = true;
                 }
             }
         }
