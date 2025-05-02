@@ -1,3 +1,10 @@
+lliurex-artwork (25.2.4.0) noble; urgency=medium
+
+  * Showing mices as default desktop
+  * Added lliurex store to panel
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Fri, 02 May 2025 13:32:33 +0200
+
 lliurex-artwork (25.2.3.2) noble; urgency=medium
 
   * Fixed console post-inst destroying bashrc
