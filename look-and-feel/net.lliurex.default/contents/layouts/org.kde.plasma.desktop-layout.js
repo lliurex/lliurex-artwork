@@ -35,7 +35,7 @@ kickoff.currentConfigGroup = ["Shortcuts"];
 kickoff.writeConfig("global", "Alt+F1");
 
 iconTasks.currentConfigGroup = ["General"];
-iconTasks.writeConfig("launchers",[ "applications:org.kde.dolphin.desktop","applications:systemsettings.desktop","applications:chromium.desktop","applications:org.kde.kcalc.desktop","applications:zero-center.desktop","applications:lliurex-store.desktop"]);
+iconTasks.writeConfig("launchers",[ "applications:org.kde.dolphin.desktop","applications:systemsettings.desktop","applications:chromium.desktop","applications:org.kde.kcalc.desktop","applications:zero-center.desktop","applications:net.lliurex.lliurex-store.desktop"]);
 iconTasks.writeConfig("showOnlyCurrentDesktop",false);
 
 userSwitcher.currentConfigGroup = ["General"];
