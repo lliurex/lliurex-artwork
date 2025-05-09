@@ -1,3 +1,9 @@
+lliurex-artwork (25.3.0.0) noble; urgency=medium
+
+  * Themed trueline colors matching catpuccin scheme
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Fri, 09 May 2025 13:34:21 +0200
+
 lliurex-artwork (25.2.6.0) noble; urgency=medium
 
   * Removed kcalc and added firefox (again) to launcher
