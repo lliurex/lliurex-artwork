@@ -1,5 +1,17 @@
 #!/bin/bash
-
+declare -A TRUELINE_COLORS=(
+    [black]='36;39;58'        #base
+    [cursor_grey]='110;115;141' #overlay 0
+    [green]='166;218;149'     #green
+    [grey]='184;192;224'    # subtext 1
+    [light_blue]='125;196;228' #sapphire
+    [mono]='36;39;58' #base
+    [orange]='245;169;127'    #peach
+    [purple]='198;160;246'    #maeve
+    [red]='237;135;150'       #red
+    [special_grey]='36;39;58' # base
+    [white]='202;211;245' #text
+)
 source /usr/share/lliurex-console/trueline.sh
 
 echo -e "Welcome to \e[34mLliureX 25\e[0m\n"
