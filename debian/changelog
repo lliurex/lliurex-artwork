@@ -1,3 +1,9 @@
+lliurex-artwork (25.3.1.0) noble; urgency=medium
+
+  * Not showing truline propmt on tty
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Mon, 12 May 2025 11:23:56 +0200
+
 lliurex-artwork (25.3.0.0) noble; urgency=medium
 
   * Themed trueline colors matching catpuccin scheme
