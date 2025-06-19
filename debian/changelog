@@ -1,3 +1,9 @@
+lliurex-artwork (25.3.2.0) noble; urgency=medium
+
+  * Add krunner skel to disable appstream(discover) plugin
+
+ -- Juanma1980 <juanma1980@gmail.com>  Thu, 19 Jun 2025 12:55:00 +0200
+
 lliurex-artwork (25.3.1.0) noble; urgency=medium
 
   * Not showing truline propmt on tty
