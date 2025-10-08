@@ -1,3 +1,9 @@
+lliurex-artwork (25.3.2.1) noble; urgency=medium
+
+  * Fix searchprovider for wikilliurex
+
+ -- Juanma1980 <juanma1980@gmail.com>  Wed, 08 Oct 2025 19:23:20 +0200
+
 lliurex-artwork (25.3.2.0) noble; urgency=medium
 
   * Add krunner skel to disable appstream(discover) plugin
