@@ -7,7 +7,5 @@ Name[es]=Wiki LliureX
 Name[ca]=wiki LliureX
 Name[ca@valencia]=Wiki LliureX
 Name[en_GB]=Wiki LliureX
-Name[x-test]=xxLliureXxx
 Query=https://wiki.edu.gva.es/lliurex/tiki-searchresults.php?highlight=\\{@}&date=0&searchLang=&categId=&cat_managed%5B%5D=9&cat_managed%5B%5D=20&cat_managed%5B%5D=23&cat_managed%5B%5D=13&cat_managed%5B%5D=21&cat_managed%5B%5D=30&cat_managed%5B%5D=29&cat_managed%5B%5D=36&cat_managed%5B%5D=31&cat_managed%5B%5D=15&cat_managed%5B%5D=18&cat_managed%5B%5D=14&cat_managed%5B%5D=17&cat_managed%5B%5D=24&cat_managed%5B%5D=12&cat_managed%5B%5D=28&cat_managed%5B%5D=34&cat_managed%5B%5D=22&cat_managed%5B%5D=25&cat_managed%5B%5D=27&cat_managed%5B%5D=26&cat_managed%5B%5D=33&cat_managed%5B%5D=32&cat_managed%5B%5D=35&cat_managed%5B%5D=16&where=wikis&search=Fes-ho
-X-KDE-ServiceTypes=SearchProvider
 Type=Service
