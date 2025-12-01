@@ -1,3 +1,9 @@
+lliurex-artwork (25.3.3.0) noble; urgency=medium
+
+  * Prevent donations notification to show up
+
+ -- Enrique Medina Gremaldos <quique@necos.es>  Mon, 01 Dec 2025 10:41:41 +0100
+
 lliurex-artwork (25.3.2.1) noble; urgency=medium
 
   * Fix searchprovider for wikilliurex
